@@ -31,6 +31,8 @@ dependencies:
     sdk: flutter
   # Routing:
   go_router: ^3.0.7
+  # Native splash screen:
+  flutter_native_splash: ^2.1.6
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -40,10 +42,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  # Routing:
-  go_router: ^3.0.7
-  # Native splash screen:
-  flutter_native_splash: ^2.1.6
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
