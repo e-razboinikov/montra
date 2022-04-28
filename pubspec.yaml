@@ -33,7 +33,8 @@ dependencies:
   go_router: ^3.0.7
   # Native splash screen:
   flutter_native_splash: ^2.1.6
-
+  # UI:
+  google_fonts: ^2.3.2
 
 
   # The following adds the Cupertino Icons font to your application.
