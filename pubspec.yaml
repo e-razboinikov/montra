@@ -37,6 +37,8 @@ dependencies:
   google_fonts: ^2.3.2
   bot_toast: ^4.0.1
   dots_indicator: ^2.1.0
+  # Code generating:
+  equatable: ^2.0.3
 
 
   # The following adds the Cupertino Icons font to your application.
