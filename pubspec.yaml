@@ -39,6 +39,8 @@ dependencies:
   dots_indicator: ^2.1.0
   # Code generating:
   equatable: ^2.0.3
+  #BLoC
+  flutter_bloc: ^8.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
