@@ -11,6 +11,8 @@ import 'package:montra/internal/themes/app_colors.dart';
 class OnboardingPage extends StatefulWidget {
   OnboardingPage({Key? key}) : super(key: key);
 
+  static const name = '/onboarding';
+
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
 }
