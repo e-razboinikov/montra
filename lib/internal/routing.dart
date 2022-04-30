@@ -4,7 +4,9 @@ import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_
 import 'package:montra/features/splash_screen/presentation/pages/splash_screen_page.dart';
 
 final router = GoRouter(
-  observers: [BotToastNavigatorObserver()],
+  observers: [
+    BotToastNavigatorObserver(),
+  ],
   routes: [
     GoRoute(
       path: '/',
