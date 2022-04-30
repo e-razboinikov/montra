@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
-      builder: BotToastInit(), //1. call BotToastInit
+      builder: BotToastInit(),
       title: 'Montra - Expenses Tracker',
       theme: AppThemes.theme,
     );
