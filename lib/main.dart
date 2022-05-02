@@ -1,4 +1,5 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:montra/internal/routing.dart';
 import 'package:montra/internal/themes/app_themes.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       builder: BotToastInit(),
       title: 'Montra - Expenses Tracker',
       theme: AppThemes.theme,
+      scrollBehavior: CupertinoScrollBehavior(),
     );
   }
 }
