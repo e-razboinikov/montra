@@ -1,5 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
 import 'package:montra/internal/themes/app_colors.dart';
