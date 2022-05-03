@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:montra/core/widgets/buttons/core_button.dart';
 import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
 import 'package:montra/features/onboarding_screen/presentation/widgets/onboarding_item.dart';
-import 'package:montra/internal/resources/graphics_resources/raster_resources.dart';
+import 'package:montra/internal/resources/raster_resources.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 
 class OnboardingPage extends StatefulWidget {
