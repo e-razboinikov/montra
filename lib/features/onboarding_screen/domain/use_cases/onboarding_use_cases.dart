@@ -10,6 +10,6 @@ class OnboardingUseCases {
   }
 
   Future<void> markAsShowed() async {
-    await repo.checkShowing();
+    await repo.markAsShowed();
   }
 }
