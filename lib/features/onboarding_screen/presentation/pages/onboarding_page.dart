@@ -2,8 +2,12 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:montra/core/widgets/buttons/core_button.dart';
+import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
 import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
+import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
 import 'package:montra/features/onboarding_screen/presentation/widgets/onboarding_item.dart';
 import 'package:montra/internal/resources/raster_resources.dart';
 import 'package:montra/internal/themes/app_colors.dart';
@@ -11,7 +15,7 @@ import 'package:montra/internal/themes/app_colors.dart';
 class OnboardingPage extends StatefulWidget {
   OnboardingPage({Key? key}) : super(key: key);
 
-  static const name = '/onboarding';
+  static const name = 'onboarding';
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
@@ -88,9 +92,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   SizedBox(height: 16.0),
                   CoreButton(
                     buttonText: 'Login',
-                    onPressed: () => BotToast.showText(
-                      text: 'Here gonna be sign in logic!',
-                    ),
+                    onPressed: () {
+                      context.read<OnboardingBloc>().add(
+                            ShowingToggleOnboardingEvent(),
+                          );
+
+                      context.goNamed(MainPage.name);
+
+                      BotToast.showText(
+                        text: 'Here gonna be sign in logic!',
+                      );
+                    },
                     primary: AppColors.violet20,
                     onPrimary: AppColors.violet100,
                   ),
