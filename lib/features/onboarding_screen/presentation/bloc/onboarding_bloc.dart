@@ -21,24 +21,40 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   }
 
   Future<void> _checkShowing(ShowingCheckOnboardingEvent event) async {
-    emitItem(PendingOnboardingState());
+    emitItem(
+      PendingOnboardingState(),
+    );
 
     try {
-      final isShowed = await useCases.checkShowing();
-      emitItem(isShowed ? IsShowedOnboardingState : IsNotShowedOnboardingState);
+      await useCases.checkShowing().then(
+        (isShowed) {
+          print(isShowed);
+
+          emitItem(
+            isShowed ? IsShowedOnboardingState() : IsNotShowedOnboardingState(),
+          );
+        },
+      );
     } catch (e) {
       emitItem(FailureOnboardingState());
     }
   }
 
   Future<void> _markAsRead(ShowingToggleOnboardingEvent event) async {
-    emitItem(PendingOnboardingState());
+    emitItem(
+      PendingOnboardingState(),
+    );
 
     try {
       await useCases.markAsShowed();
-      emitItem(IsShowedOnboardingState());
+
+      emitItem(
+        IsShowedOnboardingState(),
+      );
     } catch (e) {
-      emitItem(FailureOnboardingState());
+      emitItem(
+        FailureOnboardingState(),
+      );
     }
   }
 }
