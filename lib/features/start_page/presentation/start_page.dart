@@ -38,14 +38,16 @@ class _StartPageState extends State<StartPage> {
           listener: (context, state) {
             state.maybeMap(
               isNotShowed: (state) => context.goNamed(OnboardingPage.name),
-              isShowed: (state) => print('is showed'),
+              isShowed: (state) => context.goNamed(MainPage.name),
               orElse: () => null,
             );
           },
         ),
       ],
-      child: const Center(
-        child: CircularProgressIndicator.adaptive(),
+      child: Scaffold(
+        body: const Center(
+          child: CircularProgressIndicator.adaptive(),
+        ),
       ),
     );
   }
