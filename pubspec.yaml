@@ -55,6 +55,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # Linter:
+  lint: ^1.8.2
   # App icon generator:
   flutter_launcher_icons: ^0.9.2
   # Code generating:
