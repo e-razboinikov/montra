@@ -21,22 +21,22 @@ class OnboardingItem extends StatelessWidget {
             Image.asset(
               onboardingInfo.imageAsset,
             ),
-            SizedBox(height: 41.0),
+            const SizedBox(height: 41.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 17.0),
               child: Column(
                 children: [
                   Text(
                     onboardingInfo.title,
-                    style: AppTextStyles.title1.copyWith(
+                    style: title1.copyWith(
                       color: AppColors.dark50,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 17.0),
+                  const SizedBox(height: 17.0),
                   Text(
                     onboardingInfo.description,
-                    style: AppTextStyles.body1.copyWith(
+                    style: body1.copyWith(
                       color: AppColors.light20,
                     ),
                     textAlign: TextAlign.center,

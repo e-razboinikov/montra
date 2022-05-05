@@ -13,7 +13,7 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Coming soon...',
-          style: AppTextStyles.title2.copyWith(
+          style: title2.copyWith(
             color: AppColors.light40,
           ),
         ),
@@ -21,7 +21,7 @@ class MainPage extends StatelessWidget {
       body: Center(
         child: Text(
           'Application still in work...',
-          style: AppTextStyles.body1,
+          style: body1,
         ),
       ),
     );
