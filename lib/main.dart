@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
-import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
 import 'package:montra/internal/bloc_providers.dart';
 import 'package:montra/internal/routing.dart';
 import 'package:montra/internal/themes/app_themes.dart';
 
-void main() async {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+Future<void> main() async {
+  final WidgetsBinding widgetsBinding =
+      WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   await Hive.initFlutter();
@@ -27,14 +26,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: BlocProviders.providers,
+      providers: providers,
       child: MaterialApp.router(
         routeInformationParser: router.routeInformationParser,
         routerDelegate: router.routerDelegate,
         builder: BotToastInit(),
         title: 'Montra - Expenses Tracker',
-        theme: AppThemes.theme,
-        scrollBehavior: CupertinoScrollBehavior(),
+        theme: theme,
+        scrollBehavior: const CupertinoScrollBehavior(),
       ),
     );
   }

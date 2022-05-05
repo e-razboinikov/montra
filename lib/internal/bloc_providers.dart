@@ -4,16 +4,14 @@ import 'package:montra/features/onboarding_screen/data/repositories/onboarding_r
 import 'package:montra/features/onboarding_screen/domain/use_cases/onboarding_use_cases.dart';
 import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
 
-class BlocProviders {
-  static List<BlocProvider> get providers => [
-        BlocProvider<OnboardingBloc>(
-          create: (context) => OnboardingBloc(
-            useCases: OnboardingUseCases(
-              repo: OnboardingRepoImpl(
-                service: OnboardingSevice(),
-              ),
+List<BlocProvider> get providers => [
+      BlocProvider<OnboardingBloc>(
+        create: (context) => OnboardingBloc(
+          useCases: OnboardingUseCases(
+            repo: OnboardingRepoImpl(
+              service: OnboardingSevice(),
             ),
           ),
         ),
-      ];
-}
+      ),
+    ];

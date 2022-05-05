@@ -24,7 +24,7 @@ class _StartPageState extends State<StartPage> {
 
   void _prepareApp() {
     context.read<OnboardingBloc>().add(
-          ShowingCheckOnboardingEvent(),
+          const ShowingCheckOnboardingEvent(),
         );
 
     FlutterNativeSplash.remove();
@@ -44,8 +44,8 @@ class _StartPageState extends State<StartPage> {
           },
         ),
       ],
-      child: Scaffold(
-        body: const Center(
+      child: const Scaffold(
+        body: Center(
           child: CircularProgressIndicator.adaptive(),
         ),
       ),

@@ -8,7 +8,7 @@ class OnboardingRepoImpl extends OnboardingRepo {
 
   @override
   Future<bool> checkShowing() async {
-    return await service.showingCheck();
+    return service.showingCheck();
   }
 
   @override
