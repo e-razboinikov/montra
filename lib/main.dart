@@ -27,14 +27,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: BlocProviders.providers,
+      providers: providers,
       child: MaterialApp.router(
         routeInformationParser: router.routeInformationParser,
         routerDelegate: router.routerDelegate,
         builder: BotToastInit(),
         title: 'Montra - Expenses Tracker',
-        theme: AppThemes.theme,
-        scrollBehavior: CupertinoScrollBehavior(),
+        theme: theme,
+        scrollBehavior: const CupertinoScrollBehavior(),
       ),
     );
   }
