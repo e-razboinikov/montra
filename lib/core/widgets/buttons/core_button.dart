@@ -21,7 +21,6 @@ class CoreButton extends StatelessWidget {
       height: 56.0,
       width: double.infinity,
       child: ElevatedButton(
-        child: Text(buttonText),
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           primary: primary,
@@ -30,6 +29,7 @@ class CoreButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.0),
           ),
         ),
+        child: Text(buttonText),
       ),
     );
   }
