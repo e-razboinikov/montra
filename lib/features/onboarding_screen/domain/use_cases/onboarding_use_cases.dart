@@ -6,7 +6,7 @@ class OnboardingUseCases {
   final OnboardingRepo repo;
 
   Future<bool> checkShowing() async {
-    return await repo.checkShowing();
+    return repo.checkShowing();
   }
 
   Future<void> markAsShowed() async {
