@@ -13,7 +13,7 @@ import 'package:montra/internal/resources/raster_resources.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 
 class OnboardingPage extends StatefulWidget {
-  OnboardingPage({Key? key}) : super(key: key);
+  const OnboardingPage({Key? key}) : super(key: key);
 
   static const name = 'onboarding';
 
@@ -27,18 +27,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
   double _currentPage = 0.0;
 
   final List<OnboardingInfoEntity> _onboardigInfo = [
-    OnboardingInfoEntity(
+    const OnboardingInfoEntity(
       imageAsset: RasterResources.obloardingFirstImage,
       title: 'Gain total control of your money',
       description: 'Become your own money manager and make every cent count',
     ),
-    OnboardingInfoEntity(
+    const OnboardingInfoEntity(
       imageAsset: RasterResources.obloardingSecondImage,
       title: 'Know where your money goes',
       description:
           'Track your transaction easily, with categories and financial report ',
     ),
-    OnboardingInfoEntity(
+    const OnboardingInfoEntity(
       imageAsset: RasterResources.obloardingThirdImage,
       title: 'Planning ahead',
       description: 'Setup your budget for each category so you in control',
@@ -55,7 +55,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.65,
               child: PageView(
-                scrollBehavior: CupertinoScrollBehavior(),
+                scrollBehavior: const CupertinoScrollBehavior(),
                 controller: _controller,
                 onPageChanged: (position) =>
                     setState(() => _currentPage = position.toDouble()),
@@ -71,7 +71,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: DotsIndicator(
                 dotsCount: _onboardigInfo.length,
                 position: _currentPage,
-                decorator: DotsDecorator(
+                decorator: const DotsDecorator(
                   size: Size(8.0, 8.0),
                   activeSize: Size(16.0, 16.0),
                   color: AppColors.violet20,
@@ -89,12 +89,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       text: 'Here gonna be sign up logic!',
                     ),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   CoreButton(
                     buttonText: 'Login',
                     onPressed: () {
                       context.read<OnboardingBloc>().add(
-                            ShowingToggleOnboardingEvent(),
+                            const ShowingToggleOnboardingEvent(),
                           );
 
                       context.goNamed(MainPage.name);

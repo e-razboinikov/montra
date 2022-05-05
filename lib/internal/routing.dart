@@ -17,7 +17,7 @@ final router = GoRouter(
         GoRoute(
           path: 'onboarding',
           name: OnboardingPage.name,
-          builder: (context, state) => OnboardingPage(),
+          builder: (context, state) => const OnboardingPage(),
         ),
       ],
     ),

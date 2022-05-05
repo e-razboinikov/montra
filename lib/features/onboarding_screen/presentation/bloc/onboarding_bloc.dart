@@ -7,10 +7,10 @@ part 'onboarding_event.dart';
 part 'onboarding_state.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  final OnboardingUseCases useCases;
-  late Emitter emitItem;
-
-  OnboardingBloc({required this.useCases}) : super(OnboardingState.initial()) {
+  OnboardingBloc({required this.useCases})
+      : super(
+          const OnboardingState.initial(),
+        ) {
     on<OnboardingEvent>((event, emit) async {
       emitItem = emit;
       await event.map(
@@ -20,40 +20,43 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     });
   }
 
+  final OnboardingUseCases useCases;
+  late Emitter emitItem;
+
   Future<void> _checkShowing(ShowingCheckOnboardingEvent event) async {
     emitItem(
-      PendingOnboardingState(),
+      const PendingOnboardingState(),
     );
 
     try {
       await useCases.checkShowing().then(
         (isShowed) {
-          print(isShowed);
-
           emitItem(
-            isShowed ? IsShowedOnboardingState() : IsNotShowedOnboardingState(),
+            isShowed
+                ? const IsShowedOnboardingState()
+                : const IsNotShowedOnboardingState(),
           );
         },
       );
     } catch (e) {
-      emitItem(FailureOnboardingState());
+      emitItem(const FailureOnboardingState());
     }
   }
 
   Future<void> _markAsRead(ShowingToggleOnboardingEvent event) async {
     emitItem(
-      PendingOnboardingState(),
+      const PendingOnboardingState(),
     );
 
     try {
       await useCases.markAsShowed();
 
       emitItem(
-        IsShowedOnboardingState(),
+        const IsShowedOnboardingState(),
       );
     } catch (e) {
       emitItem(
-        FailureOnboardingState(),
+        const FailureOnboardingState(),
       );
     }
   }
