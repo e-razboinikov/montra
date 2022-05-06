@@ -22,10 +22,15 @@ class _StartPageState extends State<StartPage> {
     super.initState();
   }
 
-  void _prepareApp() {
+  Future<void> _prepareApp() async {
     context.read<OnboardingBloc>().add(
           const ShowingCheckOnboardingEvent(),
         );
+
+    // This is necessary for correct page selection
+    await Future.delayed(
+      const Duration(seconds: 1),
+    );
 
     FlutterNativeSplash.remove();
   }
