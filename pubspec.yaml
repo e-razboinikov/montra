@@ -34,6 +34,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_localizations:
+    sdk: flutter
   flutter_native_splash: ^2.1.6
   freezed_annotation: ^2.0.1
   go_router: ^3.0.7
@@ -105,3 +107,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true
+  class_name: Locales
+  arb_dir: lib/internal/l10n
+  output_dir: lib/internal/l10n/generated
+  use_deferred_loading: false
