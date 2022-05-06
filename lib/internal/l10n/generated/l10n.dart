@@ -49,6 +49,86 @@ class Locales {
   static Locales? maybeOf(BuildContext context) {
     return Localizations.of<Locales>(context, Locales);
   }
+
+  /// `Gain total control of your money`
+  String get gainTotalControlOfYourMoney {
+    return Intl.message(
+      'Gain total control of your money',
+      name: 'gainTotalControlOfYourMoney',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Become your own money manager and make every cent count`
+  String get becomeYourOwnMoneyManagerAndMakeEveryCentCount {
+    return Intl.message(
+      'Become your own money manager and make every cent count',
+      name: 'becomeYourOwnMoneyManagerAndMakeEveryCentCount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Know where your money goes`
+  String get knowWhereYourMoneyGoes {
+    return Intl.message(
+      'Know where your money goes',
+      name: 'knowWhereYourMoneyGoes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track your transaction easily, with categories and financial report`
+  String get trackYourTransactionEasilyWithCategoriesAndFinancialReport {
+    return Intl.message(
+      'Track your transaction easily, with categories and financial report',
+      name: 'trackYourTransactionEasilyWithCategoriesAndFinancialReport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Planning ahead`
+  String get planningAhead {
+    return Intl.message(
+      'Planning ahead',
+      name: 'planningAhead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setup your budget for each category so you in control`
+  String get setupYourBudgetForEachCategorySoYouInControl {
+    return Intl.message(
+      'Setup your budget for each category so you in control',
+      name: 'setupYourBudgetForEachCategorySoYouInControl',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get started`
+  String get getStarted {
+    return Intl.message(
+      'Get started',
+      name: 'getStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authorization logic will be here soon!`
+  String get authorizationLogicWillBeHereSoon {
+    return Intl.message(
+      'Authorization logic will be here soon!',
+      name: 'authorizationLogicWillBeHereSoon',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {
