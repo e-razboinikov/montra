@@ -28,8 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Станьте своим собственным бухгалтером и считайте каждую копейку"),
-        "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
-            "Получите полный контроль над своими деньгами"),
+        "gainTotalControlOfYourMoney":
+            MessageLookupByLibrary.simpleMessage("Контролируйте ваши деньги"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "knowWhereYourMoneyGoes": MessageLookupByLibrary.simpleMessage(
             "Знайте, куда уходят ваши деньги"),

@@ -9,6 +9,7 @@ import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
 import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
 import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
 import 'package:montra/features/onboarding_screen/presentation/widgets/onboarding_item.dart';
+import 'package:montra/internal/l10n/generated/l10n.dart';
 import 'package:montra/internal/resources/raster_resources.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 
@@ -26,27 +27,35 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   double _currentPage = 0.0;
 
-  final List<OnboardingInfoEntity> _onboardigInfo = [
-    const OnboardingInfoEntity(
-      imageAsset: RasterResources.obloardingFirstImage,
-      title: 'Gain total control of your money',
-      description: 'Become your own money manager and make every cent count',
-    ),
-    const OnboardingInfoEntity(
-      imageAsset: RasterResources.obloardingSecondImage,
-      title: 'Know where your money goes',
-      description:
-          'Track your transaction easily, with categories and financial report ',
-    ),
-    const OnboardingInfoEntity(
-      imageAsset: RasterResources.obloardingThirdImage,
-      title: 'Planning ahead',
-      description: 'Setup your budget for each category so you in control',
-    ),
-  ];
+  late final Locales locales;
+
+  @override
+  void didChangeDependencies() {
+    locales = Locales.of(context);
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final List<OnboardingInfoEntity> _onboardigInfo = [
+      OnboardingInfoEntity(
+        imageAsset: RasterResources.obloardingFirstImage,
+        title: locales.gainTotalControlOfYourMoney,
+        description: locales.becomeYourOwnMoneyManagerAndMakeEveryCentCount,
+      ),
+      OnboardingInfoEntity(
+        imageAsset: RasterResources.obloardingSecondImage,
+        title: locales.knowWhereYourMoneyGoes,
+        description:
+            locales.trackYourTransactionEasilyWithCategoriesAndFinancialReport,
+      ),
+      OnboardingInfoEntity(
+        imageAsset: RasterResources.obloardingThirdImage,
+        title: locales.planningAhead,
+        description: locales.setupYourBudgetForEachCategorySoYouInControl,
+      ),
+    ];
+
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilder(
@@ -87,7 +96,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(32.0, 0, 32.0, 32.0),
                       child: CoreButton(
-                        buttonText: 'Get started',
+                        buttonText: locales.getStarted,
                         onPressed: () {
                           context.read<OnboardingBloc>().add(
                                 const ShowingToggleOnboardingEvent(),
@@ -96,7 +105,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           context.goNamed(MainPage.name);
 
                           BotToast.showText(
-                            text: 'Authorization logic will be here soon!',
+                            text: locales.authorizationLogicWillBeHereSoon,
                           );
                         },
                       ),
