@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
 import 'package:montra/internal/themes/app_colors.dart';
@@ -21,28 +22,27 @@ class OnboardingItem extends StatelessWidget {
             Image.asset(
               onboardingInfo.imageAsset,
             ),
-            const SizedBox(height: 41.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 17.0),
-              child: Column(
-                children: [
-                  Text(
-                    onboardingInfo.title,
-                    style: title1.copyWith(
-                      color: AppColors.dark50,
-                    ),
-                    textAlign: TextAlign.center,
+            const SizedBox(height: 32.0),
+            Column(
+              children: [
+                AutoSizeText(
+                  onboardingInfo.title,
+                  style: title1.copyWith(
+                    color: AppColors.dark50,
                   ),
-                  const SizedBox(height: 17.0),
-                  Text(
-                    onboardingInfo.description,
-                    style: body1.copyWith(
-                      color: AppColors.light20,
-                    ),
-                    textAlign: TextAlign.center,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                ),
+                const SizedBox(height: 17.0),
+                AutoSizeText(
+                  onboardingInfo.description,
+                  style: body1.copyWith(
+                    color: AppColors.light20,
                   ),
-                ],
-              ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                ),
+              ],
             ),
           ],
         ),
