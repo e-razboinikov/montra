@@ -7,6 +7,8 @@ import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_b
 import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
 
 class StartPage extends StatefulWidget {
+  /// This page is necessary for the correct selection of the desired page after
+  /// the application is initialized.
   const StartPage({Key? key}) : super(key: key);
 
   static const name = '/';
@@ -22,10 +24,15 @@ class _StartPageState extends State<StartPage> {
     super.initState();
   }
 
-  void _prepareApp() {
+  Future<void> _prepareApp() async {
     context.read<OnboardingBloc>().add(
           const ShowingCheckOnboardingEvent(),
         );
+
+    // This is necessary for correct page selection
+    await Future.delayed(
+      const Duration(seconds: 1),
+    );
 
     FlutterNativeSplash.remove();
   }
@@ -44,10 +51,8 @@ class _StartPageState extends State<StartPage> {
           },
         ),
       ],
-      child: const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator.adaptive(),
-        ),
+      child: const Center(
+        child: CircularProgressIndicator.adaptive(),
       ),
     );
   }
