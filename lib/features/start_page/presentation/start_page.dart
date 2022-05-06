@@ -7,6 +7,8 @@ import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_b
 import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
 
 class StartPage extends StatefulWidget {
+  /// This page is necessary for the correct selection of the desired page after
+  /// the application is initialized.
   const StartPage({Key? key}) : super(key: key);
 
   static const name = '/';
