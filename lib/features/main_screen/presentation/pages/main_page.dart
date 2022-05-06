@@ -9,19 +9,23 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Coming soon...',
-          style: title2.copyWith(
-            color: AppColors.light40,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(
+            'Coming soon...',
+            style: title2.copyWith(
+              color: AppColors.light40,
+            ),
           ),
         ),
-      ),
-      body: Center(
-        child: Text(
-          'Application still in work...',
-          style: body1,
+        body: Center(
+          child: Text(
+            'Application still in work...',
+            style: body1,
+          ),
         ),
       ),
     );
