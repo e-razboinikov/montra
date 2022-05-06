@@ -51,10 +51,8 @@ class _StartPageState extends State<StartPage> {
           },
         ),
       ],
-      child: const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator.adaptive(),
-        ),
+      child: const Center(
+        child: CircularProgressIndicator.adaptive(),
       ),
     );
   }
