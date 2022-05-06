@@ -5,7 +5,7 @@ import 'package:montra/internal/themes/app_text_styles.dart';
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
-  static const name = '/main';
+  static const name = 'main';
 
   @override
   Widget build(BuildContext context) {

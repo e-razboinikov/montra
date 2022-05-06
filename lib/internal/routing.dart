@@ -19,12 +19,12 @@ final router = GoRouter(
           name: OnboardingPage.name,
           builder: (context, state) => const OnboardingPage(),
         ),
+        GoRoute(
+          path: 'main',
+          name: MainPage.name,
+          builder: (context, state) => const MainPage(),
+        ),
       ],
-    ),
-    GoRoute(
-      path: '/main',
-      name: MainPage.name,
-      builder: (context, state) => const MainPage(),
     ),
   ],
 );
