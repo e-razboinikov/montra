@@ -86,32 +86,19 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(32.0, 0, 32.0, 32.0),
-                      child: Column(
-                        children: [
-                          CoreButton(
-                            buttonText: 'Sign Up',
-                            onPressed: () => BotToast.showText(
-                              text: 'Here gonna be sign up logic!',
-                            ),
-                          ),
-                          const SizedBox(height: 16.0),
-                          CoreButton(
-                            buttonText: 'Login',
-                            onPressed: () {
-                              context.read<OnboardingBloc>().add(
-                                    const ShowingToggleOnboardingEvent(),
-                                  );
-
-                              context.goNamed(MainPage.name);
-
-                              BotToast.showText(
-                                text: 'Here gonna be sign in logic!',
+                      child: CoreButton(
+                        buttonText: 'Get started',
+                        onPressed: () {
+                          context.read<OnboardingBloc>().add(
+                                const ShowingToggleOnboardingEvent(),
                               );
-                            },
-                            primary: AppColors.violet20,
-                            onPrimary: AppColors.violet100,
-                          ),
-                        ],
+
+                          context.goNamed(MainPage.name);
+
+                          BotToast.showText(
+                            text: 'Authorization logic will be here soon!',
+                          );
+                        },
                       ),
                     ),
                   ],
