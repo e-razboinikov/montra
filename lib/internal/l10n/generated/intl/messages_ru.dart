@@ -21,5 +21,25 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "authorizationLogicWillBeHereSoon":
+            MessageLookupByLibrary.simpleMessage(
+                "Скоро здесь будет логика авторизации!"),
+        "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
+            MessageLookupByLibrary.simpleMessage(
+                "Станьте своим собственным бухгалтером и считайте каждую копейку"),
+        "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
+            "Получите полный контроль над своими деньгами"),
+        "getStarted": MessageLookupByLibrary.simpleMessage("Начать"),
+        "knowWhereYourMoneyGoes": MessageLookupByLibrary.simpleMessage(
+            "Знайте, куда уходят ваши деньги"),
+        "planningAhead":
+            MessageLookupByLibrary.simpleMessage("Планируйте заранее"),
+        "setupYourBudgetForEachCategorySoYouInControl":
+            MessageLookupByLibrary.simpleMessage(
+                "Установите бюджет для каждой категории, чтобы контролировать свои траты"),
+        "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
+            MessageLookupByLibrary.simpleMessage(
+                "Легко отслеживайте свои транзакции используя категории и финансовый отчет")
+      };
 }
