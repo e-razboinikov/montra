@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 
 class CoreButton extends StatelessWidget {
@@ -18,7 +19,7 @@ class CoreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56.0,
+      height: 56.h,
       width: double.infinity,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -26,7 +27,7 @@ class CoreButton extends StatelessWidget {
           primary: primary,
           onPrimary: onPrimary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(16.r),
           ),
         ),
         child: Text(buttonText),
