@@ -6,5 +6,7 @@
   "planningAhead": "Планируйте заранее",
   "setupYourBudgetForEachCategorySoYouInControl": "Установите бюджет для каждой категории, чтобы контролировать свои траты",
   "getStarted": "Начать",
-  "authorizationLogicWillBeHereSoon": "Скоро здесь будет логика авторизации!"
+  "authorizationLogicWillBeHereSoon": "Скоро здесь будет логика авторизации!",
+  "comingSoon": "Совсем скоро...",
+  "applicationStillInWork": "Мы все ещё работаем над приложением..."
 }
