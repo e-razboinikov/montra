@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 import 'package:montra/internal/themes/app_text_styles.dart';
@@ -15,14 +16,14 @@ class OnboardingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+      padding: EdgeInsets.symmetric(horizontal: 32.h),
       child: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset(
               onboardingInfo.imageAsset,
             ),
-            const SizedBox(height: 32.0),
+            SizedBox(height: 32.h),
             Column(
               children: [
                 AutoSizeText(
@@ -33,7 +34,7 @@ class OnboardingItem extends StatelessWidget {
                   textAlign: TextAlign.center,
                   maxLines: 2,
                 ),
-                const SizedBox(height: 17.0),
+                SizedBox(height: 17.h),
                 AutoSizeText(
                   onboardingInfo.description,
                   style: body1.copyWith(
