@@ -22,12 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
+            "Application still in work..."),
         "authorizationLogicWillBeHereSoon":
             MessageLookupByLibrary.simpleMessage(
                 "Authorization logic will be here soon!"),
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Become your own money manager and make every cent count"),
+        "comingSoon": MessageLookupByLibrary.simpleMessage("Coming soon..."),
         "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
             "Gain total control of your money"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get started"),

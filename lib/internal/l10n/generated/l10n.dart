@@ -129,6 +129,26 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Coming soon...`
+  String get comingSoon {
+    return Intl.message(
+      'Coming soon...',
+      name: 'comingSoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Application still in work...`
+  String get applicationStillInWork {
+    return Intl.message(
+      'Application still in work...',
+      name: 'applicationStillInWork',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {
