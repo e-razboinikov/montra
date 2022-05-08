@@ -6,18 +6,18 @@ import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
 import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
 import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
 
-class StartPage extends StatefulWidget {
+class FirstScreenSelecter extends StatefulWidget {
   /// This page is necessary for the correct selection of the desired page after
   /// the application is initialized.
-  const StartPage({Key? key}) : super(key: key);
+  const FirstScreenSelecter({Key? key}) : super(key: key);
 
   static const name = '/';
 
   @override
-  State<StartPage> createState() => _StartPageState();
+  State<FirstScreenSelecter> createState() => _FirstScreenSelecterState();
 }
 
-class _StartPageState extends State<StartPage> {
+class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
   @override
   void initState() {
     _prepareApp();
