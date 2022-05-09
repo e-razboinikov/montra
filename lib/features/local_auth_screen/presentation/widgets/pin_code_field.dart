@@ -17,8 +17,10 @@ class PinCodeField extends StatefulWidget {
 class _PinCodeFieldState extends State<PinCodeField> {
   final _pinCodeLength = 4;
   final TextEditingController _textEditingController = TextEditingController();
+
   // ignore: close_sinks
   StreamController<ErrorAnimationType>? _errorController;
+
   // bool _hasError = false;
   String currentText = '';
 
