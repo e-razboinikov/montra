@@ -13,6 +13,14 @@ TextStyle get titleX => GoogleFonts.inter(
       letterSpacing: 0,
     );
 
+TextStyle get ag => GoogleFonts.inter(
+      color: defaultTextColor,
+      fontSize: 48.sp,
+      fontWeight: FontWeight.w500,
+      height: 58.sp / 48.sp,
+      letterSpacing: 0,
+    );
+
 TextStyle get title1 => GoogleFonts.inter(
       color: defaultTextColor,
       fontSize: 32.sp,
