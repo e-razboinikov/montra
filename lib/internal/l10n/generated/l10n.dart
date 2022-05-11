@@ -149,6 +149,16 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Let’s  setup your PIN`
+  String get letsSetupYourPin {
+    return Intl.message(
+      'Let’s  setup your PIN',
+      name: 'letsSetupYourPin',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

@@ -36,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getStarted": MessageLookupByLibrary.simpleMessage("Get started"),
         "knowWhereYourMoneyGoes":
             MessageLookupByLibrary.simpleMessage("Know where your money goes"),
+        "letsSetupYourPin":
+            MessageLookupByLibrary.simpleMessage("Let’s  setup your PIN"),
         "planningAhead": MessageLookupByLibrary.simpleMessage("Planning ahead"),
         "setupYourBudgetForEachCategorySoYouInControl":
             MessageLookupByLibrary.simpleMessage(

@@ -8,5 +8,6 @@
   "getStarted": "Начать",
   "authorizationLogicWillBeHereSoon": "Скоро здесь будет логика авторизации!",
   "comingSoon": "Совсем скоро...",
-  "applicationStillInWork": "Мы все ещё работаем над приложением..."
+  "applicationStillInWork": "Мы все ещё работаем над приложением...",
+  "letsSetupYourPin" : "Давайте установим ПИН-код"
 }
