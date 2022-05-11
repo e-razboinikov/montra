@@ -3,12 +3,20 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:montra/internal/l10n/generated/l10n.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 import 'package:montra/internal/themes/app_text_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodeField extends StatefulWidget {
-  const PinCodeField({Key? key}) : super(key: key);
+  const PinCodeField({
+    required this.controller,
+    required this.currentText,
+    Key? key,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+  final ValueNotifier<String> currentText;
 
   @override
   State<PinCodeField> createState() => _PinCodeFieldState();
@@ -16,30 +24,30 @@ class PinCodeField extends StatefulWidget {
 
 class _PinCodeFieldState extends State<PinCodeField> {
   final _pinCodeLength = 4;
-  final TextEditingController _textEditingController = TextEditingController();
 
   // ignore: close_sinks
   StreamController<ErrorAnimationType>? _errorController;
 
   // bool _hasError = false;
-  String currentText = '';
 
   @override
   Widget build(BuildContext context) {
+    final locales = Locales.of(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'Let’s  setup your PIN',
+          locales.letsSetupYourPin,
           style: title3.copyWith(color: AppColors.light80),
         ),
         SizedBox(height: 92.h),
         PinCodeTextField(
+          readOnly: true,
           appContext: context,
           showCursor: false,
           mainAxisAlignment: MainAxisAlignment.center,
-          useHapticFeedback: true,
           length: _pinCodeLength,
           obscuringWidget: Container(
             decoration: const BoxDecoration(
@@ -58,14 +66,11 @@ class _PinCodeFieldState extends State<PinCodeField> {
             fieldWidth: 32.w,
           ),
           errorAnimationController: _errorController,
-          controller: _textEditingController,
+          controller: widget.controller,
           keyboardType: TextInputType.number,
-          onCompleted: (v) {
-            debugPrint('Completed');
-          },
           onChanged: (value) {
             setState(() {
-              currentText = value;
+              widget.currentText.value = value;
             });
           },
         ),

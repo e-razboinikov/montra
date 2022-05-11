@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locales = Locales.of(context);
+
     return ScreenUtilInit(
       // 812 x 375 - UI-kit dementions
       designSize: const Size(375, 812),
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
           routerDelegate: router.routerDelegate,
           scrollBehavior: const CupertinoScrollBehavior(),
           theme: theme,
-          title: 'Montra - Expenses Tracker',
+          title: locales.montraExpensesTracker,
         ),
       ),
     );

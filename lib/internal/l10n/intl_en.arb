@@ -8,5 +8,8 @@
   "getStarted": "Get started",
   "authorizationLogicWillBeHereSoon": "Authorization logic will be here soon!",
   "comingSoon": "Coming soon...",
-  "applicationStillInWork": "Application still in work..."
+  "applicationStillInWork": "Application still in work...",
+  "letsSetupYourPin": "Let’s  setup your PIN",
+  "soonThereWillBeATransitionToConfirmingThePin": "Soon there will be a transition to confirming the PIN code!",
+  "montraExpensesTracker": "Montra - Expenses Tracker"
 }
