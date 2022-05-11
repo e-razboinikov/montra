@@ -39,6 +39,7 @@ class _PinCodeFieldState extends State<PinCodeField> {
         ),
         SizedBox(height: 92.h),
         PinCodeTextField(
+          readOnly: true,
           appContext: context,
           showCursor: false,
           mainAxisAlignment: MainAxisAlignment.center,
