@@ -23,7 +23,7 @@ final router = GoRouter(
         GoRoute(
           path: 'lcoalAuth',
           name: LocalAuthPage.name,
-          builder: (context, state) => const LocalAuthPage(),
+          builder: (context, state) => LocalAuthPage(),
         ),
         GoRoute(
           path: 'main',
