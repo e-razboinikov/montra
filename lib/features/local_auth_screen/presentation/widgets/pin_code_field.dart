@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:montra/internal/l10n/generated/l10n.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 import 'package:montra/internal/themes/app_text_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -26,12 +27,14 @@ class _PinCodeFieldState extends State<PinCodeField> {
 
   @override
   Widget build(BuildContext context) {
+    final locales = Locales.of(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'Let’s  setup your PIN',
+          locales.letsSetupYourPin,
           style: title3.copyWith(color: AppColors.light80),
         ),
         SizedBox(height: 92.h),
