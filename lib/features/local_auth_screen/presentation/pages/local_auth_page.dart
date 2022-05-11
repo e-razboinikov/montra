@@ -10,15 +10,20 @@ class LocalAuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double _deviceHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: AppColors.violet100,
       body: Column(
-        children: const [
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
           Expanded(
-            child: PinCodeField(),
+            flex: _deviceHeight >= 720 ? 3 : 2,
+            child: const PinCodeField(),
           ),
           Expanded(
-            child: LocalAuthKeyboard(),
+            flex: _deviceHeight >= 720 ? 2 : 3,
+            child: const LocalAuthKeyboard(),
           ),
         ],
       ),
