@@ -9,7 +9,14 @@ import 'package:montra/internal/themes/app_text_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodeField extends StatefulWidget {
-  const PinCodeField({Key? key}) : super(key: key);
+  const PinCodeField({
+    required this.controller,
+    required this.currentText,
+    Key? key,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+  final ValueNotifier<String> currentText;
 
   @override
   State<PinCodeField> createState() => _PinCodeFieldState();
@@ -17,13 +24,11 @@ class PinCodeField extends StatefulWidget {
 
 class _PinCodeFieldState extends State<PinCodeField> {
   final _pinCodeLength = 4;
-  final TextEditingController _textEditingController = TextEditingController();
 
   // ignore: close_sinks
   StreamController<ErrorAnimationType>? _errorController;
 
   // bool _hasError = false;
-  String currentText = '';
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +48,6 @@ class _PinCodeFieldState extends State<PinCodeField> {
           appContext: context,
           showCursor: false,
           mainAxisAlignment: MainAxisAlignment.center,
-          useHapticFeedback: true,
           length: _pinCodeLength,
           obscuringWidget: Container(
             decoration: const BoxDecoration(
@@ -62,14 +66,11 @@ class _PinCodeFieldState extends State<PinCodeField> {
             fieldWidth: 32.w,
           ),
           errorAnimationController: _errorController,
-          controller: _textEditingController,
+          controller: widget.controller,
           keyboardType: TextInputType.number,
-          onCompleted: (v) {
-            debugPrint('Completed');
-          },
           onChanged: (value) {
             setState(() {
-              currentText = value;
+              widget.currentText.value = value;
             });
           },
         ),

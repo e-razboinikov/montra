@@ -3,10 +3,19 @@ import 'package:montra/features/local_auth_screen/presentation/widgets/local_aut
 import 'package:montra/features/local_auth_screen/presentation/widgets/pin_code_field.dart';
 import 'package:montra/internal/themes/app_colors.dart';
 
-class LocalAuthPage extends StatelessWidget {
-  const LocalAuthPage({Key? key}) : super(key: key);
+class LocalAuthPage extends StatefulWidget {
+  LocalAuthPage({Key? key}) : super(key: key);
 
   static const name = 'localAuth';
+
+  @override
+  State<LocalAuthPage> createState() => _LocalAuthPageState();
+}
+
+class _LocalAuthPageState extends State<LocalAuthPage> {
+  final TextEditingController _textEditingController = TextEditingController();
+
+  ValueNotifier<String> currentText = ValueNotifier('');
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +28,16 @@ class LocalAuthPage extends StatelessWidget {
         children: [
           Expanded(
             flex: _deviceHeight >= 720 ? 3 : 2,
-            child: const PinCodeField(),
+            child: PinCodeField(
+              currentText: currentText,
+              controller: _textEditingController,
+            ),
           ),
           Expanded(
             flex: _deviceHeight >= 720 ? 2 : 3,
-            child: const LocalAuthKeyboard(),
+            child: LocalAuthKeyboard(
+              controller: _textEditingController,
+            ),
           ),
         ],
       ),
