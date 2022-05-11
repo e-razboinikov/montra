@@ -159,6 +159,26 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Soon there will be a transition to confirming the PIN code!`
+  String get soonThereWillBeATransitionToConfirmingThePin {
+    return Intl.message(
+      'Soon there will be a transition to confirming the PIN code!',
+      name: 'soonThereWillBeATransitionToConfirmingThePin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Montra - Expenses Tracker`
+  String get montraExpensesTracker {
+    return Intl.message(
+      'Montra - Expenses Tracker',
+      name: 'montraExpensesTracker',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {
