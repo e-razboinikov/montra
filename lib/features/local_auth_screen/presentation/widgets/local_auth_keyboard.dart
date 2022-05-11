@@ -11,11 +11,14 @@ class LocalAuthKeyboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double _deviceHeight = MediaQuery.of(context).size.height;
+
     return GridView(
+      physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        childAspectRatio: 2 / 1,
+        childAspectRatio: _deviceHeight >= 720 ? 2 / 1 : 3 / 2,
         mainAxisSpacing: 8.h,
         crossAxisSpacing: 8.w,
       ),
