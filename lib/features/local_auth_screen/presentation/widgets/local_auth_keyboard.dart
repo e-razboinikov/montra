@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +13,7 @@ class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
     required this.textController,
     required this.deviceHeight,
+    required this.submitInput,
     required this.locales,
     Key? key,
   }) : super(key: key);
@@ -23,6 +23,9 @@ class LocalAuthKeyboard extends StatefulWidget {
 
   /// Device height. Needed to set the correct size of widgets.
   final double deviceHeight;
+
+  /// Input confirmation function.
+  final Function() submitInput;
 
   /// An instance of the localization class.
   final Locales locales;
@@ -67,7 +70,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
           child: Text('0', style: ag.copyWith(color: AppColors.light80)),
         ),
         TextButton(
-          onPressed: () => _submitInput(),
+          onPressed: () => widget.submitInput(),
           child: SvgPicture.asset(
             VectorResources.iconArrowRight,
             height: 64.h,
@@ -94,13 +97,6 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
             .substring(0, widget.textController.value.text.length - 1);
       }
     });
-    HapticFeedback.lightImpact();
-  }
-
-  void _submitInput() {
-    BotToast.showText(
-      text: widget.locales.soonThereWillBeATransitionToConfirmingThePin,
-    );
     HapticFeedback.lightImpact();
   }
 }

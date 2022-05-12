@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_keyboard.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/pin_code_field.dart';
@@ -25,8 +26,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
 
   late final double _deviceHeight;
   late final Locales _locales;
-
-  ValueNotifier<String> currentText = ValueNotifier('');
 
   @override
   void didChangeDependencies() {
@@ -55,6 +54,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
             child: LocalAuthKeyboard(
               textController: _textEditingController,
               deviceHeight: _deviceHeight,
+              submitInput: _submitInput,
               locales: _locales,
             ),
           ),
@@ -62,4 +62,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
       ),
     );
   }
+
+  void _submitInput() => BotToast.showText(text: _textEditingController.text);
 }
