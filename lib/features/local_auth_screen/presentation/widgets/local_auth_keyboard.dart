@@ -10,12 +10,22 @@ import 'package:montra/internal/themes/app_colors.dart';
 import 'package:montra/internal/themes/app_text_styles.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
+  /// Widget that displays a keyboard for entering a PIN code.
   const LocalAuthKeyboard({
-    required this.controller,
+    required this.textController,
+    required this.deviceHeight,
+    required this.locales,
     Key? key,
   }) : super(key: key);
 
-  final TextEditingController controller;
+  /// The controller that stores the entered PIN.
+  final TextEditingController textController;
+
+  /// Device height. Needed to set the correct size of widgets.
+  final double deviceHeight;
+
+  /// An instance of the localization class.
+  final Locales locales;
 
   @override
   State<LocalAuthKeyboard> createState() => _LocalAuthKeyboardState();
@@ -24,15 +34,12 @@ class LocalAuthKeyboard extends StatefulWidget {
 class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
   @override
   Widget build(BuildContext context) {
-    final double _deviceHeight = MediaQuery.of(context).size.height;
-    final locales = Locales.of(context);
-
     return GridView(
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
-        childAspectRatio: _deviceHeight >= 720 ? 2 / 1 : 3 / 2,
+        childAspectRatio: widget.deviceHeight >= 720 ? 2 / 1 : 3 / 2,
         mainAxisSpacing: 8.h,
         crossAxisSpacing: 8.w,
       ),
@@ -44,26 +51,11 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
               (index + 1).toString(),
               style: ag.copyWith(color: AppColors.light80),
             ),
-            onPressed: () {
-              setState(() {
-                if (widget.controller.text.length <= 4) {
-                  widget.controller.text += (index + 1).toString();
-                }
-              });
-              HapticFeedback.lightImpact();
-            },
+            onPressed: () => _enterNumber(index + 1),
           ),
         ),
         TextButton(
-          onPressed: () {
-            setState(() {
-              if (widget.controller.text.isNotEmpty) {
-                widget.controller.text = widget.controller.value.text
-                    .substring(0, widget.controller.value.text.length - 1);
-              }
-            });
-            HapticFeedback.lightImpact();
-          },
+          onPressed: () => _deleteEnteredNumber(),
           child: Icon(
             Icons.backspace_outlined,
             size: 32.h,
@@ -71,22 +63,11 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
           ),
         ),
         TextButton(
-          onPressed: () {
-            setState(() {
-              if (widget.controller.text.length <= 4) {
-                widget.controller.text += '0';
-              }
-            });
-            HapticFeedback.lightImpact();
-          },
+          onPressed: () => _enterNumber(0),
           child: Text('0', style: ag.copyWith(color: AppColors.light80)),
         ),
         TextButton(
-          onPressed: () {
-            BotToast.showText(
-                text: locales.soonThereWillBeATransitionToConfirmingThePin);
-            HapticFeedback.lightImpact();
-          },
+          onPressed: () => _submitInput(),
           child: SvgPicture.asset(
             VectorResources.iconArrowRight,
             height: 64.h,
@@ -95,5 +76,31 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
         ),
       ],
     );
+  }
+
+  void _enterNumber(int number) {
+    setState(() {
+      if (widget.textController.text.length <= 4) {
+        widget.textController.text += number.toString();
+      }
+    });
+    HapticFeedback.lightImpact();
+  }
+
+  void _deleteEnteredNumber() {
+    setState(() {
+      if (widget.textController.text.isNotEmpty) {
+        widget.textController.text = widget.textController.value.text
+            .substring(0, widget.textController.value.text.length - 1);
+      }
+    });
+    HapticFeedback.lightImpact();
+  }
+
+  void _submitInput() {
+    BotToast.showText(
+      text: widget.locales.soonThereWillBeATransitionToConfirmingThePin,
+    );
+    HapticFeedback.lightImpact();
   }
 }
