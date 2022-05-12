@@ -9,14 +9,22 @@ import 'package:montra/internal/themes/app_text_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodeField extends StatefulWidget {
+  /// A widget that displays a PIN input field.
   const PinCodeField({
-    required this.controller,
-    required this.currentText,
+    required this.textController,
+    required this.errorController,
+    required this.locales,
     Key? key,
   }) : super(key: key);
 
-  final TextEditingController controller;
-  final ValueNotifier<String> currentText;
+  /// The controller that stores the entered PIN.
+  final TextEditingController textController;
+
+  /// The controller responsible for errors when entering a PIN.
+  final StreamController<ErrorAnimationType> errorController;
+
+  /// An instance of the localization class.
+  final Locales locales;
 
   @override
   State<PinCodeField> createState() => _PinCodeFieldState();
@@ -25,29 +33,22 @@ class PinCodeField extends StatefulWidget {
 class _PinCodeFieldState extends State<PinCodeField> {
   final _pinCodeLength = 4;
 
-  // ignore: close_sinks
-  StreamController<ErrorAnimationType>? _errorController;
-
-  // bool _hasError = false;
-
   @override
   Widget build(BuildContext context) {
-    final locales = Locales.of(context);
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          locales.letsSetupYourPin,
+          widget.locales.letsSetupYourPin,
           style: title3.copyWith(color: AppColors.light80),
         ),
         SizedBox(height: 92.h),
         PinCodeTextField(
           readOnly: true,
           appContext: context,
-          showCursor: false,
           mainAxisAlignment: MainAxisAlignment.center,
+          showCursor: false,
           length: _pinCodeLength,
           obscuringWidget: Container(
             decoration: const BoxDecoration(
@@ -65,14 +66,9 @@ class _PinCodeFieldState extends State<PinCodeField> {
             fieldHeight: 32.h,
             fieldWidth: 32.w,
           ),
-          errorAnimationController: _errorController,
-          controller: widget.controller,
-          keyboardType: TextInputType.number,
-          onChanged: (value) {
-            setState(() {
-              widget.currentText.value = value;
-            });
-          },
+          errorAnimationController: widget.errorController,
+          controller: widget.textController,
+          onChanged: (value) {},
         ),
       ],
     );
