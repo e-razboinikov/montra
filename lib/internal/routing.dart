@@ -23,7 +23,9 @@ final router = GoRouter(
         GoRoute(
           path: 'lcoalAuth',
           name: LocalAuthPage.name,
-          builder: (context, state) => LocalAuthPage(),
+          builder: (context, state) => LocalAuthPage(
+            enteredPin: state.extra is String? ? state.extra as String? : null,
+          ),
         ),
         GoRoute(
           path: 'main',
