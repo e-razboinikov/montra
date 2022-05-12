@@ -169,16 +169,6 @@ class Locales {
       args: [],
     );
   }
-
-  /// `Montra - Expenses Tracker`
-  String get montraExpensesTracker {
-    return Intl.message(
-      'Montra - Expenses Tracker',
-      name: 'montraExpensesTracker',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

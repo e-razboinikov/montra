@@ -38,8 +38,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Знайте, куда уходят ваши деньги"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Давайте установим ПИН-код"),
-        "montraExpensesTracker":
-            MessageLookupByLibrary.simpleMessage("Montra - Учет Финансов"),
         "planningAhead":
             MessageLookupByLibrary.simpleMessage("Планируйте заранее"),
         "setupYourBudgetForEachCategorySoYouInControl":

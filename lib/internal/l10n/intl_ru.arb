@@ -10,7 +10,5 @@
   "comingSoon": "Совсем скоро...",
   "applicationStillInWork": "Мы все ещё работаем над приложением...",
   "letsSetupYourPin" : "Давайте установим ПИН-код",
-  "soonThereWillBeATransitionToConfirmingThePin": "Скоро здесь будет переход к подтверждению ПИН-кода!",
-  "montraExpensesTracker": "Montra - Учет Финансов"
-
+  "soonThereWillBeATransitionToConfirmingThePin": "Скоро здесь будет переход к подтверждению ПИН-кода!"
 }
