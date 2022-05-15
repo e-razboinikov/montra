@@ -22,14 +22,12 @@ mixin _$OnboardingEvent {
     required TResult Function() showingToggle,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? showingCheck,
     TResult Function()? showingToggle,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? showingCheck,
@@ -37,21 +35,18 @@ mixin _$OnboardingEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ShowingCheckOnboardingEvent value) showingCheck,
     required TResult Function(ShowingToggleOnboardingEvent value) showingToggle,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
     TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
@@ -74,7 +69,6 @@ class _$OnboardingEventCopyWithImpl<$Res>
   _$OnboardingEventCopyWithImpl(this._value, this._then);
 
   final OnboardingEvent _value;
-
   // ignore: unused_field
   final $Res Function(OnboardingEvent) _then;
 }
@@ -185,7 +179,6 @@ class _$ShowingCheckOnboardingEvent extends ShowingCheckOnboardingEvent {
 
 abstract class ShowingCheckOnboardingEvent extends OnboardingEvent {
   const factory ShowingCheckOnboardingEvent() = _$ShowingCheckOnboardingEvent;
-
   const ShowingCheckOnboardingEvent._() : super._();
 }
 
@@ -296,7 +289,6 @@ class _$ShowingToggleOnboardingEvent extends ShowingToggleOnboardingEvent {
 
 abstract class ShowingToggleOnboardingEvent extends OnboardingEvent {
   const factory ShowingToggleOnboardingEvent() = _$ShowingToggleOnboardingEvent;
-
   const ShowingToggleOnboardingEvent._() : super._();
 }
 
@@ -311,7 +303,6 @@ mixin _$OnboardingState {
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
@@ -321,7 +312,6 @@ mixin _$OnboardingState {
     TResult Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -332,7 +322,6 @@ mixin _$OnboardingState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialOnboardingState value) initial,
@@ -342,7 +331,6 @@ mixin _$OnboardingState {
     required TResult Function(FailureOnboardingState value) failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialOnboardingState value)? initial,
@@ -352,7 +340,6 @@ mixin _$OnboardingState {
     TResult Function(FailureOnboardingState value)? failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialOnboardingState value)? initial,
@@ -378,7 +365,6 @@ class _$OnboardingStateCopyWithImpl<$Res>
   _$OnboardingStateCopyWithImpl(this._value, this._then);
 
   final OnboardingState _value;
-
   // ignore: unused_field
   final $Res Function(OnboardingState) _then;
 }
@@ -504,7 +490,6 @@ class _$InitialOnboardingState extends InitialOnboardingState {
 
 abstract class InitialOnboardingState extends OnboardingState {
   const factory InitialOnboardingState() = _$InitialOnboardingState;
-
   const InitialOnboardingState._() : super._();
 }
 
@@ -629,7 +614,6 @@ class _$PendingOnboardingState extends PendingOnboardingState {
 
 abstract class PendingOnboardingState extends OnboardingState {
   const factory PendingOnboardingState() = _$PendingOnboardingState;
-
   const PendingOnboardingState._() : super._();
 }
 
@@ -754,7 +738,6 @@ class _$IsShowedOnboardingState extends IsShowedOnboardingState {
 
 abstract class IsShowedOnboardingState extends OnboardingState {
   const factory IsShowedOnboardingState() = _$IsShowedOnboardingState;
-
   const IsShowedOnboardingState._() : super._();
 }
 
@@ -881,7 +864,6 @@ class _$IsNotShowedOnboardingState extends IsNotShowedOnboardingState {
 
 abstract class IsNotShowedOnboardingState extends OnboardingState {
   const factory IsNotShowedOnboardingState() = _$IsNotShowedOnboardingState;
-
   const IsNotShowedOnboardingState._() : super._();
 }
 
@@ -1006,6 +988,5 @@ class _$FailureOnboardingState extends FailureOnboardingState {
 
 abstract class FailureOnboardingState extends OnboardingState {
   const factory FailureOnboardingState() = _$FailureOnboardingState;
-
   const FailureOnboardingState._() : super._();
 }
