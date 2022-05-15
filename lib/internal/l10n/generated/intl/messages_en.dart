@@ -45,6 +45,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "soonThereWillBeATransitionToConfirmingThePin":
             MessageLookupByLibrary.simpleMessage(
                 "Soon there will be a transition to confirming the PIN code!"),
+        "theNewPinDoesNotMatchTheOldOnePlease":
+            MessageLookupByLibrary.simpleMessage(
+                "The new PIN does not match the old one, please try again."),
+        "thePinLengthMustBe4":
+            MessageLookupByLibrary.simpleMessage("The PIN length must be 4."),
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
                 "Track your transaction easily, with categories and financial report")

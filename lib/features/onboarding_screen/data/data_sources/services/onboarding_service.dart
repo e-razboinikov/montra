@@ -2,7 +2,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:montra/internal/db_constants.dart';
 
 class OnboardingSevice {
-  Future<Box<bool>> getBox() async => Hive.openBox<bool>(DBConstants.box);
+  Future<Box<bool>> getBox() async =>
+      Hive.openBox<bool>(DBConstants.onboarding);
 
   Future<bool> showingCheck() async {
     final box = await getBox();

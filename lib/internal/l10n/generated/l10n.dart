@@ -169,6 +169,26 @@ class Locales {
       args: [],
     );
   }
+
+  /// `The PIN length must be 4.`
+  String get thePinLengthMustBe4 {
+    return Intl.message(
+      'The PIN length must be 4.',
+      name: 'thePinLengthMustBe4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The new PIN does not match the old one, please try again.`
+  String get theNewPinDoesNotMatchTheOldOnePlease {
+    return Intl.message(
+      'The new PIN does not match the old one, please try again.',
+      name: 'theNewPinDoesNotMatchTheOldOnePlease',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {
