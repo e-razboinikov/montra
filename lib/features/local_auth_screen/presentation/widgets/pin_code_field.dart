@@ -11,11 +11,17 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 class PinCodeField extends StatefulWidget {
   /// A widget that displays a PIN input field.
   const PinCodeField({
+    required this.confirmFunction,
+    required this.title,
     required this.textController,
     required this.errorController,
     required this.locales,
     Key? key,
   }) : super(key: key);
+
+  final void Function(String) confirmFunction;
+
+  final String title;
 
   /// The controller that stores the entered PIN.
   final TextEditingController textController;
@@ -40,8 +46,9 @@ class _PinCodeFieldState extends State<PinCodeField> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          widget.locales.letsSetupYourPin,
+          widget.title,
           style: title3.copyWith(color: AppColors.light80),
+          textAlign: TextAlign.center,
         ),
         SizedBox(height: 92.h),
         PinCodeTextField(
@@ -69,6 +76,7 @@ class _PinCodeFieldState extends State<PinCodeField> {
           errorAnimationController: widget.errorController,
           controller: widget.textController,
           onChanged: (value) {},
+          onCompleted: (value) => widget.confirmFunction(value),
         ),
       ],
     );
