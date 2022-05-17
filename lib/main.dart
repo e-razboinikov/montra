@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:montra/core/themes/app_themes.dart';
 import 'package:montra/internal/bloc_providers.dart';
-import 'package:montra/internal/l10n/generated/l10n.dart';
+import 'package:montra/internal/localization/generated/l10n.dart';
 import 'package:montra/internal/routing.dart';
 
 Future<void> main() async {

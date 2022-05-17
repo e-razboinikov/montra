@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_scaffold.dart';
 import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
-import 'package:montra/internal/l10n/generated/l10n.dart';
+import 'package:montra/internal/localization/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class LocalAuthPage extends StatefulWidget {
@@ -69,9 +69,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
             title: locales.enterYourPin,
             textEditingController: textEditingController,
             errorController: errorController,
-            locales: locales,
             deviceHeight: deviceHeight,
-            enteredPin: state.storedPin,
           ),
           failedAuth: (state) => LocalAuthScaffold(
             confirmFunction: (String enteredPin) =>
@@ -83,7 +81,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
             title: locales.invalidPinPleaseTryAgain,
             textEditingController: textEditingController,
             errorController: errorController,
-            locales: locales,
             deviceHeight: deviceHeight,
           ),
           createPin: (state) => LocalAuthScaffold(
@@ -96,7 +93,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
             title: locales.letsSetupYourPin,
             textEditingController: textEditingController,
             errorController: errorController,
-            locales: locales,
             deviceHeight: deviceHeight,
           ),
           repeatPin: (state) => LocalAuthScaffold(
@@ -110,7 +106,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
             title: locales.reenterPin,
             textEditingController: textEditingController,
             errorController: errorController,
-            locales: locales,
             deviceHeight: deviceHeight,
           ),
           failedPinCreation: (state) => LocalAuthScaffold(
@@ -124,7 +119,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
             title: locales.thePinsDontMatch,
             textEditingController: textEditingController,
             errorController: errorController,
-            locales: locales,
             deviceHeight: deviceHeight,
           ),
           orElse: () => const Center(

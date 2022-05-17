@@ -4,19 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_keyboard.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/pin_code_field.dart';
-import 'package:montra/internal/l10n/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class LocalAuthScaffold extends StatelessWidget {
-  /// Local authorization page with PIN.
   const LocalAuthScaffold({
     required this.confirmFunction,
     required this.title,
     required this.textEditingController,
     required this.errorController,
-    required this.locales,
     required this.deviceHeight,
-    this.enteredPin,
     Key? key,
   }) : super(key: key);
 
@@ -24,9 +20,7 @@ class LocalAuthScaffold extends StatelessWidget {
   final String title;
   final TextEditingController textEditingController;
   final StreamController<ErrorAnimationType> errorController;
-  final Locales locales;
   final double deviceHeight;
-  final String? enteredPin;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +36,6 @@ class LocalAuthScaffold extends StatelessWidget {
               title: title,
               textController: textEditingController,
               errorController: errorController,
-              locales: locales,
             ),
           ),
           Expanded(
@@ -51,7 +44,6 @@ class LocalAuthScaffold extends StatelessWidget {
               confirmFunction: confirmFunction,
               textController: textEditingController,
               deviceHeight: deviceHeight,
-              locales: locales,
             ),
           ),
         ],

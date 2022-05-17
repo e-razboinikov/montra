@@ -6,28 +6,18 @@ import 'package:flutter_svg/svg.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/internal/l10n/generated/l10n.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
-  /// Widget that displays a keyboard for entering a PIN code.
   const LocalAuthKeyboard({
     required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
-    required this.locales,
     Key? key,
   }) : super(key: key);
 
   final void Function(String) confirmFunction;
-
-  /// The controller that stores the entered PIN.
   final TextEditingController textController;
-
-  /// Device height. Needed to set the correct size of widgets.
   final double deviceHeight;
-
-  /// An instance of the localization class.
-  final Locales locales;
 
   @override
   State<LocalAuthKeyboard> createState() => _LocalAuthKeyboardState();
