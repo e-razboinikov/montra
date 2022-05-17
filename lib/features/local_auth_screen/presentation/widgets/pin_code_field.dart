@@ -5,32 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/internal/l10n/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodeField extends StatefulWidget {
-  /// A widget that displays a PIN input field.
   const PinCodeField({
     required this.confirmFunction,
     required this.title,
     required this.textController,
     required this.errorController,
-    required this.locales,
     Key? key,
   }) : super(key: key);
 
   final void Function(String) confirmFunction;
 
   final String title;
-
-  /// The controller that stores the entered PIN.
   final TextEditingController textController;
-
-  /// The controller responsible for errors when entering a PIN.
   final StreamController<ErrorAnimationType> errorController;
-
-  /// An instance of the localization class.
-  final Locales locales;
 
   @override
   State<PinCodeField> createState() => _PinCodeFieldState();
