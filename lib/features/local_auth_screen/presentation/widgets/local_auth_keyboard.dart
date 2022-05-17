@@ -3,10 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:montra/core/resources/vector_resources.dart';
+import 'package:montra/core/themes/app_colors.dart';
+import 'package:montra/core/themes/app_text_styles.dart';
 import 'package:montra/internal/l10n/generated/l10n.dart';
-import 'package:montra/internal/resources/vector_resources.dart';
-import 'package:montra/internal/themes/app_colors.dart';
-import 'package:montra/internal/themes/app_text_styles.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   /// Widget that displays a keyboard for entering a PIN code.

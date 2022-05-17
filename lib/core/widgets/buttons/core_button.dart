@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:montra/internal/themes/app_colors.dart';
+import 'package:montra/core/themes/app_colors.dart';
 
 class CoreButton extends StatelessWidget {
   const CoreButton({

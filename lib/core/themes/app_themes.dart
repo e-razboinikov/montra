@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:montra/internal/themes/app_colors.dart';
+import 'package:montra/core/themes/app_colors.dart';
 
 ThemeData get theme {
   return ThemeData(

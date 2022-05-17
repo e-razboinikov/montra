@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_keyboard.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/pin_code_field.dart';
 import 'package:montra/internal/l10n/generated/l10n.dart';
-import 'package:montra/internal/themes/app_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class LocalAuthScaffold extends StatelessWidget {

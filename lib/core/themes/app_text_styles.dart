@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:montra/internal/themes/app_colors.dart';
+import 'package:montra/core/themes/app_colors.dart';
 
 Color get defaultTextColor => AppColors.dark75;
 
