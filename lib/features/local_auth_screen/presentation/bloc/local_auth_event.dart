@@ -8,14 +8,19 @@ class LocalAuthEvent with _$LocalAuthEvent {
   const factory LocalAuthEvent.getStoredPin() =
       GetStoredPinOrNullLocalAuthEvent;
 
-  /// Confirmation of previously entered PIN.
-  const factory LocalAuthEvent.confirmPin({
+  /// Validates the entered PIN and compares it with the one stored in the local storage.
+  const factory LocalAuthEvent.confirmAuth({
+    required String enteredPin,
+  }) = ConfirmAuthLocalAuthEvent;
+
+  /// Asks for PIN confirmation.
+  const factory LocalAuthEvent.repeatPin({
+    required String firstPin,
+  }) = RepeatPinLocalAuthEvent;
+
+  /// Validates the creation of a new PIN.
+  const factory LocalAuthEvent.confirmPinCreation({
     required String oldPin,
     required String newPin,
-  }) = ConfirmPinLocalAuthEvent;
-
-  /// Saving the PIN in the local store, if it is valid and has been confirmed.
-  const factory LocalAuthEvent.storePin({
-    required String pinToStore,
-  }) = StorePinLocalAuthEvent;
+  }) = ConfirmPinCreationLocalAuthEvent;
 }
