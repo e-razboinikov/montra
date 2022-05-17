@@ -31,21 +31,31 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Станьте своим собственным бухгалтером и считайте каждую копейку"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Совсем скоро..."),
+        "enterYourPin":
+            MessageLookupByLibrary.simpleMessage("Введите ваш ПИН-код"),
         "gainTotalControlOfYourMoney":
             MessageLookupByLibrary.simpleMessage("Контролируйте ваши деньги"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Начать"),
+        "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(
+            "Неверный ПИН-код, попробуйте ещё раз"),
         "knowWhereYourMoneyGoes": MessageLookupByLibrary.simpleMessage(
             "Знайте, куда уходят ваши деньги"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Давайте установим ПИН-код"),
         "planningAhead":
             MessageLookupByLibrary.simpleMessage("Планируйте заранее"),
+        "reenterPin": MessageLookupByLibrary.simpleMessage("Повторите ПИН-код"),
         "setupYourBudgetForEachCategorySoYouInControl":
             MessageLookupByLibrary.simpleMessage(
                 "Установите бюджет для каждой категории, чтобы контролировать свои траты"),
         "soonThereWillBeATransitionToConfirmingThePin":
             MessageLookupByLibrary.simpleMessage(
                 "Скоро здесь будет переход к подтверждению ПИН-кода!"),
+        "theNewPinDoesNotMatchTheOldOnePlease":
+            MessageLookupByLibrary.simpleMessage(
+                "Новый ПИН-код не совпадает со старым, попробуйте ещё раз"),
+        "thePinsDontMatch": MessageLookupByLibrary.simpleMessage(
+            "Введенный ПИН-код не совпадает со сохраненным, попробуйте ещё раз"),
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
                 "Легко отслеживайте свои транзакции используя категории и финансовый отчет")

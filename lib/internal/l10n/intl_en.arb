@@ -12,5 +12,9 @@
   "letsSetupYourPin": "Let’s  setup your PIN",
   "soonThereWillBeATransitionToConfirmingThePin": "Soon there will be a transition to confirming the PIN code!",
   "thePinLengthMustBe4": "The PIN length must be 4.",
-  "theNewPinDoesNotMatchTheOldOnePlease": "The new PIN does not match the old one, please try again."
+  "theNewPinDoesNotMatchTheOldOnePlease": "The new PIN does not match the old one, please try again.",
+  "enterYourPin": "Enter your PIN",
+  "invalidPinPleaseTryAgain": "Invalid PIN, please try again",
+  "reenterPin": "Re-enter PIN",
+  "thePinsDontMatch": "The pins don't match"
 }

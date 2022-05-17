@@ -11,21 +11,20 @@ import 'package:montra/internal/themes/app_text_styles.dart';
 class LocalAuthKeyboard extends StatefulWidget {
   /// Widget that displays a keyboard for entering a PIN code.
   const LocalAuthKeyboard({
+    required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
-    required this.submitInput,
     required this.locales,
     Key? key,
   }) : super(key: key);
+
+  final void Function(String) confirmFunction;
 
   /// The controller that stores the entered PIN.
   final TextEditingController textController;
 
   /// Device height. Needed to set the correct size of widgets.
   final double deviceHeight;
-
-  /// Input confirmation function.
-  final Function() submitInput;
 
   /// An instance of the localization class.
   final Locales locales;
@@ -70,7 +69,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
           child: Text('0', style: ag.copyWith(color: AppColors.light80)),
         ),
         TextButton(
-          onPressed: () => widget.submitInput(),
+          onPressed: () => widget.confirmFunction(widget.textController.text),
           child: SvgPicture.asset(
             VectorResources.iconArrowRight,
             height: 64.h,

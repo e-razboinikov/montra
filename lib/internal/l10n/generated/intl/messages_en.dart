@@ -31,14 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Become your own money manager and make every cent count"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Coming soon..."),
+        "enterYourPin": MessageLookupByLibrary.simpleMessage("Enter your PIN"),
         "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
             "Gain total control of your money"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get started"),
+        "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(
+            "Invalid PIN, please try again"),
         "knowWhereYourMoneyGoes":
             MessageLookupByLibrary.simpleMessage("Know where your money goes"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Let’s  setup your PIN"),
         "planningAhead": MessageLookupByLibrary.simpleMessage("Planning ahead"),
+        "reenterPin": MessageLookupByLibrary.simpleMessage("Re-enter PIN"),
         "setupYourBudgetForEachCategorySoYouInControl":
             MessageLookupByLibrary.simpleMessage(
                 "Setup your budget for each category so you in control"),
@@ -50,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "The new PIN does not match the old one, please try again."),
         "thePinLengthMustBe4":
             MessageLookupByLibrary.simpleMessage("The PIN length must be 4."),
+        "thePinsDontMatch":
+            MessageLookupByLibrary.simpleMessage("The pins don\'t match"),
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
                 "Track your transaction easily, with categories and financial report")

@@ -1,10 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:montra/features/local_auth_screen/domain/entities/local_auth_pin_confirm_entity.dart';
 import 'package:montra/features/local_auth_screen/domain/use_cases/local_auth_use_cases.dart';
 
 part 'local_auth_bloc.freezed.dart';
+
 part 'local_auth_event.dart';
+
 part 'local_auth_state.dart';
 
 class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
@@ -12,19 +13,20 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
       : super(
           const LocalAuthState.initial(),
         ) {
-    on<LocalAuthEvent>((event, emit) {
+    on<LocalAuthEvent>((event, emit) async {
       emitItem = emit;
 
-      event.map(
+      await event.map(
         getStoredPin: _getStoredPin,
-        confirmPin: _confirmPin,
-        storePin: _storePin,
+        confirmAuth: _conformAuth,
+        repeatPin: _repeatPin,
+        confirmPinCreation: _confirmPinCreation,
       );
     });
   }
 
   final LocalAuthUseCases useCases;
-  late final Emitter emitItem;
+  late Emitter emitItem;
 
   Future<void> _getStoredPin(GetStoredPinOrNullLocalAuthEvent event) async {
     emitItem(const PendingLocalAuthState());
@@ -34,57 +36,80 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
 
       emitItem(
         storedPin != null
-            ? PinExistLocalAuthState(storedPin: storedPin)
-            : const PinDoesNotExistLocalAuthState(),
+            ? AuthLocalAuthState(storedPin: storedPin)
+            : const CreatePinLocalAuthState(),
       );
     } catch (e) {
       emitItem(
-        FailureLocalAuthState(
-          errorMessage: e.toString(),
-        ),
+        const FailureLocalAuthState(),
       );
     }
   }
 
-  Future<void> _confirmPin(ConfirmPinLocalAuthEvent event) async {
+  Future<void> _conformAuth(ConfirmAuthLocalAuthEvent event) async {
     emitItem(const PendingLocalAuthState());
 
     try {
-      final LocalAuthPinConfirmEntity isNewPinValid = useCases.confirmPin(
+      final String? storedPin = await useCases.getStoredPinOrNull();
+
+      final bool isNewPinValid = useCases.confirmPin(
+        oldPin: storedPin!,
+        newPin: event.enteredPin,
+      );
+
+      emitItem(
+        isNewPinValid
+            ? const SuccessfulAuthLocalAuthState()
+            : const FailedAuthLocalAuthState(),
+      );
+    } catch (e) {
+      emitItem(
+        const LocalAuthState.failure(),
+      );
+    }
+  }
+
+  Future<void> _repeatPin(RepeatPinLocalAuthEvent event) async {
+    emitItem(const PendingLocalAuthState());
+
+    try {
+      emitItem(
+        RepeatPinLocalAuthState(
+          firstPin: event.firstPin,
+        ),
+      );
+    } catch (e) {
+      emitItem(
+        const LocalAuthState.failure(),
+      );
+    }
+  }
+
+  Future<void> _confirmPinCreation(
+    ConfirmPinCreationLocalAuthEvent event,
+  ) async {
+    emitItem(const LocalAuthState.pending());
+
+    try {
+      final bool isNewPinValid = useCases.confirmPin(
         oldPin: event.oldPin,
         newPin: event.newPin,
       );
 
-      emitItem(
-        isNewPinValid.isPinValid
-            ? PinIsValidLocalAuthState(
-                pin: event.newPin,
-              )
-            : PinIsNotValidLocalAuthState(
-                message: isNewPinValid.errorMessage!,
-              ),
-      );
+      if (isNewPinValid) {
+        await useCases.storePin(event.newPin);
+
+        emitItem(const SuccessfulPinCreationLocalAuthState());
+      } else {
+        emitItem(
+          FailedPinCreationLocalAuthState(
+            firstPin: event.oldPin,
+          ),
+        );
+      }
     } catch (e) {
       emitItem(
-        LocalAuthState.failure(
-          errorMessage: e.toString(),
-        ),
-      );
-    }
-  }
-
-  Future<void> _storePin(StorePinLocalAuthEvent event) async {
-    emitItem(const LocalAuthState.pending());
-
-    try {
-      await useCases.storePin(event.pinToStore);
-
-      emitItem(const SuccessfulStoreLocalAuthEvent());
-    } catch (e) {
-      emitItem(
-        LocalAuthState.failure(
-          errorMessage: e.toString(),
-        ),
+        const LocalAuthState.failure(),
       );
     }
   }
