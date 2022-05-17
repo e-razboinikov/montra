@@ -189,6 +189,46 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Enter your PIN`
+  String get enterYourPin {
+    return Intl.message(
+      'Enter your PIN',
+      name: 'enterYourPin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid PIN, please try again`
+  String get invalidPinPleaseTryAgain {
+    return Intl.message(
+      'Invalid PIN, please try again',
+      name: 'invalidPinPleaseTryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re-enter PIN`
+  String get reenterPin {
+    return Intl.message(
+      'Re-enter PIN',
+      name: 'reenterPin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The pins don't match`
+  String get thePinsDontMatch {
+    return Intl.message(
+      'The pins don\'t match',
+      name: 'thePinsDontMatch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

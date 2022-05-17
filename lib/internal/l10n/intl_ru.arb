@@ -10,5 +10,10 @@
   "comingSoon": "Совсем скоро...",
   "applicationStillInWork": "Мы все ещё работаем над приложением...",
   "letsSetupYourPin": "Давайте установим ПИН-код",
-  "soonThereWillBeATransitionToConfirmingThePin": "Скоро здесь будет переход к подтверждению ПИН-кода!"
+  "soonThereWillBeATransitionToConfirmingThePin": "Скоро здесь будет переход к подтверждению ПИН-кода!",
+  "theNewPinDoesNotMatchTheOldOnePlease": "Новый ПИН-код не совпадает со старым, попробуйте ещё раз",
+  "enterYourPin": "Введите ваш ПИН-код",
+  "invalidPinPleaseTryAgain": "Неверный ПИН-код, попробуйте ещё раз",
+  "reenterPin": "Повторите ПИН-код",
+  "thePinsDontMatch": "Введенный ПИН-код не совпадает со сохраненным, попробуйте ещё раз"
 }
