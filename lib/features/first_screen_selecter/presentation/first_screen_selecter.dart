@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
+import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth_screen/presentation/pages/local_auth_page.dart';
 import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
 import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
@@ -29,6 +30,10 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
           const ShowingCheckOnboardingEvent(),
         );
 
+    context.read<LocalAuthBloc>().add(
+          const GetStoredPinOrNullLocalAuthEvent(),
+        );
+
     // This is necessary for correct page selection
     await Future.delayed(
       const Duration(seconds: 1),
@@ -45,7 +50,13 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
           listener: (context, state) {
             state.maybeMap(
               isNotShowed: (state) => context.goNamed(OnboardingPage.name),
-              isShowed: (state) => context.goNamed(LocalAuthPage.name),
+              isShowed: (state) async {
+                context.read<LocalAuthBloc>().add(
+                      const GetStoredPinOrNullLocalAuthEvent(),
+                    );
+
+                context.goNamed(LocalAuthPage.name);
+              },
               orElse: () => null,
             );
           },
