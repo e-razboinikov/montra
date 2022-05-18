@@ -5,21 +5,25 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
+import 'package:montra/internal/localization/generated/l10n.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
     required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
+    required this.locales,
     Key? key,
   }) : super(key: key);
 
   final void Function(String) confirmFunction;
   final TextEditingController textController;
   final double deviceHeight;
+  final Locales locales;
 
   @override
   State<LocalAuthKeyboard> createState() => _LocalAuthKeyboardState();

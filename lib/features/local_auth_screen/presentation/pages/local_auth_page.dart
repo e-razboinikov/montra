@@ -72,6 +72,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               textEditingController: textEditingController,
               errorController: errorController,
               deviceHeight: deviceHeight,
+              locales: locales,
             ),
             failedAuth: (state) => LocalAuthScaffold(
               confirmFunction: (String enteredPin) =>
@@ -84,6 +85,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               textEditingController: textEditingController,
               errorController: errorController,
               deviceHeight: deviceHeight,
+              locales: locales,
             ),
             createPin: (state) => LocalAuthScaffold(
               confirmFunction: (String enteredPin) =>
@@ -96,6 +98,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               textEditingController: textEditingController,
               errorController: errorController,
               deviceHeight: deviceHeight,
+              locales: locales,
             ),
             repeatPin: (state) => LocalAuthScaffold(
               confirmFunction: (String enteredPin) =>
@@ -109,6 +112,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               textEditingController: textEditingController,
               errorController: errorController,
               deviceHeight: deviceHeight,
+              locales: locales,
             ),
             failedPinCreation: (state) => LocalAuthScaffold(
               confirmFunction: (String enteredPin) =>
@@ -122,6 +126,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               textEditingController: textEditingController,
               errorController: errorController,
               deviceHeight: deviceHeight,
+              locales: locales,
             ),
             orElse: () => const Center(
               child: CircularProgressIndicator.adaptive(),
