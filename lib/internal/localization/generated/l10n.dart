@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -230,6 +229,106 @@ class Locales {
       args: [],
     );
   }
+
+  /// `If you do not want to enter a PIN, then we can use the Fingerprint`
+  String get androidBiometricRequest {
+    return Intl.message(
+      'If you do not want to enter a PIN, then we can use the Fingerprint',
+      name: 'androidBiometricRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you do not want to enter a PIN, then we can use the Face ID`
+  String get iosBiometricRequest {
+    return Intl.message(
+      'If you do not want to enter a PIN, then we can use the Face ID',
+      name: 'iosBiometricRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `let's try`
+  String get letsTry {
+    return Intl.message(
+      'let\'s try',
+      name: 'letsTry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I will use PIN`
+  String get iWillUsePin {
+    return Intl.message(
+      'I will use PIN',
+      name: 'iWillUsePin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Setup Your Face ID`
+  String get pleaseSetupYourFaceId {
+    return Intl.message(
+      'Please Setup Your Face ID',
+      name: 'pleaseSetupYourFaceId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Activate Face ID`
+  String get pleaseActivateFaceId {
+    return Intl.message(
+      'Please Activate Face ID',
+      name: 'pleaseActivateFaceId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use biometrics for authorization`
+  String get useBiometricsForAuthorization {
+    return Intl.message(
+      'Use biometrics for authorization',
+      name: 'useBiometricsForAuthorization',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {
@@ -244,10 +343,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {
 
   @override
   bool isSupported(Locale locale) => _isSupported(locale);
-
   @override
   Future<Locales> load(Locale locale) => Locales.load(locale);
-
   @override
   bool shouldReload(AppLocalizationDelegate old) => false;
 

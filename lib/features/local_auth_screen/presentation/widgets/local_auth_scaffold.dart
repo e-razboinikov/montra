@@ -8,6 +8,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 class LocalAuthScaffold extends StatelessWidget {
   const LocalAuthScaffold({
+    required this.isBiometcricAccepted,
     required this.confirmFunction,
     required this.title,
     required this.textEditingController,
@@ -16,6 +17,7 @@ class LocalAuthScaffold extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  final bool isBiometcricAccepted;
   final void Function(String) confirmFunction;
   final String title;
   final TextEditingController textEditingController;
@@ -41,6 +43,7 @@ class LocalAuthScaffold extends StatelessWidget {
           Expanded(
             flex: deviceHeight >= 720 ? 2 : 3,
             child: LocalAuthKeyboard(
+              isBiometcricAccepted: isBiometcricAccepted,
               confirmFunction: confirmFunction,
               textController: textEditingController,
               deviceHeight: deviceHeight,

@@ -23,4 +23,7 @@ class LocalAuthEvent with _$LocalAuthEvent {
     required String oldPin,
     required String newPin,
   }) = ConfirmPinCreationLocalAuthEvent;
+
+  const factory LocalAuthEvent.biometcricAccepted() =
+      BiometricAcceptedLocalAuthEvent;
 }

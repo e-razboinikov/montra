@@ -19,4 +19,12 @@ class LocalAuthUseCases {
     required String newPin,
   }) =>
       newPin.length == 4 && newPin == oldPin;
+
+  /// Stores the user's permission to use biometrics.
+  Future<void> storeBiomrtricPermission() async =>
+      repo.storeBiomrtricPermission();
+
+  /// Retrieve a previously saved user biometric permission.
+  Future<bool?> getStoredBiometricPermissionOrNull() async =>
+      repo.getStoredBiometricPermissionOrNull();
 }

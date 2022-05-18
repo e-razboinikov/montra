@@ -12,4 +12,12 @@ class LocalAuthRepoImpl extends LocalAuthRepo {
   @override
   Future<void> storePin(String pinToStore) async =>
       service.storePin(pinToStore);
+
+  @override
+  Future<void> storeBiomrtricPermission() async =>
+      service.storeBiomrtricPermission();
+
+  @override
+  Future<bool?> getStoredBiometricPermissionOrNull() async =>
+      service.getStoredBiometricPermissionOrNull();
 }

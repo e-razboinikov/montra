@@ -15,5 +15,15 @@
   "enterYourPin": "Введите ваш ПИН-код",
   "invalidPinPleaseTryAgain": "Неверный ПИН-код, попробуйте ещё раз",
   "reenterPin": "Повторите ПИН-код",
-  "thePinsDontMatch": "Введенный ПИН-код не совпадает со сохраненным, попробуйте ещё раз"
+  "thePinsDontMatch": "Введенный ПИН-код не совпадает со сохраненным, попробуйте ещё раз",
+  "androidBiometricRequest": "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать отпечаток пальца",
+  "iosBiometricRequest": "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать Face ID",
+  "letsTry": "Давайте попробум",
+  "iWillUsePin": "Я буду использовать только ПИН-код",
+  "signIn": "Войти",
+  "cancel": "Отмена",
+  "settings": "Настройки",
+  "pleaseSetupYourFaceId": "Пожалуйста, настройте Face ID",
+  "pleaseActivateFaceId": "Пожалуйста, активируйте Face ID",
+  "useBiometricsForAuthorization": "Используйте биометрию для авторизации"
 }

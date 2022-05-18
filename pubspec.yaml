@@ -48,6 +48,7 @@ dependencies:
   intl: ^0.17.0
   json_annotation: ^4.5.0
   local_auth: ^2.0.1
+  modal_bottom_sheet: ^2.0.1
   pin_code_fields: ^7.4.0
   
 dev_dependencies:
