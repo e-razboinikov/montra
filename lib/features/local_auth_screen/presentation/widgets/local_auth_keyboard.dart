@@ -62,9 +62,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
         ),
         if (Platform.isAndroid || Platform.isIOS)
           TextButton(
-            onPressed: () {
-              // biometric logic
-            },
+            onPressed: () => _buildModalBottomSheet(),
             child: Platform.isAndroid
                 ? Icon(
                     Icons.fingerprint,
@@ -108,5 +106,62 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
       }
     });
     HapticFeedback.lightImpact();
+  }
+
+  void _buildModalBottomSheet() {
+    showMaterialModalBottomSheet(
+      context: context,
+      backgroundColor: AppColors.violet100,
+      builder: (context) => Container(
+        height: widget.deviceHeight * 0.8,
+        padding: EdgeInsets.all(16.h),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            if (Platform.isAndroid)
+              Icon(
+                Icons.fingerprint,
+                color: AppColors.light80,
+                size: 256.h,
+              ),
+            if (Platform.isIOS)
+              SvgPicture.asset(
+                VectorResources.faceId,
+                height: 256.h,
+                width: 256.w,
+                color: AppColors.light80,
+              ),
+            Text(
+              Platform.isAndroid
+                  ? widget.locales.androidBiometricRequest
+                  : widget.locales.iosBiometricRequest,
+              style: body1.copyWith(color: AppColors.light80),
+              textAlign: TextAlign.center,
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    //...
+                  },
+                  child: Text(
+                    widget.locales.letsTry.toUpperCase(),
+                    style: title3.copyWith(color: AppColors.light80),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    widget.locales.iWillUsePin.toUpperCase(),
+                    style: title3.copyWith(color: AppColors.light80),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
