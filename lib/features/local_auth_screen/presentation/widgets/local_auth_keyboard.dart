@@ -5,25 +5,23 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/internal/localization/generated/l10n.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
+    required this.isBiometcricAccepted,
     required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
-    required this.locales,
     Key? key,
   }) : super(key: key);
 
+  final bool isBiometcricAccepted;
   final void Function(String) confirmFunction;
   final TextEditingController textController;
   final double deviceHeight;
-  final Locales locales;
 
   @override
   State<LocalAuthKeyboard> createState() => _LocalAuthKeyboardState();
@@ -64,9 +62,11 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
           onPressed: () => _enterNumber(0),
           child: Text('0', style: ag.copyWith(color: AppColors.light80)),
         ),
-        if (Platform.isAndroid || Platform.isIOS)
+        if (widget.isBiometcricAccepted)
           TextButton(
-            onPressed: () => _buildModalBottomSheet(),
+            onPressed: () {
+              // biometric
+            },
             child: Platform.isAndroid
                 ? Icon(
                     Icons.fingerprint,
@@ -80,7 +80,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
                     color: AppColors.light80,
                   ),
           ),
-        if (!Platform.isAndroid && !Platform.isIOS)
+        if (!widget.isBiometcricAccepted)
           TextButton(
             onPressed: () => widget.confirmFunction(widget.textController.text),
             child: SvgPicture.asset(
@@ -110,62 +110,5 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
       }
     });
     HapticFeedback.lightImpact();
-  }
-
-  void _buildModalBottomSheet() {
-    showMaterialModalBottomSheet(
-      context: context,
-      backgroundColor: AppColors.violet100,
-      builder: (context) => Container(
-        height: widget.deviceHeight * 0.8,
-        padding: EdgeInsets.all(16.h),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            if (Platform.isAndroid)
-              Icon(
-                Icons.fingerprint,
-                color: AppColors.light80,
-                size: 256.h,
-              ),
-            if (Platform.isIOS)
-              SvgPicture.asset(
-                VectorResources.faceId,
-                height: 256.h,
-                width: 256.w,
-                color: AppColors.light80,
-              ),
-            Text(
-              Platform.isAndroid
-                  ? widget.locales.androidBiometricRequest
-                  : widget.locales.iosBiometricRequest,
-              style: body1.copyWith(color: AppColors.light80),
-              textAlign: TextAlign.center,
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    //...
-                  },
-                  child: Text(
-                    widget.locales.letsTry.toUpperCase(),
-                    style: title3.copyWith(color: AppColors.light80),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    widget.locales.iWillUsePin.toUpperCase(),
-                    style: title3.copyWith(color: AppColors.light80),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
