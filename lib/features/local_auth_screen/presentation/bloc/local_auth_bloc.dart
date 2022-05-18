@@ -19,6 +19,7 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
         confirmAuth: _conformAuth,
         repeatPin: _repeatPin,
         confirmPinCreation: _confirmPinCreation,
+        biometcricAccepted: _biometricAccepted,
       );
     });
   }
@@ -31,10 +32,15 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
 
     try {
       final String? storedPin = await useCases.getStoredPinOrNull();
+      final bool? isBiometricAccepted =
+          await useCases.getStoredBiometricPermissionOrNull();
 
       emitItem(
         storedPin != null
-            ? AuthLocalAuthState(storedPin: storedPin)
+            ? AuthLocalAuthState(
+                storedPin: storedPin,
+                isBiometricAccepted: isBiometricAccepted ?? false,
+              )
             : const CreatePinLocalAuthState(),
       );
     } catch (e) {
@@ -105,6 +111,22 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
           ),
         );
       }
+    } catch (e) {
+      emitItem(
+        const LocalAuthState.failure(),
+      );
+    }
+  }
+
+  Future<void> _biometricAccepted(
+    BiometricAcceptedLocalAuthEvent event,
+  ) async {
+    emitItem(const LocalAuthState.pending());
+
+    try {
+      await useCases.storeBiomrtricPermission();
+
+      emitItem(const SuccessfulBiometricAcceptedLocalAuthState());
     } catch (e) {
       emitItem(
         const LocalAuthState.failure(),
