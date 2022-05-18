@@ -9,13 +9,11 @@ import 'package:montra/core/themes/app_text_styles.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
-    required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
     Key? key,
   }) : super(key: key);
 
-  final void Function(String) confirmFunction;
   final TextEditingController textController;
   final double deviceHeight;
 
