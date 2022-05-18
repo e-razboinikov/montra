@@ -75,7 +75,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           scrollBehavior: const CupertinoScrollBehavior(),
                           controller: _controller,
                           onPageChanged: (position) => setState(
-                              () => _currentPage = position.toDouble()),
+                            () => _currentPage = position.toDouble(),
+                          ),
                           children: _onboardigInfo
                               .map(
                                 (e) => OnboardingItem(onboardingInfo: e),

@@ -41,6 +41,7 @@ class LocalAuthScaffold extends StatelessWidget {
           Expanded(
             flex: deviceHeight >= 720 ? 2 : 3,
             child: LocalAuthKeyboard(
+              confirmFunction: confirmFunction,
               textController: textEditingController,
               deviceHeight: deviceHeight,
             ),

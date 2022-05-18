@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,11 +11,13 @@ import 'package:montra/core/themes/app_text_styles.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
+    required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
     Key? key,
   }) : super(key: key);
 
+  final void Function(String) confirmFunction;
   final TextEditingController textController;
   final double deviceHeight;
 
@@ -56,14 +60,33 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
           onPressed: () => _enterNumber(0),
           child: Text('0', style: ag.copyWith(color: AppColors.light80)),
         ),
-        TextButton(
-          onPressed: () => widget.confirmFunction(widget.textController.text),
-          child: SvgPicture.asset(
-            VectorResources.iconArrowRight,
-            height: 64.h,
-            width: 64.w,
+        if (Platform.isAndroid || Platform.isIOS)
+          TextButton(
+            onPressed: () {
+              // biometric logic
+            },
+            child: Platform.isAndroid
+                ? Icon(
+                    Icons.fingerprint,
+                    color: AppColors.light80,
+                    size: 48.h,
+                  )
+                : SvgPicture.asset(
+                    VectorResources.faceId,
+                    height: 64.h,
+                    width: 64.w,
+                    color: AppColors.light80,
+                  ),
           ),
-        ),
+        if (!Platform.isAndroid && !Platform.isIOS)
+          TextButton(
+            onPressed: () => widget.confirmFunction(widget.textController.text),
+            child: SvgPicture.asset(
+              VectorResources.iconArrowRight,
+              height: 64.h,
+              width: 64.w,
+            ),
+          ),
       ],
     );
   }
