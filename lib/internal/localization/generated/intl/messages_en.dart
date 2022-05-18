@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
+            "If you do not want to enter a PIN, then we can use the Fingerprint"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
             "Application still in work..."),
         "authorizationLogicWillBeHereSoon":
@@ -35,12 +37,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
             "Gain total control of your money"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get started"),
+        "iWillUsePin": MessageLookupByLibrary.simpleMessage("I will use PIN"),
         "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(
             "Invalid PIN, please try again"),
+        "iosBiometricRequest": MessageLookupByLibrary.simpleMessage(
+            "If you do not want to enter a PIN, then we can use the Face ID"),
         "knowWhereYourMoneyGoes":
             MessageLookupByLibrary.simpleMessage("Know where your money goes"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Let’s  setup your PIN"),
+        "letsTry": MessageLookupByLibrary.simpleMessage("let\'s try"),
         "planningAhead": MessageLookupByLibrary.simpleMessage("Planning ahead"),
         "reenterPin": MessageLookupByLibrary.simpleMessage("Re-enter PIN"),
         "setupYourBudgetForEachCategorySoYouInControl":

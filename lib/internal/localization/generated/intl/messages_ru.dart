@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
+            "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать отпечаток пальца"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
             "Мы все ещё работаем над приложением..."),
         "authorizationLogicWillBeHereSoon":
@@ -36,12 +38,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "gainTotalControlOfYourMoney":
             MessageLookupByLibrary.simpleMessage("Контролируйте ваши деньги"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Начать"),
+        "iWillUsePin": MessageLookupByLibrary.simpleMessage(
+            "Я буду использовать только ПИН-код"),
         "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(
             "Неверный ПИН-код, попробуйте ещё раз"),
+        "iosBiometricRequest": MessageLookupByLibrary.simpleMessage(
+            "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать Face ID"),
         "knowWhereYourMoneyGoes": MessageLookupByLibrary.simpleMessage(
             "Знайте, куда уходят ваши деньги"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Давайте установим ПИН-код"),
+        "letsTry": MessageLookupByLibrary.simpleMessage("Давайте попробум"),
         "planningAhead":
             MessageLookupByLibrary.simpleMessage("Планируйте заранее"),
         "reenterPin": MessageLookupByLibrary.simpleMessage("Повторите ПИН-код"),

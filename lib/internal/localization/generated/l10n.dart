@@ -229,6 +229,46 @@ class Locales {
       args: [],
     );
   }
+
+  /// `If you do not want to enter a PIN, then we can use the Fingerprint`
+  String get androidBiometricRequest {
+    return Intl.message(
+      'If you do not want to enter a PIN, then we can use the Fingerprint',
+      name: 'androidBiometricRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you do not want to enter a PIN, then we can use the Face ID`
+  String get iosBiometricRequest {
+    return Intl.message(
+      'If you do not want to enter a PIN, then we can use the Face ID',
+      name: 'iosBiometricRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `let's try`
+  String get letsTry {
+    return Intl.message(
+      'let\'s try',
+      name: 'letsTry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I will use PIN`
+  String get iWillUsePin {
+    return Intl.message(
+      'I will use PIN',
+      name: 'iWillUsePin',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

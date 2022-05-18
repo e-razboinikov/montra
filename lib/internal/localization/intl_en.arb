@@ -16,5 +16,9 @@
   "enterYourPin": "Enter your PIN",
   "invalidPinPleaseTryAgain": "Invalid PIN, please try again",
   "reenterPin": "Re-enter PIN",
-  "thePinsDontMatch": "The pins don't match"
+  "thePinsDontMatch": "The pins don't match",
+  "androidBiometricRequest": "If you do not want to enter a PIN, then we can use the Fingerprint",
+  "iosBiometricRequest": "If you do not want to enter a PIN, then we can use the Face ID",
+  "letsTry": "let's try",
+  "iWillUsePin": "I will use PIN"
 }
