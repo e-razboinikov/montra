@@ -22,28 +22,28 @@ mixin _$LocalAuthEvent {
     required TResult Function(String enteredPin) confirmAuth,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function(String oldPin, String newPin) confirmPinCreation,
+    required TResult Function() biometcricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getStoredPin,
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getStoredPin,
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetStoredPinOrNullLocalAuthEvent value)
@@ -52,9 +52,10 @@ mixin _$LocalAuthEvent {
     required TResult Function(RepeatPinLocalAuthEvent value) repeatPin,
     required TResult Function(ConfirmPinCreationLocalAuthEvent value)
         confirmPinCreation,
+    required TResult Function(BiometricAcceptedLocalAuthEvent value)
+        biometcricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetStoredPinOrNullLocalAuthEvent value)? getStoredPin,
@@ -62,9 +63,9 @@ mixin _$LocalAuthEvent {
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetStoredPinOrNullLocalAuthEvent value)? getStoredPin,
@@ -72,6 +73,7 @@ mixin _$LocalAuthEvent {
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -90,7 +92,6 @@ class _$LocalAuthEventCopyWithImpl<$Res>
   _$LocalAuthEventCopyWithImpl(this._value, this._then);
 
   final LocalAuthEvent _value;
-
   // ignore: unused_field
   final $Res Function(LocalAuthEvent) _then;
 }
@@ -145,6 +146,7 @@ class _$GetStoredPinOrNullLocalAuthEvent
     required TResult Function(String enteredPin) confirmAuth,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function(String oldPin, String newPin) confirmPinCreation,
+    required TResult Function() biometcricAccepted,
   }) {
     return getStoredPin();
   }
@@ -156,6 +158,7 @@ class _$GetStoredPinOrNullLocalAuthEvent
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
   }) {
     return getStoredPin?.call();
   }
@@ -167,6 +170,7 @@ class _$GetStoredPinOrNullLocalAuthEvent
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (getStoredPin != null) {
@@ -184,6 +188,8 @@ class _$GetStoredPinOrNullLocalAuthEvent
     required TResult Function(RepeatPinLocalAuthEvent value) repeatPin,
     required TResult Function(ConfirmPinCreationLocalAuthEvent value)
         confirmPinCreation,
+    required TResult Function(BiometricAcceptedLocalAuthEvent value)
+        biometcricAccepted,
   }) {
     return getStoredPin(this);
   }
@@ -196,6 +202,7 @@ class _$GetStoredPinOrNullLocalAuthEvent
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
   }) {
     return getStoredPin?.call(this);
   }
@@ -208,6 +215,7 @@ class _$GetStoredPinOrNullLocalAuthEvent
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (getStoredPin != null) {
@@ -220,7 +228,6 @@ class _$GetStoredPinOrNullLocalAuthEvent
 abstract class GetStoredPinOrNullLocalAuthEvent extends LocalAuthEvent {
   const factory GetStoredPinOrNullLocalAuthEvent() =
       _$GetStoredPinOrNullLocalAuthEvent;
-
   const GetStoredPinOrNullLocalAuthEvent._() : super._();
 }
 
@@ -229,7 +236,6 @@ abstract class $ConfirmAuthLocalAuthEventCopyWith<$Res> {
   factory $ConfirmAuthLocalAuthEventCopyWith(ConfirmAuthLocalAuthEvent value,
           $Res Function(ConfirmAuthLocalAuthEvent) then) =
       _$ConfirmAuthLocalAuthEventCopyWithImpl<$Res>;
-
   $Res call({String enteredPin});
 }
 
@@ -297,6 +303,7 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
     required TResult Function(String enteredPin) confirmAuth,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function(String oldPin, String newPin) confirmPinCreation,
+    required TResult Function() biometcricAccepted,
   }) {
     return confirmAuth(enteredPin);
   }
@@ -308,6 +315,7 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
   }) {
     return confirmAuth?.call(enteredPin);
   }
@@ -319,6 +327,7 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (confirmAuth != null) {
@@ -336,6 +345,8 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
     required TResult Function(RepeatPinLocalAuthEvent value) repeatPin,
     required TResult Function(ConfirmPinCreationLocalAuthEvent value)
         confirmPinCreation,
+    required TResult Function(BiometricAcceptedLocalAuthEvent value)
+        biometcricAccepted,
   }) {
     return confirmAuth(this);
   }
@@ -348,6 +359,7 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
   }) {
     return confirmAuth?.call(this);
   }
@@ -360,6 +372,7 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (confirmAuth != null) {
@@ -372,11 +385,9 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
 abstract class ConfirmAuthLocalAuthEvent extends LocalAuthEvent {
   const factory ConfirmAuthLocalAuthEvent({required final String enteredPin}) =
       _$ConfirmAuthLocalAuthEvent;
-
   const ConfirmAuthLocalAuthEvent._() : super._();
 
   String get enteredPin => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ConfirmAuthLocalAuthEventCopyWith<ConfirmAuthLocalAuthEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -387,7 +398,6 @@ abstract class $RepeatPinLocalAuthEventCopyWith<$Res> {
   factory $RepeatPinLocalAuthEventCopyWith(RepeatPinLocalAuthEvent value,
           $Res Function(RepeatPinLocalAuthEvent) then) =
       _$RepeatPinLocalAuthEventCopyWithImpl<$Res>;
-
   $Res call({String firstPin});
 }
 
@@ -453,6 +463,7 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
     required TResult Function(String enteredPin) confirmAuth,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function(String oldPin, String newPin) confirmPinCreation,
+    required TResult Function() biometcricAccepted,
   }) {
     return repeatPin(firstPin);
   }
@@ -464,6 +475,7 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
   }) {
     return repeatPin?.call(firstPin);
   }
@@ -475,6 +487,7 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (repeatPin != null) {
@@ -492,6 +505,8 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
     required TResult Function(RepeatPinLocalAuthEvent value) repeatPin,
     required TResult Function(ConfirmPinCreationLocalAuthEvent value)
         confirmPinCreation,
+    required TResult Function(BiometricAcceptedLocalAuthEvent value)
+        biometcricAccepted,
   }) {
     return repeatPin(this);
   }
@@ -504,6 +519,7 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
   }) {
     return repeatPin?.call(this);
   }
@@ -516,6 +532,7 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (repeatPin != null) {
@@ -528,11 +545,9 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
 abstract class RepeatPinLocalAuthEvent extends LocalAuthEvent {
   const factory RepeatPinLocalAuthEvent({required final String firstPin}) =
       _$RepeatPinLocalAuthEvent;
-
   const RepeatPinLocalAuthEvent._() : super._();
 
   String get firstPin => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $RepeatPinLocalAuthEventCopyWith<RepeatPinLocalAuthEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -544,7 +559,6 @@ abstract class $ConfirmPinCreationLocalAuthEventCopyWith<$Res> {
           ConfirmPinCreationLocalAuthEvent value,
           $Res Function(ConfirmPinCreationLocalAuthEvent) then) =
       _$ConfirmPinCreationLocalAuthEventCopyWithImpl<$Res>;
-
   $Res call({String oldPin, String newPin});
 }
 
@@ -625,6 +639,7 @@ class _$ConfirmPinCreationLocalAuthEvent
     required TResult Function(String enteredPin) confirmAuth,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function(String oldPin, String newPin) confirmPinCreation,
+    required TResult Function() biometcricAccepted,
   }) {
     return confirmPinCreation(oldPin, newPin);
   }
@@ -636,6 +651,7 @@ class _$ConfirmPinCreationLocalAuthEvent
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
   }) {
     return confirmPinCreation?.call(oldPin, newPin);
   }
@@ -647,6 +663,7 @@ class _$ConfirmPinCreationLocalAuthEvent
     TResult Function(String enteredPin)? confirmAuth,
     TResult Function(String firstPin)? repeatPin,
     TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (confirmPinCreation != null) {
@@ -664,6 +681,8 @@ class _$ConfirmPinCreationLocalAuthEvent
     required TResult Function(RepeatPinLocalAuthEvent value) repeatPin,
     required TResult Function(ConfirmPinCreationLocalAuthEvent value)
         confirmPinCreation,
+    required TResult Function(BiometricAcceptedLocalAuthEvent value)
+        biometcricAccepted,
   }) {
     return confirmPinCreation(this);
   }
@@ -676,6 +695,7 @@ class _$ConfirmPinCreationLocalAuthEvent
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
   }) {
     return confirmPinCreation?.call(this);
   }
@@ -688,6 +708,7 @@ class _$ConfirmPinCreationLocalAuthEvent
     TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
     TResult Function(ConfirmPinCreationLocalAuthEvent value)?
         confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
     required TResult orElse(),
   }) {
     if (confirmPinCreation != null) {
@@ -701,16 +722,148 @@ abstract class ConfirmPinCreationLocalAuthEvent extends LocalAuthEvent {
   const factory ConfirmPinCreationLocalAuthEvent(
       {required final String oldPin,
       required final String newPin}) = _$ConfirmPinCreationLocalAuthEvent;
-
   const ConfirmPinCreationLocalAuthEvent._() : super._();
 
   String get oldPin => throw _privateConstructorUsedError;
-
   String get newPin => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $ConfirmPinCreationLocalAuthEventCopyWith<ConfirmPinCreationLocalAuthEvent>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BiometricAcceptedLocalAuthEventCopyWith<$Res> {
+  factory $BiometricAcceptedLocalAuthEventCopyWith(
+          BiometricAcceptedLocalAuthEvent value,
+          $Res Function(BiometricAcceptedLocalAuthEvent) then) =
+      _$BiometricAcceptedLocalAuthEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$BiometricAcceptedLocalAuthEventCopyWithImpl<$Res>
+    extends _$LocalAuthEventCopyWithImpl<$Res>
+    implements $BiometricAcceptedLocalAuthEventCopyWith<$Res> {
+  _$BiometricAcceptedLocalAuthEventCopyWithImpl(
+      BiometricAcceptedLocalAuthEvent _value,
+      $Res Function(BiometricAcceptedLocalAuthEvent) _then)
+      : super(_value, (v) => _then(v as BiometricAcceptedLocalAuthEvent));
+
+  @override
+  BiometricAcceptedLocalAuthEvent get _value =>
+      super._value as BiometricAcceptedLocalAuthEvent;
+}
+
+/// @nodoc
+
+class _$BiometricAcceptedLocalAuthEvent
+    extends BiometricAcceptedLocalAuthEvent {
+  const _$BiometricAcceptedLocalAuthEvent() : super._();
+
+  @override
+  String toString() {
+    return 'LocalAuthEvent.biometcricAccepted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is BiometricAcceptedLocalAuthEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getStoredPin,
+    required TResult Function(String enteredPin) confirmAuth,
+    required TResult Function(String firstPin) repeatPin,
+    required TResult Function(String oldPin, String newPin) confirmPinCreation,
+    required TResult Function() biometcricAccepted,
+  }) {
+    return biometcricAccepted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? getStoredPin,
+    TResult Function(String enteredPin)? confirmAuth,
+    TResult Function(String firstPin)? repeatPin,
+    TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
+  }) {
+    return biometcricAccepted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getStoredPin,
+    TResult Function(String enteredPin)? confirmAuth,
+    TResult Function(String firstPin)? repeatPin,
+    TResult Function(String oldPin, String newPin)? confirmPinCreation,
+    TResult Function()? biometcricAccepted,
+    required TResult orElse(),
+  }) {
+    if (biometcricAccepted != null) {
+      return biometcricAccepted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetStoredPinOrNullLocalAuthEvent value)
+        getStoredPin,
+    required TResult Function(ConfirmAuthLocalAuthEvent value) confirmAuth,
+    required TResult Function(RepeatPinLocalAuthEvent value) repeatPin,
+    required TResult Function(ConfirmPinCreationLocalAuthEvent value)
+        confirmPinCreation,
+    required TResult Function(BiometricAcceptedLocalAuthEvent value)
+        biometcricAccepted,
+  }) {
+    return biometcricAccepted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(GetStoredPinOrNullLocalAuthEvent value)? getStoredPin,
+    TResult Function(ConfirmAuthLocalAuthEvent value)? confirmAuth,
+    TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
+    TResult Function(ConfirmPinCreationLocalAuthEvent value)?
+        confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
+  }) {
+    return biometcricAccepted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetStoredPinOrNullLocalAuthEvent value)? getStoredPin,
+    TResult Function(ConfirmAuthLocalAuthEvent value)? confirmAuth,
+    TResult Function(RepeatPinLocalAuthEvent value)? repeatPin,
+    TResult Function(ConfirmPinCreationLocalAuthEvent value)?
+        confirmPinCreation,
+    TResult Function(BiometricAcceptedLocalAuthEvent value)? biometcricAccepted,
+    required TResult orElse(),
+  }) {
+    if (biometcricAccepted != null) {
+      return biometcricAccepted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BiometricAcceptedLocalAuthEvent extends LocalAuthEvent {
+  const factory BiometricAcceptedLocalAuthEvent() =
+      _$BiometricAcceptedLocalAuthEvent;
+  const BiometricAcceptedLocalAuthEvent._() : super._();
 }
 
 /// @nodoc
@@ -720,47 +873,47 @@ mixin _$LocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialLocalAuthState value) initial,
@@ -776,9 +929,10 @@ mixin _$LocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialLocalAuthState value)? initial,
@@ -792,9 +946,10 @@ mixin _$LocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLocalAuthState value)? initial,
@@ -808,6 +963,8 @@ mixin _$LocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -826,7 +983,6 @@ class _$LocalAuthStateCopyWithImpl<$Res>
   _$LocalAuthStateCopyWithImpl(this._value, this._then);
 
   final LocalAuthState _value;
-
   // ignore: unused_field
   final $Res Function(LocalAuthState) _then;
 }
@@ -875,13 +1031,14 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return initial();
   }
@@ -892,13 +1049,14 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return initial?.call();
   }
@@ -909,13 +1067,14 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -940,6 +1099,8 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return initial(this);
   }
@@ -958,6 +1119,8 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return initial?.call(this);
   }
@@ -976,6 +1139,8 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -987,7 +1152,6 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
 
 abstract class InitialLocalAuthState extends LocalAuthState {
   const factory InitialLocalAuthState() = _$InitialLocalAuthState;
-
   const InitialLocalAuthState._() : super._();
 }
 
@@ -1035,13 +1199,14 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return pending();
   }
@@ -1052,13 +1217,14 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return pending?.call();
   }
@@ -1069,13 +1235,14 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (pending != null) {
@@ -1100,6 +1267,8 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return pending(this);
   }
@@ -1118,6 +1287,8 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return pending?.call(this);
   }
@@ -1136,6 +1307,8 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (pending != null) {
@@ -1147,7 +1320,6 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
 
 abstract class PendingLocalAuthState extends LocalAuthState {
   const factory PendingLocalAuthState() = _$PendingLocalAuthState;
-
   const PendingLocalAuthState._() : super._();
 }
 
@@ -1195,13 +1367,14 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return failure();
   }
@@ -1212,13 +1385,14 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return failure?.call();
   }
@@ -1229,13 +1403,14 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1260,6 +1435,8 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return failure(this);
   }
@@ -1278,6 +1455,8 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return failure?.call(this);
   }
@@ -1296,6 +1475,8 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1307,7 +1488,6 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
 
 abstract class FailureLocalAuthState extends LocalAuthState {
   const factory FailureLocalAuthState() = _$FailureLocalAuthState;
-
   const FailureLocalAuthState._() : super._();
 }
 
@@ -1316,8 +1496,7 @@ abstract class $AuthLocalAuthStateCopyWith<$Res> {
   factory $AuthLocalAuthStateCopyWith(
           AuthLocalAuthState value, $Res Function(AuthLocalAuthState) then) =
       _$AuthLocalAuthStateCopyWithImpl<$Res>;
-
-  $Res call({String storedPin});
+  $Res call({String storedPin, bool? isBiometricAccepted});
 }
 
 /// @nodoc
@@ -1334,12 +1513,17 @@ class _$AuthLocalAuthStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? storedPin = freezed,
+    Object? isBiometricAccepted = freezed,
   }) {
     return _then(AuthLocalAuthState(
       storedPin: storedPin == freezed
           ? _value.storedPin
           : storedPin // ignore: cast_nullable_to_non_nullable
               as String,
+      isBiometricAccepted: isBiometricAccepted == freezed
+          ? _value.isBiometricAccepted
+          : isBiometricAccepted // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -1347,14 +1531,18 @@ class _$AuthLocalAuthStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AuthLocalAuthState extends AuthLocalAuthState {
-  const _$AuthLocalAuthState({required this.storedPin}) : super._();
+  const _$AuthLocalAuthState(
+      {required this.storedPin, this.isBiometricAccepted})
+      : super._();
 
   @override
   final String storedPin;
+  @override
+  final bool? isBiometricAccepted;
 
   @override
   String toString() {
-    return 'LocalAuthState.auth(storedPin: $storedPin)';
+    return 'LocalAuthState.auth(storedPin: $storedPin, isBiometricAccepted: $isBiometricAccepted)';
   }
 
   @override
@@ -1362,12 +1550,16 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AuthLocalAuthState &&
-            const DeepCollectionEquality().equals(other.storedPin, storedPin));
+            const DeepCollectionEquality().equals(other.storedPin, storedPin) &&
+            const DeepCollectionEquality()
+                .equals(other.isBiometricAccepted, isBiometricAccepted));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(storedPin));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(storedPin),
+      const DeepCollectionEquality().hash(isBiometricAccepted));
 
   @JsonKey(ignore: true)
   @override
@@ -1380,15 +1572,16 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
-    return auth(storedPin);
+    return auth(storedPin, isBiometricAccepted);
   }
 
   @override
@@ -1397,15 +1590,16 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
-    return auth?.call(storedPin);
+    return auth?.call(storedPin, isBiometricAccepted);
   }
 
   @override
@@ -1414,17 +1608,18 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (auth != null) {
-      return auth(storedPin);
+      return auth(storedPin, isBiometricAccepted);
     }
     return orElse();
   }
@@ -1445,6 +1640,8 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return auth(this);
   }
@@ -1463,6 +1660,8 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return auth?.call(this);
   }
@@ -1481,6 +1680,8 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -1491,13 +1692,13 @@ class _$AuthLocalAuthState extends AuthLocalAuthState {
 }
 
 abstract class AuthLocalAuthState extends LocalAuthState {
-  const factory AuthLocalAuthState({required final String storedPin}) =
-      _$AuthLocalAuthState;
-
+  const factory AuthLocalAuthState(
+      {required final String storedPin,
+      final bool? isBiometricAccepted}) = _$AuthLocalAuthState;
   const AuthLocalAuthState._() : super._();
 
   String get storedPin => throw _privateConstructorUsedError;
-
+  bool? get isBiometricAccepted => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AuthLocalAuthStateCopyWith<AuthLocalAuthState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1551,13 +1752,14 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return successfulAuth();
   }
@@ -1568,13 +1770,14 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return successfulAuth?.call();
   }
@@ -1585,13 +1788,14 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (successfulAuth != null) {
@@ -1616,6 +1820,8 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return successfulAuth(this);
   }
@@ -1634,6 +1840,8 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return successfulAuth?.call(this);
   }
@@ -1652,6 +1860,8 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (successfulAuth != null) {
@@ -1663,7 +1873,6 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
 
 abstract class SuccessfulAuthLocalAuthState extends LocalAuthState {
   const factory SuccessfulAuthLocalAuthState() = _$SuccessfulAuthLocalAuthState;
-
   const SuccessfulAuthLocalAuthState._() : super._();
 }
 
@@ -1712,13 +1921,14 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return failedAuth();
   }
@@ -1729,13 +1939,14 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return failedAuth?.call();
   }
@@ -1746,13 +1957,14 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (failedAuth != null) {
@@ -1777,6 +1989,8 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return failedAuth(this);
   }
@@ -1795,6 +2009,8 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return failedAuth?.call(this);
   }
@@ -1813,6 +2029,8 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (failedAuth != null) {
@@ -1824,7 +2042,6 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
 
 abstract class FailedAuthLocalAuthState extends LocalAuthState {
   const factory FailedAuthLocalAuthState() = _$FailedAuthLocalAuthState;
-
   const FailedAuthLocalAuthState._() : super._();
 }
 
@@ -1872,13 +2089,14 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return createPin();
   }
@@ -1889,13 +2107,14 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return createPin?.call();
   }
@@ -1906,13 +2125,14 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (createPin != null) {
@@ -1937,6 +2157,8 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return createPin(this);
   }
@@ -1955,6 +2177,8 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return createPin?.call(this);
   }
@@ -1973,6 +2197,8 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (createPin != null) {
@@ -1984,7 +2210,6 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
 
 abstract class CreatePinLocalAuthState extends LocalAuthState {
   const factory CreatePinLocalAuthState() = _$CreatePinLocalAuthState;
-
   const CreatePinLocalAuthState._() : super._();
 }
 
@@ -1993,7 +2218,6 @@ abstract class $RepeatPinLocalAuthStateCopyWith<$Res> {
   factory $RepeatPinLocalAuthStateCopyWith(RepeatPinLocalAuthState value,
           $Res Function(RepeatPinLocalAuthState) then) =
       _$RepeatPinLocalAuthStateCopyWithImpl<$Res>;
-
   $Res call({String firstPin});
 }
 
@@ -2058,13 +2282,14 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return repeatPin(firstPin);
   }
@@ -2075,13 +2300,14 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return repeatPin?.call(firstPin);
   }
@@ -2092,13 +2318,14 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (repeatPin != null) {
@@ -2123,6 +2350,8 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return repeatPin(this);
   }
@@ -2141,6 +2370,8 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return repeatPin?.call(this);
   }
@@ -2159,6 +2390,8 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (repeatPin != null) {
@@ -2171,11 +2404,9 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
 abstract class RepeatPinLocalAuthState extends LocalAuthState {
   const factory RepeatPinLocalAuthState({required final String firstPin}) =
       _$RepeatPinLocalAuthState;
-
   const RepeatPinLocalAuthState._() : super._();
 
   String get firstPin => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $RepeatPinLocalAuthStateCopyWith<RepeatPinLocalAuthState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2230,13 +2461,14 @@ class _$SuccessfulPinCreationLocalAuthState
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return successfulPinCreation();
   }
@@ -2247,13 +2479,14 @@ class _$SuccessfulPinCreationLocalAuthState
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return successfulPinCreation?.call();
   }
@@ -2264,13 +2497,14 @@ class _$SuccessfulPinCreationLocalAuthState
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (successfulPinCreation != null) {
@@ -2295,6 +2529,8 @@ class _$SuccessfulPinCreationLocalAuthState
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return successfulPinCreation(this);
   }
@@ -2313,6 +2549,8 @@ class _$SuccessfulPinCreationLocalAuthState
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return successfulPinCreation?.call(this);
   }
@@ -2331,6 +2569,8 @@ class _$SuccessfulPinCreationLocalAuthState
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (successfulPinCreation != null) {
@@ -2343,7 +2583,6 @@ class _$SuccessfulPinCreationLocalAuthState
 abstract class SuccessfulPinCreationLocalAuthState extends LocalAuthState {
   const factory SuccessfulPinCreationLocalAuthState() =
       _$SuccessfulPinCreationLocalAuthState;
-
   const SuccessfulPinCreationLocalAuthState._() : super._();
 }
 
@@ -2353,7 +2592,6 @@ abstract class $FailedPinCreationLocalAuthStateCopyWith<$Res> {
           FailedPinCreationLocalAuthState value,
           $Res Function(FailedPinCreationLocalAuthState) then) =
       _$FailedPinCreationLocalAuthStateCopyWithImpl<$Res>;
-
   $Res call({String firstPin});
 }
 
@@ -2421,13 +2659,14 @@ class _$FailedPinCreationLocalAuthState
     required TResult Function() initial,
     required TResult Function() pending,
     required TResult Function() failure,
-    required TResult Function(String storedPin) auth,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
     required TResult Function() successfulAuth,
     required TResult Function() failedAuth,
     required TResult Function() createPin,
     required TResult Function(String firstPin) repeatPin,
     required TResult Function() successfulPinCreation,
     required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
   }) {
     return failedPinCreation(firstPin);
   }
@@ -2438,13 +2677,14 @@ class _$FailedPinCreationLocalAuthState
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
   }) {
     return failedPinCreation?.call(firstPin);
   }
@@ -2455,13 +2695,14 @@ class _$FailedPinCreationLocalAuthState
     TResult Function()? initial,
     TResult Function()? pending,
     TResult Function()? failure,
-    TResult Function(String storedPin)? auth,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
     TResult Function()? successfulAuth,
     TResult Function()? failedAuth,
     TResult Function()? createPin,
     TResult Function(String firstPin)? repeatPin,
     TResult Function()? successfulPinCreation,
     TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (failedPinCreation != null) {
@@ -2486,6 +2727,8 @@ class _$FailedPinCreationLocalAuthState
         successfulPinCreation,
     required TResult Function(FailedPinCreationLocalAuthState value)
         failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
   }) {
     return failedPinCreation(this);
   }
@@ -2504,6 +2747,8 @@ class _$FailedPinCreationLocalAuthState
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
   }) {
     return failedPinCreation?.call(this);
   }
@@ -2522,6 +2767,8 @@ class _$FailedPinCreationLocalAuthState
     TResult Function(SuccessfulPinCreationLocalAuthState value)?
         successfulPinCreation,
     TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
     required TResult orElse(),
   }) {
     if (failedPinCreation != null) {
@@ -2534,12 +2781,186 @@ class _$FailedPinCreationLocalAuthState
 abstract class FailedPinCreationLocalAuthState extends LocalAuthState {
   const factory FailedPinCreationLocalAuthState(
       {required final String firstPin}) = _$FailedPinCreationLocalAuthState;
-
   const FailedPinCreationLocalAuthState._() : super._();
 
   String get firstPin => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $FailedPinCreationLocalAuthStateCopyWith<FailedPinCreationLocalAuthState>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SuccessfulBiometricAcceptedLocalAuthStateCopyWith<$Res> {
+  factory $SuccessfulBiometricAcceptedLocalAuthStateCopyWith(
+          SuccessfulBiometricAcceptedLocalAuthState value,
+          $Res Function(SuccessfulBiometricAcceptedLocalAuthState) then) =
+      _$SuccessfulBiometricAcceptedLocalAuthStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SuccessfulBiometricAcceptedLocalAuthStateCopyWithImpl<$Res>
+    extends _$LocalAuthStateCopyWithImpl<$Res>
+    implements $SuccessfulBiometricAcceptedLocalAuthStateCopyWith<$Res> {
+  _$SuccessfulBiometricAcceptedLocalAuthStateCopyWithImpl(
+      SuccessfulBiometricAcceptedLocalAuthState _value,
+      $Res Function(SuccessfulBiometricAcceptedLocalAuthState) _then)
+      : super(_value,
+            (v) => _then(v as SuccessfulBiometricAcceptedLocalAuthState));
+
+  @override
+  SuccessfulBiometricAcceptedLocalAuthState get _value =>
+      super._value as SuccessfulBiometricAcceptedLocalAuthState;
+}
+
+/// @nodoc
+
+class _$SuccessfulBiometricAcceptedLocalAuthState
+    extends SuccessfulBiometricAcceptedLocalAuthState {
+  const _$SuccessfulBiometricAcceptedLocalAuthState() : super._();
+
+  @override
+  String toString() {
+    return 'LocalAuthState.successfulBiometricAccepted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SuccessfulBiometricAcceptedLocalAuthState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() pending,
+    required TResult Function() failure,
+    required TResult Function(String storedPin, bool? isBiometricAccepted) auth,
+    required TResult Function() successfulAuth,
+    required TResult Function() failedAuth,
+    required TResult Function() createPin,
+    required TResult Function(String firstPin) repeatPin,
+    required TResult Function() successfulPinCreation,
+    required TResult Function(String firstPin) failedPinCreation,
+    required TResult Function() successfulBiometricAccepted,
+  }) {
+    return successfulBiometricAccepted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? pending,
+    TResult Function()? failure,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
+    TResult Function()? successfulAuth,
+    TResult Function()? failedAuth,
+    TResult Function()? createPin,
+    TResult Function(String firstPin)? repeatPin,
+    TResult Function()? successfulPinCreation,
+    TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
+  }) {
+    return successfulBiometricAccepted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? pending,
+    TResult Function()? failure,
+    TResult Function(String storedPin, bool? isBiometricAccepted)? auth,
+    TResult Function()? successfulAuth,
+    TResult Function()? failedAuth,
+    TResult Function()? createPin,
+    TResult Function(String firstPin)? repeatPin,
+    TResult Function()? successfulPinCreation,
+    TResult Function(String firstPin)? failedPinCreation,
+    TResult Function()? successfulBiometricAccepted,
+    required TResult orElse(),
+  }) {
+    if (successfulBiometricAccepted != null) {
+      return successfulBiometricAccepted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialLocalAuthState value) initial,
+    required TResult Function(PendingLocalAuthState value) pending,
+    required TResult Function(FailureLocalAuthState value) failure,
+    required TResult Function(AuthLocalAuthState value) auth,
+    required TResult Function(SuccessfulAuthLocalAuthState value)
+        successfulAuth,
+    required TResult Function(FailedAuthLocalAuthState value) failedAuth,
+    required TResult Function(CreatePinLocalAuthState value) createPin,
+    required TResult Function(RepeatPinLocalAuthState value) repeatPin,
+    required TResult Function(SuccessfulPinCreationLocalAuthState value)
+        successfulPinCreation,
+    required TResult Function(FailedPinCreationLocalAuthState value)
+        failedPinCreation,
+    required TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)
+        successfulBiometricAccepted,
+  }) {
+    return successfulBiometricAccepted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitialLocalAuthState value)? initial,
+    TResult Function(PendingLocalAuthState value)? pending,
+    TResult Function(FailureLocalAuthState value)? failure,
+    TResult Function(AuthLocalAuthState value)? auth,
+    TResult Function(SuccessfulAuthLocalAuthState value)? successfulAuth,
+    TResult Function(FailedAuthLocalAuthState value)? failedAuth,
+    TResult Function(CreatePinLocalAuthState value)? createPin,
+    TResult Function(RepeatPinLocalAuthState value)? repeatPin,
+    TResult Function(SuccessfulPinCreationLocalAuthState value)?
+        successfulPinCreation,
+    TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
+  }) {
+    return successfulBiometricAccepted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialLocalAuthState value)? initial,
+    TResult Function(PendingLocalAuthState value)? pending,
+    TResult Function(FailureLocalAuthState value)? failure,
+    TResult Function(AuthLocalAuthState value)? auth,
+    TResult Function(SuccessfulAuthLocalAuthState value)? successfulAuth,
+    TResult Function(FailedAuthLocalAuthState value)? failedAuth,
+    TResult Function(CreatePinLocalAuthState value)? createPin,
+    TResult Function(RepeatPinLocalAuthState value)? repeatPin,
+    TResult Function(SuccessfulPinCreationLocalAuthState value)?
+        successfulPinCreation,
+    TResult Function(FailedPinCreationLocalAuthState value)? failedPinCreation,
+    TResult Function(SuccessfulBiometricAcceptedLocalAuthState value)?
+        successfulBiometricAccepted,
+    required TResult orElse(),
+  }) {
+    if (successfulBiometricAccepted != null) {
+      return successfulBiometricAccepted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessfulBiometricAcceptedLocalAuthState
+    extends LocalAuthState {
+  const factory SuccessfulBiometricAcceptedLocalAuthState() =
+      _$SuccessfulBiometricAcceptedLocalAuthState;
+  const SuccessfulBiometricAcceptedLocalAuthState._() : super._();
 }
