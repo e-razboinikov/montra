@@ -15,8 +15,10 @@ class LocalAuthState with _$LocalAuthState {
   const factory LocalAuthState.failure() = FailureLocalAuthState;
 
   /// This state is sent when the PIN exists in local storage.
-  const factory LocalAuthState.auth({required String storedPin}) =
-      AuthLocalAuthState;
+  const factory LocalAuthState.auth({
+    required String storedPin,
+    bool? isBiometricAccepted,
+  }) = AuthLocalAuthState;
 
   /// This state is sent when the PIN has passed the validity and match checks.
   const factory LocalAuthState.successfulAuth() = SuccessfulAuthLocalAuthState;
@@ -40,4 +42,7 @@ class LocalAuthState with _$LocalAuthState {
   const factory LocalAuthState.failedPinCreation({
     required String firstPin,
   }) = FailedPinCreationLocalAuthState;
+
+  const factory LocalAuthState.successfulBiometricAccepted() =
+      SuccessfulBiometricAcceptedLocalAuthState;
 }
