@@ -36,96 +36,99 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LocalAuthBloc, LocalAuthState>(
-      listener: (context, state) {
-        state.maybeMap(
-          failedAuth: (state) {
-            errorController.add(ErrorAnimationType.shake);
-            textEditingController.clear();
-          },
-          repeatPin: (state) {
-            textEditingController.clear();
-          },
-          failedPinCreation: (state) {
-            errorController.add(ErrorAnimationType.shake);
-            textEditingController.clear();
-          },
-          successfulAuth: (state) {
-            context.goNamed(MainPage.name);
-          },
-          successfulPinCreation: (state) async {
-            context.goNamed(MainPage.name);
-          },
-          orElse: () => null,
-        );
-      },
-      builder: (context, state) {
-        return state.maybeMap(
-          auth: (state) => LocalAuthScaffold(
-            confirmFunction: (String enteredPin) =>
-                context.read<LocalAuthBloc>().add(
-                      ConfirmAuthLocalAuthEvent(enteredPin: enteredPin),
-                    ),
-            title: locales.enterYourPin,
-            textEditingController: textEditingController,
-            errorController: errorController,
-            deviceHeight: deviceHeight,
-          ),
-          failedAuth: (state) => LocalAuthScaffold(
-            confirmFunction: (String enteredPin) =>
-                context.read<LocalAuthBloc>().add(
-                      ConfirmAuthLocalAuthEvent(
-                        enteredPin: enteredPin,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: BlocConsumer<LocalAuthBloc, LocalAuthState>(
+        listener: (context, state) {
+          state.maybeMap(
+            failedAuth: (state) {
+              errorController.add(ErrorAnimationType.shake);
+              textEditingController.clear();
+            },
+            repeatPin: (state) {
+              textEditingController.clear();
+            },
+            failedPinCreation: (state) {
+              errorController.add(ErrorAnimationType.shake);
+              textEditingController.clear();
+            },
+            successfulAuth: (state) {
+              context.goNamed(MainPage.name);
+            },
+            successfulPinCreation: (state) async {
+              context.goNamed(MainPage.name);
+            },
+            orElse: () => null,
+          );
+        },
+        builder: (context, state) {
+          return state.maybeMap(
+            auth: (state) => LocalAuthScaffold(
+              confirmFunction: (String enteredPin) =>
+                  context.read<LocalAuthBloc>().add(
+                        ConfirmAuthLocalAuthEvent(enteredPin: enteredPin),
                       ),
-                    ),
-            title: locales.invalidPinPleaseTryAgain,
-            textEditingController: textEditingController,
-            errorController: errorController,
-            deviceHeight: deviceHeight,
-          ),
-          createPin: (state) => LocalAuthScaffold(
-            confirmFunction: (String enteredPin) =>
-                context.read<LocalAuthBloc>().add(
-                      RepeatPinLocalAuthEvent(
-                        firstPin: enteredPin,
+              title: locales.enterYourPin,
+              textEditingController: textEditingController,
+              errorController: errorController,
+              deviceHeight: deviceHeight,
+            ),
+            failedAuth: (state) => LocalAuthScaffold(
+              confirmFunction: (String enteredPin) =>
+                  context.read<LocalAuthBloc>().add(
+                        ConfirmAuthLocalAuthEvent(
+                          enteredPin: enteredPin,
+                        ),
                       ),
-                    ),
-            title: locales.letsSetupYourPin,
-            textEditingController: textEditingController,
-            errorController: errorController,
-            deviceHeight: deviceHeight,
-          ),
-          repeatPin: (state) => LocalAuthScaffold(
-            confirmFunction: (String enteredPin) =>
-                context.read<LocalAuthBloc>().add(
-                      ConfirmPinCreationLocalAuthEvent(
-                        oldPin: state.firstPin,
-                        newPin: enteredPin,
+              title: locales.invalidPinPleaseTryAgain,
+              textEditingController: textEditingController,
+              errorController: errorController,
+              deviceHeight: deviceHeight,
+            ),
+            createPin: (state) => LocalAuthScaffold(
+              confirmFunction: (String enteredPin) =>
+                  context.read<LocalAuthBloc>().add(
+                        RepeatPinLocalAuthEvent(
+                          firstPin: enteredPin,
+                        ),
                       ),
-                    ),
-            title: locales.reenterPin,
-            textEditingController: textEditingController,
-            errorController: errorController,
-            deviceHeight: deviceHeight,
-          ),
-          failedPinCreation: (state) => LocalAuthScaffold(
-            confirmFunction: (String enteredPin) =>
-                context.read<LocalAuthBloc>().add(
-                      ConfirmPinCreationLocalAuthEvent(
-                        oldPin: state.firstPin,
-                        newPin: enteredPin,
+              title: locales.letsSetupYourPin,
+              textEditingController: textEditingController,
+              errorController: errorController,
+              deviceHeight: deviceHeight,
+            ),
+            repeatPin: (state) => LocalAuthScaffold(
+              confirmFunction: (String enteredPin) =>
+                  context.read<LocalAuthBloc>().add(
+                        ConfirmPinCreationLocalAuthEvent(
+                          oldPin: state.firstPin,
+                          newPin: enteredPin,
+                        ),
                       ),
-                    ),
-            title: locales.thePinsDontMatch,
-            textEditingController: textEditingController,
-            errorController: errorController,
-            deviceHeight: deviceHeight,
-          ),
-          orElse: () => const Center(
-            child: CircularProgressIndicator.adaptive(),
-          ),
-        );
-      },
+              title: locales.reenterPin,
+              textEditingController: textEditingController,
+              errorController: errorController,
+              deviceHeight: deviceHeight,
+            ),
+            failedPinCreation: (state) => LocalAuthScaffold(
+              confirmFunction: (String enteredPin) =>
+                  context.read<LocalAuthBloc>().add(
+                        ConfirmPinCreationLocalAuthEvent(
+                          oldPin: state.firstPin,
+                          newPin: enteredPin,
+                        ),
+                      ),
+              title: locales.thePinsDontMatch,
+              textEditingController: textEditingController,
+              errorController: errorController,
+              deviceHeight: deviceHeight,
+            ),
+            orElse: () => const Center(
+              child: CircularProgressIndicator.adaptive(),
+            ),
+          );
+        },
+      ),
     );
   }
 }

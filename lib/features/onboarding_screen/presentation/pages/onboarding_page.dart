@@ -57,61 +57,64 @@ class _OnboardingPageState extends State<OnboardingPage> {
       ),
     ];
 
-    return Scaffold(
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraint) => SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraint.maxHeight),
-              child: IntrinsicHeight(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      height: constraint.maxHeight * 0.7,
-                      child: PageView(
-                        scrollBehavior: const CupertinoScrollBehavior(),
-                        controller: _controller,
-                        onPageChanged: (position) =>
-                            setState(() => _currentPage = position.toDouble()),
-                        children: _onboardigInfo
-                            .map(
-                              (e) => OnboardingItem(onboardingInfo: e),
-                            )
-                            .toList(),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 32.w),
-                      child: DotsIndicator(
-                        dotsCount: _onboardigInfo.length,
-                        position: _currentPage,
-                        decorator: DotsDecorator(
-                          size: Size(8.w, 8.h),
-                          activeSize: Size(16.w, 16.h),
-                          color: AppColors.violet20,
-                          activeColor: AppColors.violet100,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraint) => SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraint.maxHeight),
+                child: IntrinsicHeight(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        height: constraint.maxHeight * 0.7,
+                        child: PageView(
+                          scrollBehavior: const CupertinoScrollBehavior(),
+                          controller: _controller,
+                          onPageChanged: (position) => setState(
+                              () => _currentPage = position.toDouble()),
+                          children: _onboardigInfo
+                              .map(
+                                (e) => OnboardingItem(onboardingInfo: e),
+                              )
+                              .toList(),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(32.w, 0, 32.w, 32.h),
-                      child: CoreButton(
-                        buttonText: locales.getStarted,
-                        onPressed: () {
-                          context.read<OnboardingBloc>().add(
-                                const ShowingToggleOnboardingEvent(),
-                              );
-
-                          context.goNamed(MainPage.name);
-
-                          BotToast.showText(
-                            text: locales.authorizationLogicWillBeHereSoon,
-                          );
-                        },
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 32.w),
+                        child: DotsIndicator(
+                          dotsCount: _onboardigInfo.length,
+                          position: _currentPage,
+                          decorator: DotsDecorator(
+                            size: Size(8.w, 8.h),
+                            activeSize: Size(16.w, 16.h),
+                            color: AppColors.violet20,
+                            activeColor: AppColors.violet100,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(32.w, 0, 32.w, 32.h),
+                        child: CoreButton(
+                          buttonText: locales.getStarted,
+                          onPressed: () {
+                            context.read<OnboardingBloc>().add(
+                                  const ShowingToggleOnboardingEvent(),
+                                );
+
+                            context.goNamed(MainPage.name);
+
+                            BotToast.showText(
+                              text: locales.authorizationLogicWillBeHereSoon,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
