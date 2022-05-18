@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Become your own money manager and make every cent count"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Coming soon..."),
         "enterYourPin": MessageLookupByLibrary.simpleMessage("Enter your PIN"),
         "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
@@ -48,10 +49,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Let’s  setup your PIN"),
         "letsTry": MessageLookupByLibrary.simpleMessage("let\'s try"),
         "planningAhead": MessageLookupByLibrary.simpleMessage("Planning ahead"),
+        "pleaseActivateFaceId":
+            MessageLookupByLibrary.simpleMessage("Please Activate Face ID"),
+        "pleaseSetupYourFaceId":
+            MessageLookupByLibrary.simpleMessage("Please Setup Your Face ID"),
         "reenterPin": MessageLookupByLibrary.simpleMessage("Re-enter PIN"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "setupYourBudgetForEachCategorySoYouInControl":
             MessageLookupByLibrary.simpleMessage(
                 "Setup your budget for each category so you in control"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "soonThereWillBeATransitionToConfirmingThePin":
             MessageLookupByLibrary.simpleMessage(
                 "Soon there will be a transition to confirming the PIN code!"),
@@ -64,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("The pins don\'t match"),
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
-                "Track your transaction easily, with categories and financial report")
+                "Track your transaction easily, with categories and financial report"),
+        "useBiometricsForAuthorization": MessageLookupByLibrary.simpleMessage(
+            "Use biometrics for authorization")
       };
 }

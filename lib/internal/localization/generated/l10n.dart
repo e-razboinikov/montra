@@ -269,6 +269,66 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Setup Your Face ID`
+  String get pleaseSetupYourFaceId {
+    return Intl.message(
+      'Please Setup Your Face ID',
+      name: 'pleaseSetupYourFaceId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Activate Face ID`
+  String get pleaseActivateFaceId {
+    return Intl.message(
+      'Please Activate Face ID',
+      name: 'pleaseActivateFaceId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use biometrics for authorization`
+  String get useBiometricsForAuthorization {
+    return Intl.message(
+      'Use biometrics for authorization',
+      name: 'useBiometricsForAuthorization',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

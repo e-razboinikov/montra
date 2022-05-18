@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Станьте своим собственным бухгалтером и считайте каждую копейку"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Совсем скоро..."),
         "enterYourPin":
             MessageLookupByLibrary.simpleMessage("Введите ваш ПИН-код"),
@@ -51,10 +52,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "letsTry": MessageLookupByLibrary.simpleMessage("Давайте попробум"),
         "planningAhead":
             MessageLookupByLibrary.simpleMessage("Планируйте заранее"),
+        "pleaseActivateFaceId": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, активируйте Face ID"),
+        "pleaseSetupYourFaceId": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, настройте Face ID"),
         "reenterPin": MessageLookupByLibrary.simpleMessage("Повторите ПИН-код"),
+        "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "setupYourBudgetForEachCategorySoYouInControl":
             MessageLookupByLibrary.simpleMessage(
                 "Установите бюджет для каждой категории, чтобы контролировать свои траты"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "soonThereWillBeATransitionToConfirmingThePin":
             MessageLookupByLibrary.simpleMessage(
                 "Скоро здесь будет переход к подтверждению ПИН-кода!"),
@@ -65,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Введенный ПИН-код не совпадает со сохраненным, попробуйте ещё раз"),
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
-                "Легко отслеживайте свои транзакции используя категории и финансовый отчет")
+                "Легко отслеживайте свои транзакции используя категории и финансовый отчет"),
+        "useBiometricsForAuthorization": MessageLookupByLibrary.simpleMessage(
+            "Используйте биометрию для авторизации")
       };
 }

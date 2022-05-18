@@ -20,5 +20,11 @@
   "androidBiometricRequest": "If you do not want to enter a PIN, then we can use the Fingerprint",
   "iosBiometricRequest": "If you do not want to enter a PIN, then we can use the Face ID",
   "letsTry": "let's try",
-  "iWillUsePin": "I will use PIN"
+  "iWillUsePin": "I will use PIN",
+  "signIn": "Sign In",
+  "cancel": "Cancel",
+  "settings": "Settings",
+  "pleaseSetupYourFaceId": "Please Setup Your Face ID",
+  "pleaseActivateFaceId": "Please Activate Face ID",
+  "useBiometricsForAuthorization": "Use biometrics for authorization"
 }
