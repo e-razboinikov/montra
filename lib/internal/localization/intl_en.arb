@@ -25,5 +25,7 @@
   "settings": "Settings",
   "pleaseSetupYourFaceId": "Please Setup Your Face ID",
   "pleaseActivateFaceId": "Please Activate Face ID",
-  "useBiometricsForAuthorization": "Use biometrics for authorization"
+  "useBiometricsForAuthorization": "Use biometrics for authorization",
+  "letsSetupYourAccount": "Let’s setup your account!",
+  "accountCanBeYourBankCardOrYourWallet": "Account can be your bank card or your wallet."
 }

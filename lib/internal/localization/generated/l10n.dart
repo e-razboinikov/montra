@@ -319,6 +319,26 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Let’s setup your account!`
+  String get letsSetupYourAccount {
+    return Intl.message(
+      'Let’s setup your account!',
+      name: 'letsSetupYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account can be your bank card or your wallet.`
+  String get accountCanBeYourBankCardOrYourWallet {
+    return Intl.message(
+      'Account can be your bank card or your wallet.',
+      name: 'accountCanBeYourBankCardOrYourWallet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

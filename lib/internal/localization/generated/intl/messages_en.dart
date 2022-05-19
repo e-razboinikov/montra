@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "accountCanBeYourBankCardOrYourWallet":
+            MessageLookupByLibrary.simpleMessage(
+                "Account can be your bank card or your wallet."),
         "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
             "If you do not want to enter a PIN, then we can use the Fingerprint"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
@@ -42,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "If you do not want to enter a PIN, then we can use the Face ID"),
         "knowWhereYourMoneyGoes":
             MessageLookupByLibrary.simpleMessage("Know where your money goes"),
+        "letsSetupYourAccount":
+            MessageLookupByLibrary.simpleMessage("Let’s setup your account!"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Let’s  setup your PIN"),
         "letsTry": MessageLookupByLibrary.simpleMessage("let\'s try"),
