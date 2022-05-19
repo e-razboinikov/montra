@@ -107,10 +107,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 );
 
                             context.goNamed(MainPage.name);
-
-                            BotToast.showText(
-                              text: locales.authorizationLogicWillBeHereSoon,
-                            );
                           },
                         ),
                       ),

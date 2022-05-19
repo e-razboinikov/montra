@@ -120,16 +120,6 @@ class Locales {
     );
   }
 
-  /// `Authorization logic will be here soon!`
-  String get authorizationLogicWillBeHereSoon {
-    return Intl.message(
-      'Authorization logic will be here soon!',
-      name: 'authorizationLogicWillBeHereSoon',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Coming soon...`
   String get comingSoon {
     return Intl.message(

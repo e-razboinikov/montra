@@ -26,9 +26,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "If you do not want to enter a PIN, then we can use the Fingerprint"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
             "Application still in work..."),
-        "authorizationLogicWillBeHereSoon":
-            MessageLookupByLibrary.simpleMessage(
-                "Authorization logic will be here soon!"),
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Become your own money manager and make every cent count"),

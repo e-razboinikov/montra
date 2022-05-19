@@ -26,9 +26,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать отпечаток пальца"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
             "Мы все ещё работаем над приложением..."),
-        "authorizationLogicWillBeHereSoon":
-            MessageLookupByLibrary.simpleMessage(
-                "Скоро здесь будет логика авторизации!"),
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Станьте своим собственным бухгалтером и считайте каждую копейку"),
