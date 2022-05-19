@@ -5,9 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
+import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
@@ -15,6 +17,7 @@ class LocalAuthKeyboard extends StatefulWidget {
     required this.confirmFunction,
     required this.textController,
     required this.deviceHeight,
+    this.authWithBiometric,
     Key? key,
   }) : super(key: key);
 
@@ -22,6 +25,7 @@ class LocalAuthKeyboard extends StatefulWidget {
   final void Function(String) confirmFunction;
   final TextEditingController textController;
   final double deviceHeight;
+  final Future<bool> Function()? authWithBiometric;
 
   @override
   State<LocalAuthKeyboard> createState() => _LocalAuthKeyboardState();
@@ -64,8 +68,16 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
         ),
         if (widget.isBiometcricAccepted)
           TextButton(
-            onPressed: () {
-              // biometric
+            onPressed: () async {
+              if (widget.authWithBiometric != null) {
+                await widget.authWithBiometric!().then(
+                  (value) {
+                    if (value) {
+                      context.goNamed(MainPage.name);
+                    }
+                  },
+                );
+              }
             },
             child: Platform.isAndroid
                 ? Icon(

@@ -14,6 +14,7 @@ class LocalAuthScaffold extends StatelessWidget {
     required this.textEditingController,
     required this.errorController,
     required this.deviceHeight,
+    this.authWithBiometric,
     Key? key,
   }) : super(key: key);
 
@@ -23,6 +24,7 @@ class LocalAuthScaffold extends StatelessWidget {
   final TextEditingController textEditingController;
   final StreamController<ErrorAnimationType> errorController;
   final double deviceHeight;
+  final Future<bool> Function()? authWithBiometric;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,7 @@ class LocalAuthScaffold extends StatelessWidget {
               confirmFunction: confirmFunction,
               textController: textEditingController,
               deviceHeight: deviceHeight,
+              authWithBiometric: authWithBiometric,
             ),
           ),
         ],

@@ -104,8 +104,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
         listener: (context, state) {
           state.maybeMap(
             auth: (state) async {
-              if (_supportState == _SupportState.supported &&
-                  state.isBiometricAccepted != null &&
+              if (state.isBiometricAccepted != null &&
                   state.isBiometricAccepted!) {
                 await _authenticateWithBiometrics().then(
                   (value) {
@@ -142,6 +141,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
           return state.maybeMap(
             auth: (state) => LocalAuthScaffold(
               isBiometcricAccepted: state.isBiometricAccepted ?? false,
+              authWithBiometric: _authenticateWithBiometrics,
               confirmFunction: (String enteredPin) =>
                   context.read<LocalAuthBloc>().add(
                         ConfirmAuthLocalAuthEvent(enteredPin: enteredPin),
@@ -249,15 +249,17 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               children: [
                 TextButton(
                   onPressed: () async {
-                    await _authenticateWithBiometrics().then((value) {
-                      if (value) {
-                        context
-                            .read<LocalAuthBloc>()
-                            .add(const BiometricAcceptedLocalAuthEvent());
+                    await _authenticateWithBiometrics().then(
+                      (value) {
+                        if (value) {
+                          context
+                              .read<LocalAuthBloc>()
+                              .add(const BiometricAcceptedLocalAuthEvent());
 
-                        context.goNamed(MainPage.name);
-                      }
-                    });
+                          context.goNamed(MainPage.name);
+                        }
+                      },
+                    );
                   },
                   child: Text(
                     locales.letsTry.toUpperCase(),
