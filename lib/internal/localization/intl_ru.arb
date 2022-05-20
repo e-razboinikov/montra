@@ -24,5 +24,17 @@
   "settings": "Настройки",
   "pleaseSetupYourFaceId": "Пожалуйста, настройте Face ID",
   "pleaseActivateFaceId": "Пожалуйста, активируйте Face ID",
-  "useBiometricsForAuthorization": "Используйте биометрию для авторизации"
+  "useBiometricsForAuthorization": "Используйте биометрию для авторизации",
+  "letsSetupYourAccount": "Давайте добавим счета!",
+  "accountCanBeYourBankCardOrYourWallet": "Счетом могут быть наличные или банковская карта",
+  "addNewAccount": "Добавить счет",
+  "balance": "Баланс",
+  "name": "Название счета",
+  "type": "Тип счета",
+  "card": "Банковская карта",
+  "vallet": "Наличные",
+  "letsGo": "Вперед",
+  "continue": "Продолжить",
+  "youAreSet": "Все готово!"
+}
 }

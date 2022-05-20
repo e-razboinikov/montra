@@ -27,5 +27,14 @@
   "pleaseActivateFaceId": "Please Activate Face ID",
   "useBiometricsForAuthorization": "Use biometrics for authorization",
   "letsSetupYourAccount": "Let’s setup your account!",
-  "accountCanBeYourBankCardOrYourWallet": "Account can be your bank card or your wallet."
+  "accountCanBeYourBankCardOrYourWallet": "Account can be your bank card or your wallet.",
+  "addNewAccount": "Add new account",
+  "balance": "Balance",
+  "name": "Name",
+  "type": "Type",
+  "card": "Card",
+  "vallet": "Vallet",
+  "letsGo": "Let’s go",
+  "continue": "Continue",
+  "youAreSet": "You are set!"
 }
