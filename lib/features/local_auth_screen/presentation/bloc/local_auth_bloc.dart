@@ -3,7 +3,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:montra/features/local_auth_screen/domain/use_cases/local_auth_use_cases.dart';
 
 part 'local_auth_bloc.freezed.dart';
+
 part 'local_auth_event.dart';
+
 part 'local_auth_state.dart';
 
 class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
