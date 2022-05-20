@@ -18,31 +18,28 @@ class Locales {
   static Locales? _current;
 
   static Locales get current {
-    assert(_current != null,
-        'No instance of Locales was loaded. Try to initialize the Locales delegate before accessing Locales.current.');
+    assert(_current != null, 'No instance of Locales was loaded. Try to initialize the Locales delegate before accessing Locales.current.');
     return _current!;
   }
 
-  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
+  static const AppLocalizationDelegate delegate =
+    AppLocalizationDelegate();
 
   static Future<Locales> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name);
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name); 
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       final instance = Locales();
       Locales._current = instance;
-
+ 
       return instance;
     });
-  }
+  } 
 
   static Locales of(BuildContext context) {
     final instance = Locales.maybeOf(context);
-    assert(instance != null,
-        'No instance of Locales present in the widget tree. Did you add Locales.delegate in localizationsDelegates?');
+    assert(instance != null, 'No instance of Locales present in the widget tree. Did you add Locales.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -315,6 +312,116 @@ class Locales {
     return Intl.message(
       'Use biometrics for authorization',
       name: 'useBiometricsForAuthorization',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let’s setup your account!`
+  String get letsSetupYourAccount {
+    return Intl.message(
+      'Let’s setup your account!',
+      name: 'letsSetupYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account can be your bank card or your wallet.`
+  String get accountCanBeYourBankCardOrYourWallet {
+    return Intl.message(
+      'Account can be your bank card or your wallet.',
+      name: 'accountCanBeYourBankCardOrYourWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add new account`
+  String get addNewAccount {
+    return Intl.message(
+      'Add new account',
+      name: 'addNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance`
+  String get balance {
+    return Intl.message(
+      'Balance',
+      name: 'balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message(
+      'Type',
+      name: 'type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card`
+  String get card {
+    return Intl.message(
+      'Card',
+      name: 'card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vallet`
+  String get vallet {
+    return Intl.message(
+      'Vallet',
+      name: 'vallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let’s go`
+  String get letsGo {
+    return Intl.message(
+      'Let’s go',
+      name: 'letsGo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue {
+    return Intl.message(
+      'Continue',
+      name: 'continue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are set!`
+  String get youAreSet {
+    return Intl.message(
+      'You are set!',
+      name: 'youAreSet',
       desc: '',
       args: [],
     );

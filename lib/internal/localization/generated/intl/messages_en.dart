@@ -22,14 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "accountCanBeYourBankCardOrYourWallet":
+            MessageLookupByLibrary.simpleMessage(
+                "Account can be your bank card or your wallet."),
+        "addNewAccount":
+            MessageLookupByLibrary.simpleMessage("Add new account"),
         "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
             "If you do not want to enter a PIN, then we can use the Fingerprint"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
             "Application still in work..."),
+        "balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Become your own money manager and make every cent count"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "card": MessageLookupByLibrary.simpleMessage("Card"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Coming soon..."),
         "enterYourPin": MessageLookupByLibrary.simpleMessage("Enter your PIN"),
         "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
@@ -42,9 +49,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "If you do not want to enter a PIN, then we can use the Face ID"),
         "knowWhereYourMoneyGoes":
             MessageLookupByLibrary.simpleMessage("Know where your money goes"),
+        "letsGo": MessageLookupByLibrary.simpleMessage("Let’s go"),
+        "letsSetupYourAccount":
+            MessageLookupByLibrary.simpleMessage("Let’s setup your account!"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Let’s  setup your PIN"),
         "letsTry": MessageLookupByLibrary.simpleMessage("let\'s try"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "planningAhead": MessageLookupByLibrary.simpleMessage("Planning ahead"),
         "pleaseActivateFaceId":
             MessageLookupByLibrary.simpleMessage("Please Activate Face ID"),
@@ -69,7 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
                 "Track your transaction easily, with categories and financial report"),
+        "type": MessageLookupByLibrary.simpleMessage("Type"),
         "useBiometricsForAuthorization": MessageLookupByLibrary.simpleMessage(
-            "Use biometrics for authorization")
+            "Use biometrics for authorization"),
+        "vallet": MessageLookupByLibrary.simpleMessage("Vallet")
       };
 }

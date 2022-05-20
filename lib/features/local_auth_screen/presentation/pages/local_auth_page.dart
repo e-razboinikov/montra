@@ -17,9 +17,9 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
+import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
 import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_scaffold.dart';
-import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -109,7 +109,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                 await _authenticateWithBiometrics().then(
                   (value) {
                     if (value) {
-                      context.goNamed(MainPage.name);
+                      context.goNamed(SetupAccountPage.name);
                     }
                   },
                 );
@@ -127,12 +127,12 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               textEditingController.clear();
             },
             successfulAuth: (state) {
-              context.goNamed(MainPage.name);
+              context.goNamed(SetupAccountPage.name);
             },
             successfulPinCreation: (state) {
               _supportState == _SupportState.supported
                   ? _buildModalBottomSheet()
-                  : context.goNamed(MainPage.name);
+                  : context.goNamed(SetupAccountPage.name);
             },
             orElse: () => null,
           );
@@ -256,7 +256,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                               .read<LocalAuthBloc>()
                               .add(const BiometricAcceptedLocalAuthEvent());
 
-                          context.goNamed(MainPage.name);
+                          context.goNamed(SetupAccountPage.name);
                         }
                       },
                     );
@@ -267,7 +267,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => context.goNamed(MainPage.name),
+                  onPressed: () => context.goNamed(SetupAccountPage.name),
                   child: Text(
                     locales.iWillUsePin.toUpperCase(),
                     style: title3.copyWith(color: AppColors.light80),

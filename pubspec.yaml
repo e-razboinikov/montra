@@ -35,8 +35,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_form_builder: ^7.1.1
   flutter_localizations:
     sdk: flutter
+  flutter_multi_formatter: ^2.5.5
   flutter_native_splash: ^2.1.6
   flutter_screenutil: ^5.5.2
   flutter_svg: ^1.0.3
