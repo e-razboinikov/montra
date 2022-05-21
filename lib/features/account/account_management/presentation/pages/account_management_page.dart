@@ -114,8 +114,19 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                   ),
                   SizedBox(height: 24.h),
                   CoreButton(
-                    onPressed: () =>
-                        context.goNamed(SetupAccountSuccessPage.name),
+                    onPressed: () {
+                      print(
+                        'balance: ${_balanceKey.currentState!.fields['balance']?.value ?? ''}',
+                      );
+                      print(
+                        'name: ${_nameAndTypeKey.currentState!.fields['name']?.value ?? ''}',
+                      );
+                      print(
+                        'balance: ${_nameAndTypeKey.currentState!.fields['type']?.value ?? ''}',
+                      );
+
+                      context.goNamed(SetupAccountSuccessPage.name);
+                    },
                     buttonText: locales.continueText,
                   ),
                 ],
