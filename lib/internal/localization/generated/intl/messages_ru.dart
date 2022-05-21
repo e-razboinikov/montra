@@ -22,15 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "accountCanBeYourBankCardOrYourWallet":
+            MessageLookupByLibrary.simpleMessage(
+                "Счетом могут быть наличные или банковская карта"),
+        "addNewAccount": MessageLookupByLibrary.simpleMessage("Добавить счет"),
         "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
             "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать отпечаток пальца"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
             "Мы все ещё работаем над приложением..."),
+        "balance": MessageLookupByLibrary.simpleMessage("Баланс"),
         "becomeYourOwnMoneyManagerAndMakeEveryCentCount":
             MessageLookupByLibrary.simpleMessage(
                 "Станьте своим собственным бухгалтером и считайте каждую копейку"),
         "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "card": MessageLookupByLibrary.simpleMessage("Банковская карта"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Совсем скоро..."),
+        "continueText": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "enterYourPin":
             MessageLookupByLibrary.simpleMessage("Введите ваш ПИН-код"),
         "gainTotalControlOfYourMoney":
@@ -44,9 +51,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать Face ID"),
         "knowWhereYourMoneyGoes": MessageLookupByLibrary.simpleMessage(
             "Знайте, куда уходят ваши деньги"),
+        "letsGo": MessageLookupByLibrary.simpleMessage("Вперед"),
+        "letsSetupYourAccount":
+            MessageLookupByLibrary.simpleMessage("Давайте добавим счета!"),
         "letsSetupYourPin":
             MessageLookupByLibrary.simpleMessage("Давайте установим ПИН-код"),
         "letsTry": MessageLookupByLibrary.simpleMessage("Давайте попробум"),
+        "name": MessageLookupByLibrary.simpleMessage("Название счета"),
         "planningAhead":
             MessageLookupByLibrary.simpleMessage("Планируйте заранее"),
         "pleaseActivateFaceId": MessageLookupByLibrary.simpleMessage(
@@ -70,7 +81,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "trackYourTransactionEasilyWithCategoriesAndFinancialReport":
             MessageLookupByLibrary.simpleMessage(
                 "Легко отслеживайте свои транзакции используя категории и финансовый отчет"),
+        "type": MessageLookupByLibrary.simpleMessage("Тип счета"),
         "useBiometricsForAuthorization": MessageLookupByLibrary.simpleMessage(
-            "Используйте биометрию для авторизации")
+            "Используйте биометрию для авторизации"),
+        "vallet": MessageLookupByLibrary.simpleMessage("Наличные"),
+        "youAreSet": MessageLookupByLibrary.simpleMessage("Все готово!")
       };
 }
