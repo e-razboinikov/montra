@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "card": MessageLookupByLibrary.simpleMessage("Card"),
         "comingSoon": MessageLookupByLibrary.simpleMessage("Coming soon..."),
+        "continueText": MessageLookupByLibrary.simpleMessage("Continue"),
         "enterYourPin": MessageLookupByLibrary.simpleMessage("Enter your PIN"),
         "gainTotalControlOfYourMoney": MessageLookupByLibrary.simpleMessage(
             "Gain total control of your money"),
@@ -83,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "type": MessageLookupByLibrary.simpleMessage("Type"),
         "useBiometricsForAuthorization": MessageLookupByLibrary.simpleMessage(
             "Use biometrics for authorization"),
-        "vallet": MessageLookupByLibrary.simpleMessage("Vallet")
+        "vallet": MessageLookupByLibrary.simpleMessage("Vallet"),
+        "youAreSet": MessageLookupByLibrary.simpleMessage("You are set!")
       };
 }

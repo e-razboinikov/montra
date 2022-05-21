@@ -116,7 +116,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                   CoreButton(
                     onPressed: () =>
                         context.goNamed(SetupAccountSuccessPage.name),
-                    buttonText: locales.continue,
+                    buttonText: locales.continueText,
                   ),
                 ],
               ),

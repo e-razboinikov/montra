@@ -18,28 +18,31 @@ class Locales {
   static Locales? _current;
 
   static Locales get current {
-    assert(_current != null, 'No instance of Locales was loaded. Try to initialize the Locales delegate before accessing Locales.current.');
+    assert(_current != null,
+        'No instance of Locales was loaded. Try to initialize the Locales delegate before accessing Locales.current.');
     return _current!;
   }
 
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<Locales> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       final instance = Locales();
       Locales._current = instance;
- 
+
       return instance;
     });
-  } 
+  }
 
   static Locales of(BuildContext context) {
     final instance = Locales.maybeOf(context);
-    assert(instance != null, 'No instance of Locales present in the widget tree. Did you add Locales.delegate in localizationsDelegates?');
+    assert(instance != null,
+        'No instance of Locales present in the widget tree. Did you add Locales.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -408,10 +411,10 @@ class Locales {
   }
 
   /// `Continue`
-  String get continue {
+  String get continueText {
     return Intl.message(
       'Continue',
-      name: 'continue',
+      name: 'continueText',
       desc: '',
       args: [],
     );
