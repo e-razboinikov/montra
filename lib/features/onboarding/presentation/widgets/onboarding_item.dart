@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
+import 'package:montra/features/onboarding/domain/entities/onboarding_info_entity.dart';
 
 class OnboardingItem extends StatelessWidget {
   const OnboardingItem({

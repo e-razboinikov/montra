@@ -4,9 +4,9 @@ import 'package:montra/features/account/account_management/presentation/pages/ac
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_success_page.dart';
 import 'package:montra/features/first_screen_selecter/presentation/first_screen_selecter.dart';
-import 'package:montra/features/local_auth_screen/presentation/pages/local_auth_page.dart';
-import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
-import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
+import 'package:montra/features/home/presentation/pages/main_page.dart';
+import 'package:montra/features/local_auth/presentation/pages/local_auth_page.dart';
+import 'package:montra/features/onboarding/presentation/pages/onboarding_page.dart';
 
 final router = GoRouter(
   observers: [

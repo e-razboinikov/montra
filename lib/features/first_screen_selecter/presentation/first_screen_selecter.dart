@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
-import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
-import 'package:montra/features/local_auth_screen/presentation/pages/local_auth_page.dart';
-import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
-import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
+import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
+import 'package:montra/features/local_auth/presentation/pages/local_auth_page.dart';
+import 'package:montra/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:montra/features/onboarding/presentation/pages/onboarding_page.dart';
 
 class FirstScreenSelecter extends StatefulWidget {
   /// This page is necessary for the correct selection of the desired page after

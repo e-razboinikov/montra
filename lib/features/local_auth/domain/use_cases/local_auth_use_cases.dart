@@ -1,4 +1,4 @@
-import 'package:montra/features/local_auth_screen/domain/repositories/local_auth_repo.dart';
+import 'package:montra/features/local_auth/domain/repositories/local_auth_repo.dart';
 
 class LocalAuthUseCases {
   const LocalAuthUseCases({

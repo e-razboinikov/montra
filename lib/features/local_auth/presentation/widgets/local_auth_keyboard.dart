@@ -9,7 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
+import 'package:montra/features/home/presentation/pages/main_page.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({

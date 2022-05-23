@@ -18,8 +18,8 @@ import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
-import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
-import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_scaffold.dart';
+import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
+import 'package:montra/features/local_auth/presentation/widgets/local_auth_scaffold.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
