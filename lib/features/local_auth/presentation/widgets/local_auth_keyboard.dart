@@ -9,7 +9,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
+import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({

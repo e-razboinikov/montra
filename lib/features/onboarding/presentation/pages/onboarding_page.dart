@@ -6,9 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/resources/raster_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/widgets/buttons/core_button.dart';
-import 'package:montra/features/onboarding_screen/domain/entities/onboarding_info_entity.dart';
-import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
-import 'package:montra/features/onboarding_screen/presentation/widgets/onboarding_item.dart';
+import 'package:montra/features/onboarding/domain/entities/onboarding_info_entity.dart';
+import 'package:montra/features/onboarding/presentation/bloc/onboarding_bloc.dart';
+import 'package:montra/features/onboarding/presentation/widgets/onboarding_item.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 
 class OnboardingPage extends StatefulWidget {

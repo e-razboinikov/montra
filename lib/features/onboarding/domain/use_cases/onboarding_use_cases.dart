@@ -1,4 +1,4 @@
-import 'package:montra/features/onboarding_screen/domain/repositories/onboarding_repo.dart';
+import 'package:montra/features/onboarding/domain/repositories/onboarding_repo.dart';
 
 class OnboardingUseCases {
   const OnboardingUseCases({required this.repo});

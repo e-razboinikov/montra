@@ -1,5 +1,5 @@
-import 'package:montra/features/onboarding_screen/data/data_sources/services/onboarding_service.dart';
-import 'package:montra/features/onboarding_screen/domain/repositories/onboarding_repo.dart';
+import 'package:montra/features/onboarding/data/data_sources/services/onboarding_service.dart';
+import 'package:montra/features/onboarding/domain/repositories/onboarding_repo.dart';
 
 class OnboardingRepoImpl extends OnboardingRepo {
   OnboardingRepoImpl({required this.service});

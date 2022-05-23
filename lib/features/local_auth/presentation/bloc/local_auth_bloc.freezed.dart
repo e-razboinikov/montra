@@ -26,6 +26,7 @@ mixin _$LocalAuthEvent {
     required TResult Function() successfulAuth,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getStoredPin,
@@ -36,6 +37,7 @@ mixin _$LocalAuthEvent {
     TResult Function()? successfulAuth,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getStoredPin,
@@ -47,6 +49,7 @@ mixin _$LocalAuthEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetStoredPinOrNullLocalAuthEvent value)
@@ -61,6 +64,7 @@ mixin _$LocalAuthEvent {
         successfulAuth,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(GetStoredPinOrNullLocalAuthEvent value)? getStoredPin,
@@ -72,6 +76,7 @@ mixin _$LocalAuthEvent {
     TResult Function(SuccessfulAuthLocalAuthEvent value)? successfulAuth,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetStoredPinOrNullLocalAuthEvent value)? getStoredPin,
@@ -99,6 +104,7 @@ class _$LocalAuthEventCopyWithImpl<$Res>
   _$LocalAuthEventCopyWithImpl(this._value, this._then);
 
   final LocalAuthEvent _value;
+
   // ignore: unused_field
   final $Res Function(LocalAuthEvent) _then;
 }
@@ -242,6 +248,7 @@ class _$GetStoredPinOrNullLocalAuthEvent
 abstract class GetStoredPinOrNullLocalAuthEvent extends LocalAuthEvent {
   const factory GetStoredPinOrNullLocalAuthEvent() =
       _$GetStoredPinOrNullLocalAuthEvent;
+
   const GetStoredPinOrNullLocalAuthEvent._() : super._();
 }
 
@@ -250,6 +257,7 @@ abstract class $ConfirmAuthLocalAuthEventCopyWith<$Res> {
   factory $ConfirmAuthLocalAuthEventCopyWith(ConfirmAuthLocalAuthEvent value,
           $Res Function(ConfirmAuthLocalAuthEvent) then) =
       _$ConfirmAuthLocalAuthEventCopyWithImpl<$Res>;
+
   $Res call({String enteredPin});
 }
 
@@ -406,9 +414,11 @@ class _$ConfirmAuthLocalAuthEvent extends ConfirmAuthLocalAuthEvent {
 abstract class ConfirmAuthLocalAuthEvent extends LocalAuthEvent {
   const factory ConfirmAuthLocalAuthEvent({required final String enteredPin}) =
       _$ConfirmAuthLocalAuthEvent;
+
   const ConfirmAuthLocalAuthEvent._() : super._();
 
   String get enteredPin => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $ConfirmAuthLocalAuthEventCopyWith<ConfirmAuthLocalAuthEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -419,6 +429,7 @@ abstract class $RepeatPinLocalAuthEventCopyWith<$Res> {
   factory $RepeatPinLocalAuthEventCopyWith(RepeatPinLocalAuthEvent value,
           $Res Function(RepeatPinLocalAuthEvent) then) =
       _$RepeatPinLocalAuthEventCopyWithImpl<$Res>;
+
   $Res call({String firstPin});
 }
 
@@ -573,9 +584,11 @@ class _$RepeatPinLocalAuthEvent extends RepeatPinLocalAuthEvent {
 abstract class RepeatPinLocalAuthEvent extends LocalAuthEvent {
   const factory RepeatPinLocalAuthEvent({required final String firstPin}) =
       _$RepeatPinLocalAuthEvent;
+
   const RepeatPinLocalAuthEvent._() : super._();
 
   String get firstPin => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $RepeatPinLocalAuthEventCopyWith<RepeatPinLocalAuthEvent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -587,6 +600,7 @@ abstract class $ConfirmPinCreationLocalAuthEventCopyWith<$Res> {
           ConfirmPinCreationLocalAuthEvent value,
           $Res Function(ConfirmPinCreationLocalAuthEvent) then) =
       _$ConfirmPinCreationLocalAuthEventCopyWithImpl<$Res>;
+
   $Res call({String oldPin, String newPin});
 }
 
@@ -757,10 +771,13 @@ abstract class ConfirmPinCreationLocalAuthEvent extends LocalAuthEvent {
   const factory ConfirmPinCreationLocalAuthEvent(
       {required final String oldPin,
       required final String newPin}) = _$ConfirmPinCreationLocalAuthEvent;
+
   const ConfirmPinCreationLocalAuthEvent._() : super._();
 
   String get oldPin => throw _privateConstructorUsedError;
+
   String get newPin => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $ConfirmPinCreationLocalAuthEventCopyWith<ConfirmPinCreationLocalAuthEvent>
       get copyWith => throw _privateConstructorUsedError;
@@ -905,6 +922,7 @@ class _$BiometricAcceptedLocalAuthEvent
 abstract class BiometricAcceptedLocalAuthEvent extends LocalAuthEvent {
   const factory BiometricAcceptedLocalAuthEvent() =
       _$BiometricAcceptedLocalAuthEvent;
+
   const BiometricAcceptedLocalAuthEvent._() : super._();
 }
 
@@ -1045,6 +1063,7 @@ class _$SuccessfulAuthLocalAuthEvent extends SuccessfulAuthLocalAuthEvent {
 
 abstract class SuccessfulAuthLocalAuthEvent extends LocalAuthEvent {
   const factory SuccessfulAuthLocalAuthEvent() = _$SuccessfulAuthLocalAuthEvent;
+
   const SuccessfulAuthLocalAuthEvent._() : super._();
 }
 
@@ -1065,6 +1084,7 @@ mixin _$LocalAuthState {
     required TResult Function() successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
@@ -1080,6 +1100,7 @@ mixin _$LocalAuthState {
     TResult Function()? successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -1096,6 +1117,7 @@ mixin _$LocalAuthState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialLocalAuthState value) initial,
@@ -1115,6 +1137,7 @@ mixin _$LocalAuthState {
         successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialLocalAuthState value)? initial,
@@ -1132,6 +1155,7 @@ mixin _$LocalAuthState {
         successfulBiometricAccepted,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialLocalAuthState value)? initial,
@@ -1165,6 +1189,7 @@ class _$LocalAuthStateCopyWithImpl<$Res>
   _$LocalAuthStateCopyWithImpl(this._value, this._then);
 
   final LocalAuthState _value;
+
   // ignore: unused_field
   final $Res Function(LocalAuthState) _then;
 }
@@ -1334,6 +1359,7 @@ class _$InitialLocalAuthState extends InitialLocalAuthState {
 
 abstract class InitialLocalAuthState extends LocalAuthState {
   const factory InitialLocalAuthState() = _$InitialLocalAuthState;
+
   const InitialLocalAuthState._() : super._();
 }
 
@@ -1502,6 +1528,7 @@ class _$PendingLocalAuthState extends PendingLocalAuthState {
 
 abstract class PendingLocalAuthState extends LocalAuthState {
   const factory PendingLocalAuthState() = _$PendingLocalAuthState;
+
   const PendingLocalAuthState._() : super._();
 }
 
@@ -1670,6 +1697,7 @@ class _$FailureLocalAuthState extends FailureLocalAuthState {
 
 abstract class FailureLocalAuthState extends LocalAuthState {
   const factory FailureLocalAuthState() = _$FailureLocalAuthState;
+
   const FailureLocalAuthState._() : super._();
 }
 
@@ -1678,6 +1706,7 @@ abstract class $AuthLocalAuthStateCopyWith<$Res> {
   factory $AuthLocalAuthStateCopyWith(
           AuthLocalAuthState value, $Res Function(AuthLocalAuthState) then) =
       _$AuthLocalAuthStateCopyWithImpl<$Res>;
+
   $Res call({String storedPin, bool? isBiometricAccepted});
 }
 
@@ -1877,10 +1906,13 @@ abstract class AuthLocalAuthState extends LocalAuthState {
   const factory AuthLocalAuthState(
       {required final String storedPin,
       final bool? isBiometricAccepted}) = _$AuthLocalAuthState;
+
   const AuthLocalAuthState._() : super._();
 
   String get storedPin => throw _privateConstructorUsedError;
+
   bool? get isBiometricAccepted => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $AuthLocalAuthStateCopyWith<AuthLocalAuthState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2055,6 +2087,7 @@ class _$SuccessfulAuthLocalAuthState extends SuccessfulAuthLocalAuthState {
 
 abstract class SuccessfulAuthLocalAuthState extends LocalAuthState {
   const factory SuccessfulAuthLocalAuthState() = _$SuccessfulAuthLocalAuthState;
+
   const SuccessfulAuthLocalAuthState._() : super._();
 }
 
@@ -2224,6 +2257,7 @@ class _$FailedAuthLocalAuthState extends FailedAuthLocalAuthState {
 
 abstract class FailedAuthLocalAuthState extends LocalAuthState {
   const factory FailedAuthLocalAuthState() = _$FailedAuthLocalAuthState;
+
   const FailedAuthLocalAuthState._() : super._();
 }
 
@@ -2392,6 +2426,7 @@ class _$CreatePinLocalAuthState extends CreatePinLocalAuthState {
 
 abstract class CreatePinLocalAuthState extends LocalAuthState {
   const factory CreatePinLocalAuthState() = _$CreatePinLocalAuthState;
+
   const CreatePinLocalAuthState._() : super._();
 }
 
@@ -2400,6 +2435,7 @@ abstract class $RepeatPinLocalAuthStateCopyWith<$Res> {
   factory $RepeatPinLocalAuthStateCopyWith(RepeatPinLocalAuthState value,
           $Res Function(RepeatPinLocalAuthState) then) =
       _$RepeatPinLocalAuthStateCopyWithImpl<$Res>;
+
   $Res call({String firstPin});
 }
 
@@ -2586,9 +2622,11 @@ class _$RepeatPinLocalAuthState extends RepeatPinLocalAuthState {
 abstract class RepeatPinLocalAuthState extends LocalAuthState {
   const factory RepeatPinLocalAuthState({required final String firstPin}) =
       _$RepeatPinLocalAuthState;
+
   const RepeatPinLocalAuthState._() : super._();
 
   String get firstPin => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $RepeatPinLocalAuthStateCopyWith<RepeatPinLocalAuthState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2765,6 +2803,7 @@ class _$SuccessfulPinCreationLocalAuthState
 abstract class SuccessfulPinCreationLocalAuthState extends LocalAuthState {
   const factory SuccessfulPinCreationLocalAuthState() =
       _$SuccessfulPinCreationLocalAuthState;
+
   const SuccessfulPinCreationLocalAuthState._() : super._();
 }
 
@@ -2774,6 +2813,7 @@ abstract class $FailedPinCreationLocalAuthStateCopyWith<$Res> {
           FailedPinCreationLocalAuthState value,
           $Res Function(FailedPinCreationLocalAuthState) then) =
       _$FailedPinCreationLocalAuthStateCopyWithImpl<$Res>;
+
   $Res call({String firstPin});
 }
 
@@ -2963,9 +3003,11 @@ class _$FailedPinCreationLocalAuthState
 abstract class FailedPinCreationLocalAuthState extends LocalAuthState {
   const factory FailedPinCreationLocalAuthState(
       {required final String firstPin}) = _$FailedPinCreationLocalAuthState;
+
   const FailedPinCreationLocalAuthState._() : super._();
 
   String get firstPin => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $FailedPinCreationLocalAuthStateCopyWith<FailedPinCreationLocalAuthState>
       get copyWith => throw _privateConstructorUsedError;
@@ -3144,5 +3186,6 @@ abstract class SuccessfulBiometricAcceptedLocalAuthState
     extends LocalAuthState {
   const factory SuccessfulBiometricAcceptedLocalAuthState() =
       _$SuccessfulBiometricAcceptedLocalAuthState;
+
   const SuccessfulBiometricAcceptedLocalAuthState._() : super._();
 }

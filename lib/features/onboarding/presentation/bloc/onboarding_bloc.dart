@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:montra/features/onboarding_screen/domain/use_cases/onboarding_use_cases.dart';
+import 'package:montra/features/onboarding/domain/use_cases/onboarding_use_cases.dart';
 
 part 'onboarding_bloc.freezed.dart';
 part 'onboarding_event.dart';
