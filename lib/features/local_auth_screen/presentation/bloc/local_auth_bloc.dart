@@ -3,9 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:montra/features/local_auth_screen/domain/use_cases/local_auth_use_cases.dart';
 
 part 'local_auth_bloc.freezed.dart';
-
 part 'local_auth_event.dart';
-
 part 'local_auth_state.dart';
 
 class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
@@ -22,6 +20,7 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
         repeatPin: _repeatPin,
         confirmPinCreation: _confirmPinCreation,
         biometcricAccepted: _biometricAccepted,
+        successfulAuth: _successfulAuth,
       );
     });
   }
@@ -129,6 +128,18 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
       await useCases.storeBiomrtricPermission();
 
       emitItem(const SuccessfulBiometricAcceptedLocalAuthState());
+    } catch (e) {
+      emitItem(
+        const LocalAuthState.failure(),
+      );
+    }
+  }
+
+  Future<void> _successfulAuth(SuccessfulAuthLocalAuthEvent event) async {
+    emitItem(const PendingLocalAuthState());
+
+    try {
+      emitItem(const SuccessfulAuthLocalAuthState());
     } catch (e) {
       emitItem(
         const LocalAuthState.failure(),
