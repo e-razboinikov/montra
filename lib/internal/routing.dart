@@ -47,12 +47,13 @@ final router = GoRouter(
             ),
           ],
         ),
-        GoRoute(
-          path: 'main',
-          name: MainPage.name,
-          builder: (context, state) => const MainPage(),
-        ),
+
       ],
+    ),
+    GoRoute(
+      path: '/main',
+      name: MainPage.name,
+      builder: (context, state) => const MainPage(),
     ),
   ],
 );
