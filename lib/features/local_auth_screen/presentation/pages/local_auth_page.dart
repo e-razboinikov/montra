@@ -9,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_ios/local_auth_ios.dart';
@@ -17,7 +16,6 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
 import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth_screen/presentation/widgets/local_auth_scaffold.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
@@ -109,7 +107,9 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                 await _authenticateWithBiometrics().then(
                   (value) {
                     if (value) {
-                      context.goNamed(SetupAccountPage.name);
+                      context
+                          .read<LocalAuthBloc>()
+                          .add(const SuccessfulAuthLocalAuthEvent());
                     }
                   },
                 );
@@ -126,13 +126,12 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               errorController.add(ErrorAnimationType.shake);
               textEditingController.clear();
             },
-            successfulAuth: (state) {
-              context.goNamed(SetupAccountPage.name);
-            },
             successfulPinCreation: (state) {
               _supportState == _SupportState.supported
                   ? _buildModalBottomSheet()
-                  : context.goNamed(SetupAccountPage.name);
+                  : context
+                      .read<LocalAuthBloc>()
+                      .add(const SuccessfulAuthLocalAuthEvent());
             },
             orElse: () => null,
           );
@@ -256,7 +255,9 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                               .read<LocalAuthBloc>()
                               .add(const BiometricAcceptedLocalAuthEvent());
 
-                          context.goNamed(SetupAccountPage.name);
+                          context
+                              .read<LocalAuthBloc>()
+                              .add(const SuccessfulAuthLocalAuthEvent());
                         }
                       },
                     );
@@ -267,7 +268,9 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => context.goNamed(SetupAccountPage.name),
+                  onPressed: () => context
+                      .read<LocalAuthBloc>()
+                      .add(const SuccessfulAuthLocalAuthEvent()),
                   child: Text(
                     locales.iWillUsePin.toUpperCase(),
                     style: title3.copyWith(color: AppColors.light80),

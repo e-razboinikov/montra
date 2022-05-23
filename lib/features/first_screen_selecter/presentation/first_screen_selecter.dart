@@ -4,6 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 import 'package:montra/features/local_auth_screen/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth_screen/presentation/pages/local_auth_page.dart';
+import 'package:montra/features/main_screen/presentation/pages/main_page.dart';
 import 'package:montra/features/onboarding_screen/presentation/bloc/onboarding_bloc.dart';
 import 'package:montra/features/onboarding_screen/presentation/pages/onboarding_page.dart';
 
@@ -30,10 +31,6 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
           const ShowingCheckOnboardingEvent(),
         );
 
-    context.read<LocalAuthBloc>().add(
-          const GetStoredPinOrNullLocalAuthEvent(),
-        );
-
     // This is necessary for correct page selection
     await Future.delayed(
       const Duration(seconds: 1),
@@ -47,19 +44,24 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
     return MultiBlocListener(
       listeners: [
         BlocListener<OnboardingBloc, OnboardingState>(
-          listener: (context, state) {
-            state.maybeMap(
-              isNotShowed: (state) => context.goNamed(OnboardingPage.name),
-              isShowed: (state) async {
-                context.read<LocalAuthBloc>().add(
-                      const GetStoredPinOrNullLocalAuthEvent(),
-                    );
+          listener: (context, state) => state.maybeMap(
+            isNotShowed: (state) => context.goNamed(OnboardingPage.name),
+            isShowed: (state) async {
+              context.read<LocalAuthBloc>().add(
+                    const GetStoredPinOrNullLocalAuthEvent(),
+                  );
 
-                context.goNamed(LocalAuthPage.name);
-              },
-              orElse: () => null,
-            );
-          },
+              context.goNamed(LocalAuthPage.name);
+              return null;
+            },
+            orElse: () => null,
+          ),
+        ),
+        BlocListener<LocalAuthBloc, LocalAuthState>(
+          listener: (context, state) => state.maybeMap(
+            successfulAuth: (state) => context.goNamed(MainPage.name),
+            orElse: () => null,
+          ),
         ),
       ],
       child: const Center(
