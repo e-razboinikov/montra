@@ -26,4 +26,6 @@ class LocalAuthEvent with _$LocalAuthEvent {
 
   const factory LocalAuthEvent.biometcricAccepted() =
       BiometricAcceptedLocalAuthEvent;
+
+  const factory LocalAuthEvent.successfulAuth() = SuccessfulAuthLocalAuthEvent;
 }
