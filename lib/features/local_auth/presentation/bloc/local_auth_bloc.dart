@@ -22,6 +22,7 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
         repeatPin: _repeatPin,
         confirmPinCreation: _confirmPinCreation,
         biometcricAccepted: _biometricAccepted,
+        successfulAuth: _successfulAuth,
       );
     });
   }
@@ -129,6 +130,18 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
       await useCases.storeBiomrtricPermission();
 
       emitItem(const SuccessfulBiometricAcceptedLocalAuthState());
+    } catch (e) {
+      emitItem(
+        const LocalAuthState.failure(),
+      );
+    }
+  }
+
+  Future<void> _successfulAuth(SuccessfulAuthLocalAuthEvent event) async {
+    emitItem(const PendingLocalAuthState());
+
+    try {
+      emitItem(const SuccessfulAuthLocalAuthState());
     } catch (e) {
       emitItem(
         const LocalAuthState.failure(),

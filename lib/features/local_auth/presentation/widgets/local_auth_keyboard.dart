@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
-import 'package:montra/features/home/presentation/pages/main_page.dart';
+import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
 
 class LocalAuthKeyboard extends StatefulWidget {
   const LocalAuthKeyboard({
@@ -73,7 +73,9 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
                 await widget.authWithBiometric!().then(
                   (value) {
                     if (value) {
-                      context.goNamed(MainPage.name);
+                      context
+                          .read<LocalAuthBloc>()
+                          .add(const SuccessfulAuthLocalAuthEvent());
                     }
                   },
                 );

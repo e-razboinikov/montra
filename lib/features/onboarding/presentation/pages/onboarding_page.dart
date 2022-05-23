@@ -3,11 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:montra/core/resources/raster_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/widgets/buttons/core_button.dart';
-import 'package:montra/features/home/presentation/pages/main_page.dart';
 import 'package:montra/features/onboarding/domain/entities/onboarding_info_entity.dart';
 import 'package:montra/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:montra/features/onboarding/presentation/widgets/onboarding_item.dart';
@@ -104,8 +102,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             context.read<OnboardingBloc>().add(
                                   const ShowingToggleOnboardingEvent(),
                                 );
-
-                            context.goNamed(MainPage.name);
                           },
                         ),
                       ),
