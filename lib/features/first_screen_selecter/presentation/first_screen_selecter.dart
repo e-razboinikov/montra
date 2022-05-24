@@ -28,7 +28,7 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
 
   Future<void> _prepareApp() async {
     context.read<OnboardingBloc>().add(
-          const ShowingCheckOnboardingEvent(),
+          const CheckShowingOnboardingEvent(),
         );
 
     // This is necessary for correct page selection

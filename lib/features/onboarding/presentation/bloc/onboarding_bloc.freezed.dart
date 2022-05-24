@@ -18,44 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OnboardingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() showingCheck,
-    required TResult Function() showingToggle,
+    required TResult Function() checkShowing,
+    required TResult Function() markAsShowed,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? showingCheck,
-    TResult Function()? showingToggle,
+    TResult Function()? checkShowing,
+    TResult Function()? markAsShowed,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? showingCheck,
-    TResult Function()? showingToggle,
+    TResult Function()? checkShowing,
+    TResult Function()? markAsShowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ShowingCheckOnboardingEvent value) showingCheck,
-    required TResult Function(ShowingToggleOnboardingEvent value) showingToggle,
+    required TResult Function(CheckShowingOnboardingEvent value) checkShowing,
+    required TResult Function(MarkAsShowedOnboardingEvent value) markAsShowed,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
-    TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
+    TResult Function(CheckShowingOnboardingEvent value)? checkShowing,
+    TResult Function(MarkAsShowedOnboardingEvent value)? markAsShowed,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
-    TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
+    TResult Function(CheckShowingOnboardingEvent value)? checkShowing,
+    TResult Function(MarkAsShowedOnboardingEvent value)? markAsShowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,47 +69,46 @@ class _$OnboardingEventCopyWithImpl<$Res>
   _$OnboardingEventCopyWithImpl(this._value, this._then);
 
   final OnboardingEvent _value;
-
   // ignore: unused_field
   final $Res Function(OnboardingEvent) _then;
 }
 
 /// @nodoc
-abstract class $ShowingCheckOnboardingEventCopyWith<$Res> {
-  factory $ShowingCheckOnboardingEventCopyWith(
-          ShowingCheckOnboardingEvent value,
-          $Res Function(ShowingCheckOnboardingEvent) then) =
-      _$ShowingCheckOnboardingEventCopyWithImpl<$Res>;
+abstract class $CheckShowingOnboardingEventCopyWith<$Res> {
+  factory $CheckShowingOnboardingEventCopyWith(
+          CheckShowingOnboardingEvent value,
+          $Res Function(CheckShowingOnboardingEvent) then) =
+      _$CheckShowingOnboardingEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ShowingCheckOnboardingEventCopyWithImpl<$Res>
+class _$CheckShowingOnboardingEventCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res>
-    implements $ShowingCheckOnboardingEventCopyWith<$Res> {
-  _$ShowingCheckOnboardingEventCopyWithImpl(ShowingCheckOnboardingEvent _value,
-      $Res Function(ShowingCheckOnboardingEvent) _then)
-      : super(_value, (v) => _then(v as ShowingCheckOnboardingEvent));
+    implements $CheckShowingOnboardingEventCopyWith<$Res> {
+  _$CheckShowingOnboardingEventCopyWithImpl(CheckShowingOnboardingEvent _value,
+      $Res Function(CheckShowingOnboardingEvent) _then)
+      : super(_value, (v) => _then(v as CheckShowingOnboardingEvent));
 
   @override
-  ShowingCheckOnboardingEvent get _value =>
-      super._value as ShowingCheckOnboardingEvent;
+  CheckShowingOnboardingEvent get _value =>
+      super._value as CheckShowingOnboardingEvent;
 }
 
 /// @nodoc
 
-class _$ShowingCheckOnboardingEvent extends ShowingCheckOnboardingEvent {
-  const _$ShowingCheckOnboardingEvent() : super._();
+class _$CheckShowingOnboardingEvent extends CheckShowingOnboardingEvent {
+  const _$CheckShowingOnboardingEvent() : super._();
 
   @override
   String toString() {
-    return 'OnboardingEvent.showingCheck()';
+    return 'OnboardingEvent.checkShowing()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ShowingCheckOnboardingEvent);
+            other is CheckShowingOnboardingEvent);
   }
 
   @override
@@ -123,30 +117,30 @@ class _$ShowingCheckOnboardingEvent extends ShowingCheckOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() showingCheck,
-    required TResult Function() showingToggle,
+    required TResult Function() checkShowing,
+    required TResult Function() markAsShowed,
   }) {
-    return showingCheck();
+    return checkShowing();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? showingCheck,
-    TResult Function()? showingToggle,
+    TResult Function()? checkShowing,
+    TResult Function()? markAsShowed,
   }) {
-    return showingCheck?.call();
+    return checkShowing?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? showingCheck,
-    TResult Function()? showingToggle,
+    TResult Function()? checkShowing,
+    TResult Function()? markAsShowed,
     required TResult orElse(),
   }) {
-    if (showingCheck != null) {
-      return showingCheck();
+    if (checkShowing != null) {
+      return checkShowing();
     }
     return orElse();
   }
@@ -154,78 +148,76 @@ class _$ShowingCheckOnboardingEvent extends ShowingCheckOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ShowingCheckOnboardingEvent value) showingCheck,
-    required TResult Function(ShowingToggleOnboardingEvent value) showingToggle,
+    required TResult Function(CheckShowingOnboardingEvent value) checkShowing,
+    required TResult Function(MarkAsShowedOnboardingEvent value) markAsShowed,
   }) {
-    return showingCheck(this);
+    return checkShowing(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
-    TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
+    TResult Function(CheckShowingOnboardingEvent value)? checkShowing,
+    TResult Function(MarkAsShowedOnboardingEvent value)? markAsShowed,
   }) {
-    return showingCheck?.call(this);
+    return checkShowing?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
-    TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
+    TResult Function(CheckShowingOnboardingEvent value)? checkShowing,
+    TResult Function(MarkAsShowedOnboardingEvent value)? markAsShowed,
     required TResult orElse(),
   }) {
-    if (showingCheck != null) {
-      return showingCheck(this);
+    if (checkShowing != null) {
+      return checkShowing(this);
     }
     return orElse();
   }
 }
 
-abstract class ShowingCheckOnboardingEvent extends OnboardingEvent {
-  const factory ShowingCheckOnboardingEvent() = _$ShowingCheckOnboardingEvent;
-
-  const ShowingCheckOnboardingEvent._() : super._();
+abstract class CheckShowingOnboardingEvent extends OnboardingEvent {
+  const factory CheckShowingOnboardingEvent() = _$CheckShowingOnboardingEvent;
+  const CheckShowingOnboardingEvent._() : super._();
 }
 
 /// @nodoc
-abstract class $ShowingToggleOnboardingEventCopyWith<$Res> {
-  factory $ShowingToggleOnboardingEventCopyWith(
-          ShowingToggleOnboardingEvent value,
-          $Res Function(ShowingToggleOnboardingEvent) then) =
-      _$ShowingToggleOnboardingEventCopyWithImpl<$Res>;
+abstract class $MarkAsShowedOnboardingEventCopyWith<$Res> {
+  factory $MarkAsShowedOnboardingEventCopyWith(
+          MarkAsShowedOnboardingEvent value,
+          $Res Function(MarkAsShowedOnboardingEvent) then) =
+      _$MarkAsShowedOnboardingEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ShowingToggleOnboardingEventCopyWithImpl<$Res>
+class _$MarkAsShowedOnboardingEventCopyWithImpl<$Res>
     extends _$OnboardingEventCopyWithImpl<$Res>
-    implements $ShowingToggleOnboardingEventCopyWith<$Res> {
-  _$ShowingToggleOnboardingEventCopyWithImpl(
-      ShowingToggleOnboardingEvent _value,
-      $Res Function(ShowingToggleOnboardingEvent) _then)
-      : super(_value, (v) => _then(v as ShowingToggleOnboardingEvent));
+    implements $MarkAsShowedOnboardingEventCopyWith<$Res> {
+  _$MarkAsShowedOnboardingEventCopyWithImpl(MarkAsShowedOnboardingEvent _value,
+      $Res Function(MarkAsShowedOnboardingEvent) _then)
+      : super(_value, (v) => _then(v as MarkAsShowedOnboardingEvent));
 
   @override
-  ShowingToggleOnboardingEvent get _value =>
-      super._value as ShowingToggleOnboardingEvent;
+  MarkAsShowedOnboardingEvent get _value =>
+      super._value as MarkAsShowedOnboardingEvent;
 }
 
 /// @nodoc
 
-class _$ShowingToggleOnboardingEvent extends ShowingToggleOnboardingEvent {
-  const _$ShowingToggleOnboardingEvent() : super._();
+class _$MarkAsShowedOnboardingEvent extends MarkAsShowedOnboardingEvent {
+  const _$MarkAsShowedOnboardingEvent() : super._();
 
   @override
   String toString() {
-    return 'OnboardingEvent.showingToggle()';
+    return 'OnboardingEvent.markAsShowed()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ShowingToggleOnboardingEvent);
+            other is MarkAsShowedOnboardingEvent);
   }
 
   @override
@@ -234,30 +226,30 @@ class _$ShowingToggleOnboardingEvent extends ShowingToggleOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() showingCheck,
-    required TResult Function() showingToggle,
+    required TResult Function() checkShowing,
+    required TResult Function() markAsShowed,
   }) {
-    return showingToggle();
+    return markAsShowed();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? showingCheck,
-    TResult Function()? showingToggle,
+    TResult Function()? checkShowing,
+    TResult Function()? markAsShowed,
   }) {
-    return showingToggle?.call();
+    return markAsShowed?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? showingCheck,
-    TResult Function()? showingToggle,
+    TResult Function()? checkShowing,
+    TResult Function()? markAsShowed,
     required TResult orElse(),
   }) {
-    if (showingToggle != null) {
-      return showingToggle();
+    if (markAsShowed != null) {
+      return markAsShowed();
     }
     return orElse();
   }
@@ -265,39 +257,38 @@ class _$ShowingToggleOnboardingEvent extends ShowingToggleOnboardingEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(ShowingCheckOnboardingEvent value) showingCheck,
-    required TResult Function(ShowingToggleOnboardingEvent value) showingToggle,
+    required TResult Function(CheckShowingOnboardingEvent value) checkShowing,
+    required TResult Function(MarkAsShowedOnboardingEvent value) markAsShowed,
   }) {
-    return showingToggle(this);
+    return markAsShowed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
-    TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
+    TResult Function(CheckShowingOnboardingEvent value)? checkShowing,
+    TResult Function(MarkAsShowedOnboardingEvent value)? markAsShowed,
   }) {
-    return showingToggle?.call(this);
+    return markAsShowed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(ShowingCheckOnboardingEvent value)? showingCheck,
-    TResult Function(ShowingToggleOnboardingEvent value)? showingToggle,
+    TResult Function(CheckShowingOnboardingEvent value)? checkShowing,
+    TResult Function(MarkAsShowedOnboardingEvent value)? markAsShowed,
     required TResult orElse(),
   }) {
-    if (showingToggle != null) {
-      return showingToggle(this);
+    if (markAsShowed != null) {
+      return markAsShowed(this);
     }
     return orElse();
   }
 }
 
-abstract class ShowingToggleOnboardingEvent extends OnboardingEvent {
-  const factory ShowingToggleOnboardingEvent() = _$ShowingToggleOnboardingEvent;
-
-  const ShowingToggleOnboardingEvent._() : super._();
+abstract class MarkAsShowedOnboardingEvent extends OnboardingEvent {
+  const factory MarkAsShowedOnboardingEvent() = _$MarkAsShowedOnboardingEvent;
+  const MarkAsShowedOnboardingEvent._() : super._();
 }
 
 /// @nodoc
@@ -311,7 +302,6 @@ mixin _$OnboardingState {
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
@@ -321,7 +311,6 @@ mixin _$OnboardingState {
     TResult Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -332,7 +321,6 @@ mixin _$OnboardingState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitialOnboardingState value) initial,
@@ -342,7 +330,6 @@ mixin _$OnboardingState {
     required TResult Function(FailureOnboardingState value) failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialOnboardingState value)? initial,
@@ -352,7 +339,6 @@ mixin _$OnboardingState {
     TResult Function(FailureOnboardingState value)? failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialOnboardingState value)? initial,
@@ -378,7 +364,6 @@ class _$OnboardingStateCopyWithImpl<$Res>
   _$OnboardingStateCopyWithImpl(this._value, this._then);
 
   final OnboardingState _value;
-
   // ignore: unused_field
   final $Res Function(OnboardingState) _then;
 }
@@ -504,7 +489,6 @@ class _$InitialOnboardingState extends InitialOnboardingState {
 
 abstract class InitialOnboardingState extends OnboardingState {
   const factory InitialOnboardingState() = _$InitialOnboardingState;
-
   const InitialOnboardingState._() : super._();
 }
 
@@ -629,7 +613,6 @@ class _$PendingOnboardingState extends PendingOnboardingState {
 
 abstract class PendingOnboardingState extends OnboardingState {
   const factory PendingOnboardingState() = _$PendingOnboardingState;
-
   const PendingOnboardingState._() : super._();
 }
 
@@ -754,7 +737,6 @@ class _$IsShowedOnboardingState extends IsShowedOnboardingState {
 
 abstract class IsShowedOnboardingState extends OnboardingState {
   const factory IsShowedOnboardingState() = _$IsShowedOnboardingState;
-
   const IsShowedOnboardingState._() : super._();
 }
 
@@ -881,7 +863,6 @@ class _$IsNotShowedOnboardingState extends IsNotShowedOnboardingState {
 
 abstract class IsNotShowedOnboardingState extends OnboardingState {
   const factory IsNotShowedOnboardingState() = _$IsNotShowedOnboardingState;
-
   const IsNotShowedOnboardingState._() : super._();
 }
 
@@ -1006,6 +987,5 @@ class _$FailureOnboardingState extends FailureOnboardingState {
 
 abstract class FailureOnboardingState extends OnboardingState {
   const factory FailureOnboardingState() = _$FailureOnboardingState;
-
   const FailureOnboardingState._() : super._();
 }

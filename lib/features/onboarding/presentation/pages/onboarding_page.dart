@@ -26,16 +26,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
   double _currentPage = 0.0;
 
   late final Locales locales;
+  late final List<OnboardingInfoEntity> _onboardigInfo;
 
   @override
   void didChangeDependencies() {
     locales = Locales.of(context);
-    super.didChangeDependencies();
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    final List<OnboardingInfoEntity> _onboardigInfo = [
+    _onboardigInfo = [
       OnboardingInfoEntity(
         imageAsset: RasterResources.obloardingFirstImage,
         title: locales.gainTotalControlOfYourMoney,
@@ -54,6 +51,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
       ),
     ];
 
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
@@ -100,7 +102,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           buttonText: locales.getStarted,
                           onPressed: () {
                             context.read<OnboardingBloc>().add(
-                                  const ShowingToggleOnboardingEvent(),
+                                  const CheckShowingOnboardingEvent(),
                                 );
                           },
                         ),
