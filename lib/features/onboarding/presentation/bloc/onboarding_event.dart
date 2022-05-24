@@ -4,7 +4,7 @@ part of 'onboarding_bloc.dart';
 class OnboardingEvent with _$OnboardingEvent {
   const OnboardingEvent._();
 
-  const factory OnboardingEvent.showingCheck() = ShowingCheckOnboardingEvent;
+  const factory OnboardingEvent.checkShowing() = CheckShowingOnboardingEvent;
 
-  const factory OnboardingEvent.showingToggle() = ShowingToggleOnboardingEvent;
+  const factory OnboardingEvent.markAsShowed() = MarkAsShowedOnboardingEvent;
 }

@@ -14,8 +14,8 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     on<OnboardingEvent>((event, emit) async {
       emitItem = emit;
       await event.map(
-        showingCheck: _checkShowing,
-        showingToggle: _markAsRead,
+        checkShowing: _checkShowing,
+        markAsShowed: _markAsRead,
       );
     });
   }
@@ -23,7 +23,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   final OnboardingUseCases useCases;
   late Emitter emitItem;
 
-  Future<void> _checkShowing(ShowingCheckOnboardingEvent event) async {
+  Future<void> _checkShowing(CheckShowingOnboardingEvent event) async {
     emitItem(
       const PendingOnboardingState(),
     );
@@ -43,7 +43,7 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     }
   }
 
-  Future<void> _markAsRead(ShowingToggleOnboardingEvent event) async {
+  Future<void> _markAsRead(MarkAsShowedOnboardingEvent event) async {
     emitItem(
       const PendingOnboardingState(),
     );
