@@ -24,7 +24,7 @@ class SetupAccountPage extends StatelessWidget {
               SizedBox(height: 51.h),
               Text(
                 locales.letsSetupYourAccount,
-                style: ag.copyWith(
+                style: button.copyWith(
                   color: AppColors.dark50,
                 ),
               ),

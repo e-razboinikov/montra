@@ -13,7 +13,7 @@ TextStyle get titleX => GoogleFonts.inter(
       letterSpacing: 0,
     );
 
-TextStyle get ag => GoogleFonts.inter(
+TextStyle get button => GoogleFonts.inter(
       color: defaultTextColor,
       fontSize: 48.sp,
       fontWeight: FontWeight.w500,

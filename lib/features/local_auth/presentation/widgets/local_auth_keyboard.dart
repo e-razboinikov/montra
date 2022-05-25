@@ -49,7 +49,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
           (index) => TextButton(
             child: Text(
               (index + 1).toString(),
-              style: ag.copyWith(color: AppColors.light80),
+              style: button.copyWith(color: AppColors.light80),
             ),
             onPressed: () => _enterNumber(index + 1),
           ),
@@ -64,7 +64,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
         ),
         TextButton(
           onPressed: () => _enterNumber(0),
-          child: Text('0', style: ag.copyWith(color: AppColors.light80)),
+          child: Text('0', style: button.copyWith(color: AppColors.light80)),
         ),
         if (widget.isBiometcricAccepted)
           TextButton(
