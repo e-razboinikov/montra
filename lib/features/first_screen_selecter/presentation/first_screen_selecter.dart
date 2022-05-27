@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
+import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
+import 'package:montra/features/account/account_management/presentation/pages/setup_account_success_page.dart';
 import 'package:montra/features/home/presentation/pages/main_page.dart';
 import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth/presentation/pages/local_auth_page.dart';
@@ -59,7 +61,7 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
         ),
         BlocListener<LocalAuthBloc, LocalAuthState>(
           listener: (context, state) => state.maybeMap(
-            successfulAuth: (state) => context.goNamed(MainPage.name),
+            successfulAuth: (state) => context.goNamed(SetupAccountPage.name),
             orElse: () => null,
           ),
         ),
