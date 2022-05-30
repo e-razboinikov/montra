@@ -6,12 +6,12 @@ class AccountService {
   Future<Box<AccountModel>> get getBox async =>
       Hive.openBox<AccountModel>(DBConstants.account);
 
-  Future<void> addAccount(AccountModel account) async {
+  Future<void> create(AccountModel account) async {
     final box = await getBox;
     await box.put(account.id, account);
   }
 
-  Future<List<AccountModel>?> getAllAccounts() async {
+  Future<List<AccountModel>?> readAll() async {
     final box = await getBox;
     if (box.isNotEmpty) {
       return box.values.toList();
@@ -19,12 +19,12 @@ class AccountService {
     return null;
   }
 
-  Future<AccountModel?> getAccount(int id) async {
+  Future<AccountModel?> readCurrent(int id) async {
     final box = await getBox;
     return box.get(id);
   }
 
-  Future<void> editAccount(AccountModel newAccount) async {
+  Future<void> udate(AccountModel newAccount) async {
     final box = await getBox;
     if (!box.containsKey(newAccount.id)) {
       return;
@@ -32,7 +32,7 @@ class AccountService {
     await box.put(newAccount.id, newAccount);
   }
 
-  Future<void> deleteAccount(int accountId) async {
+  Future<void> delete(int accountId) async {
     final box = await getBox;
     if (!box.containsKey(accountId)) {
       return;
