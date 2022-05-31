@@ -10,13 +10,8 @@ class AccountUseCases {
   Future<void> addAccount(AccountEntity account) async =>
       repo.addAccount(account as AccountModel);
 
-  Future<void> deleteAccount(int accountId) async =>
-      repo.deleteAccount(accountId);
+  Future<AccountEntity?> getAccount() async => repo.getAccount();
 
   Future<void> editAccount(AccountModel newAccount) async =>
       repo.editAccount(newAccount);
-
-  Future<AccountEntity?> getAccount(int id) async => repo.getAccount(id);
-
-  Future<List<AccountEntity>?> getAllAccounts() async => repo.getAllAccounts();
 }

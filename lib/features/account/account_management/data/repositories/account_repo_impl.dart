@@ -11,15 +11,9 @@ class AccountRepoImpl extends AccountRepo {
   Future<void> addAccount(AccountModel account) => service.create(account);
 
   @override
-  Future<void> deleteAccount(int accountId) => service.delete(accountId);
-
-  @override
   Future<void> editAccount(AccountModel newAccount) =>
       service.udate(newAccount);
 
   @override
-  Future<AccountModel?> getAccount(int id) => service.readCurrent(id);
-
-  @override
-  Future<List<AccountModel>?> getAllAccounts() => service.readAll();
+  Future<AccountModel?> getAccount() => service.read();
 }
