@@ -3,6 +3,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
+import 'package:montra/internal/localization/generated/l10n.dart';
 
 class CoreTextField extends StatelessWidget {
   const CoreTextField({
@@ -29,6 +30,11 @@ class CoreTextField extends StatelessWidget {
           style: body1.copyWith(color: AppColors.light20),
         ),
       ),
+      validator: (input) {
+        if (input == null) {
+          return Locales.of(context).inpuntShouldNotBeEmpty;
+        }
+      },
     );
   }
 }

@@ -36,5 +36,6 @@
   "vallet": "Vallet",
   "letsGo": "Let’s go",
   "continueText": "Continue",
-  "youAreSet": "You are set!"
+  "youAreSet": "You are set!",
+  "inpuntShouldNotBeEmpty": "Inpunt should not be empty"
 }
