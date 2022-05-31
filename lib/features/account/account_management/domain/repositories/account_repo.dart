@@ -4,11 +4,7 @@ import 'package:montra/features/account/account_management/domain/entities/accou
 abstract class AccountRepo {
   Future<void> addAccount(AccountModel account);
 
-  Future<List<AccountEntity>?> getAllAccounts();
-
-  Future<AccountEntity?> getAccount(int id);
+  Future<AccountEntity?> getAccount();
 
   Future<void> editAccount(AccountModel newAccount);
-
-  Future<void> deleteAccount(int accountId);
 }

@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Gain total control of your money"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get started"),
         "iWillUsePin": MessageLookupByLibrary.simpleMessage("I will use PIN"),
+        "inpuntShouldNotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Inpunt should not be empty"),
         "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(
             "Invalid PIN, please try again"),
         "iosBiometricRequest": MessageLookupByLibrary.simpleMessage(

@@ -8,35 +8,19 @@ class AccountService {
 
   Future<void> create(AccountModel account) async {
     final box = await getBox;
-    await box.put(account.id, account);
+    await box.put(DBConstants.account, account);
   }
 
-  Future<List<AccountModel>?> readAll() async {
+  Future<AccountModel?> read() async {
     final box = await getBox;
-    if (box.isNotEmpty) {
-      return box.values.toList();
-    }
-    return null;
-  }
-
-  Future<AccountModel?> readCurrent(int id) async {
-    final box = await getBox;
-    return box.get(id);
+    return box.get(DBConstants.account);
   }
 
   Future<void> udate(AccountModel newAccount) async {
     final box = await getBox;
-    if (!box.containsKey(newAccount.id)) {
+    if (!box.containsKey(DBConstants.account)) {
       return;
     }
-    await box.put(newAccount.id, newAccount);
-  }
-
-  Future<void> delete(int accountId) async {
-    final box = await getBox;
-    if (!box.containsKey(accountId)) {
-      return;
-    }
-    await box.delete(accountId);
+    await box.put(DBConstants.account, newAccount);
   }
 }

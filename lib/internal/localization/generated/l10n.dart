@@ -429,6 +429,16 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Inpunt should not be empty`
+  String get inpuntShouldNotBeEmpty {
+    return Intl.message(
+      'Inpunt should not be empty',
+      name: 'inpuntShouldNotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

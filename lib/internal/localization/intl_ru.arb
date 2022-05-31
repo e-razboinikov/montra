@@ -35,5 +35,6 @@
   "vallet": "Наличные",
   "letsGo": "Вперед",
   "continueText": "Продолжить",
-  "youAreSet": "Все готово!"
+  "youAreSet": "Все готово!",
+  "inpuntShouldNotBeEmpty": "Ввод не должен быть пустым"
 }
