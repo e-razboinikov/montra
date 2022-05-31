@@ -102,7 +102,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           buttonText: locales.getStarted,
                           onPressed: () {
                             context.read<OnboardingBloc>().add(
-                                  const CheckShowingOnboardingEvent(),
+                                  const MarkAsShowedOnboardingEvent(),
                                 );
                           },
                         ),
