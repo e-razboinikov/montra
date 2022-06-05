@@ -13,9 +13,9 @@ part 'account_state.dart';
 class AccountBloc extends Bloc<AccountEvent, AccountState> {
   AccountBloc({required this.useCases}) : super(const InitialAccountState()) {
     on<AccountEvent>(
-      (event, emit) {
+      (event, emit) async {
         emitItem = emit;
-        event.map(
+        await event.map(
           setupAccounts: _setupAccount,
           getAccount: _getAccount,
           addAccount: _addAccount,

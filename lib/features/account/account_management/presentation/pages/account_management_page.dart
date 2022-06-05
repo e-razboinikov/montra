@@ -151,7 +151,6 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                                 ),
                               ),
                             );
-                        context.goNamed(SetupAccountSuccessPage.name);
                       },
                       buttonText: locales.continueText,
                     ),
