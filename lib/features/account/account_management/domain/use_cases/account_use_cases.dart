@@ -8,7 +8,7 @@ class AccountUseCases {
   final AccountRepo repo;
 
   Future<void> addAccount(AccountEntity account) async =>
-      repo.addAccount(account as AccountModel);
+      repo.addAccount(account);
 
   Future<AccountEntity?> getAccount() async => repo.getAccount();
 
