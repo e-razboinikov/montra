@@ -20,16 +20,16 @@ class LocalAuthService {
 
   /// Stores the user's permission to use biometrics.
   Future<void> storeBiomrtricPermission() async {
-    final box = await Hive.openBox<bool>(DBConstants.biometricPermission);
+    final box = await Hive.openBox<bool>(DBConstants.biometric);
 
-    box.put(DBConstants.biometricPermission, true);
+    box.put(DBConstants.biometric, true);
   }
 
   /// Retrieve a previously saved user biometric permission.
   Future<bool?> getStoredBiometricPermissionOrNull() async {
-    final box = await Hive.openBox<bool>(DBConstants.biometricPermission);
+    final box = await Hive.openBox<bool>(DBConstants.biometric);
 
-    final bool? value = box.get(DBConstants.biometricPermission);
+    final bool? value = box.get(DBConstants.biometric);
 
     return value;
   }
