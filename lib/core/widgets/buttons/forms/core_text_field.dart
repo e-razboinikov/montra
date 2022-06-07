@@ -34,6 +34,8 @@ class CoreTextField extends StatelessWidget {
         if (input == null) {
           return Locales.of(context).inpuntShouldNotBeEmpty;
         }
+
+        return null;
       },
     );
   }
