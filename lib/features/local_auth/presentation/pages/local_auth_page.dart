@@ -99,43 +99,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
     return WillPopScope(
       onWillPop: () async => false,
       child: BlocConsumer<LocalAuthBloc, LocalAuthState>(
-        listener: (context, state) {
-          state.maybeMap(
-            auth: (state) async {
-              if (state.isBiometricAccepted != null &&
-                  state.isBiometricAccepted!) {
-                await _authenticateWithBiometrics().then(
-                  (value) {
-                    if (value) {
-                      context
-                          .read<LocalAuthBloc>()
-                          .add(const SuccessfulAuthLocalAuthEvent());
-                    }
-                  },
-                );
-              }
-            },
-            failedAuth: (state) {
-              errorController.add(ErrorAnimationType.shake);
-              textEditingController.clear();
-            },
-            repeatPin: (state) {
-              textEditingController.clear();
-            },
-            failedPinCreation: (state) {
-              errorController.add(ErrorAnimationType.shake);
-              textEditingController.clear();
-            },
-            successfulPinCreation: (state) {
-              _supportState == _SupportState.supported
-                  ? _buildModalBottomSheet()
-                  : context
-                      .read<LocalAuthBloc>()
-                      .add(const SuccessfulAuthLocalAuthEvent());
-            },
-            orElse: () => null,
-          );
-        },
+        listener: _listenBloc,
         builder: (context, state) {
           return state.maybeMap(
             auth: (state) => LocalAuthScaffold(
@@ -212,6 +176,47 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
       ),
     );
   }
+
+  void _listenBloc(BuildContext context, LocalAuthState state) =>
+      state.maybeMap(
+        auth: (state) async {
+          if (state.isBiometricAccepted != null && state.isBiometricAccepted!) {
+            await _authenticateWithBiometrics().then(
+              (value) {
+                if (value) {
+                  context
+                      .read<LocalAuthBloc>()
+                      .add(const SuccessfulAuthLocalAuthEvent());
+                }
+              },
+            );
+          }
+          return null;
+        },
+        failedAuth: (state) {
+          errorController.add(ErrorAnimationType.shake);
+          textEditingController.clear();
+          return null;
+        },
+        repeatPin: (state) {
+          textEditingController.clear();
+          return null;
+        },
+        failedPinCreation: (state) {
+          errorController.add(ErrorAnimationType.shake);
+          textEditingController.clear();
+          return null;
+        },
+        successfulPinCreation: (state) {
+          _supportState == _SupportState.supported
+              ? _buildModalBottomSheet()
+              : context
+                  .read<LocalAuthBloc>()
+                  .add(const SuccessfulAuthLocalAuthEvent());
+          return null;
+        },
+        orElse: () => null,
+      );
 
   void _buildModalBottomSheet() {
     showMaterialModalBottomSheet(
