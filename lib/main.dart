@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             Locales.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate
+            GlobalWidgetsLocalizations.delegate,
           ],
           supportedLocales: Locales.delegate.supportedLocales,
           routeInformationParser: router.routeInformationParser,

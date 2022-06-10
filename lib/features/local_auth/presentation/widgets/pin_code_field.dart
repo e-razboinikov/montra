@@ -65,7 +65,9 @@ class _PinCodeFieldState extends State<PinCodeField> {
           ),
           errorAnimationController: widget.errorController,
           controller: widget.textController,
-          onChanged: (value) {},
+          onChanged: (value) {
+            // I don't need this, but it's required.
+          },
           onCompleted: (value) => widget.confirmFunction(value),
         ),
       ],
