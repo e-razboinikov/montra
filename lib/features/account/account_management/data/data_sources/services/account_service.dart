@@ -13,6 +13,7 @@ class AccountService {
 
   Future<AccountModel?> read() async {
     final box = await getBox;
+
     return box.get(DBConstants.account);
   }
 

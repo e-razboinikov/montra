@@ -57,6 +57,7 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
                   );
 
               context.goNamed(LocalAuthPage.name);
+
               return null;
             },
             orElse: () => null,

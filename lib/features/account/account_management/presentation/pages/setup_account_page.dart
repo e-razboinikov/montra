@@ -15,6 +15,7 @@ class SetupAccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locales = Locales.of(context);
+
     return SafeArea(
       child: Scaffold(
         body: Padding(

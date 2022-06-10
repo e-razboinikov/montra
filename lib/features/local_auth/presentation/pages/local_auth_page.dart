@@ -68,6 +68,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
       );
     } on PlatformException catch (e) {
       BotToast.showText(text: e.toString());
+
       return false;
     }
   }
@@ -191,20 +192,24 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               },
             );
           }
+
           return null;
         },
         failedAuth: (state) {
           errorController.add(ErrorAnimationType.shake);
           textEditingController.clear();
+
           return null;
         },
         repeatPin: (state) {
           textEditingController.clear();
+
           return null;
         },
         failedPinCreation: (state) {
           errorController.add(ErrorAnimationType.shake);
           textEditingController.clear();
+
           return null;
         },
         successfulPinCreation: (state) {
@@ -213,6 +218,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
               : context
                   .read<LocalAuthBloc>()
                   .add(const SuccessfulAuthLocalAuthEvent());
+
           return null;
         },
         orElse: () => null,

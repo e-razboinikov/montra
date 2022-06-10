@@ -25,7 +25,7 @@ class SetupAccountSuccessPage extends StatelessWidget {
               Locales.of(context).youAreSet,
               style: title2,
               textAlign: TextAlign.center,
-            )
+            ),
           ],
         ),
       ),

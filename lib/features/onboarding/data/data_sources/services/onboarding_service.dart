@@ -10,7 +10,7 @@ class OnboardingSevice {
 
     final bool? value = box.get(DBConstants.onboarding);
 
-    return value != null && value == true;
+    return value == true;
   }
 
   Future<void> markAsShowed() async {
