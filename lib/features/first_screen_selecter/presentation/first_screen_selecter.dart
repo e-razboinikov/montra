@@ -74,6 +74,13 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
           listener: (context, state) => state.maybeMap(
             successGetAccount: (state) => context.goNamed(MainPage.name),
             setupAccounts: (state) => context.goNamed(SetupAccountPage.name),
+            successAddAccount: (state) async {
+              await Future.delayed(const Duration(seconds: 1));
+              if (!mounted) return;
+              context.goNamed(MainPage.name);
+
+              return null;
+            },
             orElse: () => null,
           ),
         ),
