@@ -10,7 +10,7 @@ import 'package:montra/core/widgets/buttons/core_button.dart';
 import 'package:montra/core/widgets/buttons/forms/core_dropdown_form.dart';
 import 'package:montra/core/widgets/buttons/forms/core_text_field.dart';
 import 'package:montra/features/account/account_management/domain/entities/account_entity.dart';
-import 'package:montra/features/account/account_management/presentation/manager/account_bloc.dart';
+import 'package:montra/features/account/account_management/presentation/bloc/account_bloc.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_success_page.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 
@@ -81,7 +81,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                       name: 'balance',
                       style: titleX.copyWith(color: AppColors.light80),
                       decoration: InputDecoration.collapsed(
-                        hintText: '0.00',
+                        hintText: '0',
                         hintStyle: titleX.copyWith(color: AppColors.light60),
                       ),
                       keyboardType: TextInputType.number,
