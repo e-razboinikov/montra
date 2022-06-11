@@ -127,27 +127,13 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                     SizedBox(height: 24.h),
                     CoreButton(
                       onPressed: () {
-                        final String name = (_nameAndTypeKey.currentState!
-                                .fields['name']?.value as String?) ??
-                            '';
-
-                        final String type = (_nameAndTypeKey.currentState!
-                                .fields['type']?.value as String?) ??
-                            '';
-                        final double balance = double.tryParse(
-                              (_balanceKey.currentState?.fields['balance']
-                                      ?.value as String?) ??
-                                  '',
-                            ) ??
-                            0.0;
-
                         context.read<AccountBloc>().add(
                               AddAccountEvent(
                                 account: AccountEntity(
                                   id: 0,
-                                  name: name,
-                                  type: type,
-                                  balance: balance,
+                                  name: _getName(),
+                                  type: _getType(),
+                                  balance: _getBalance(),
                                 ),
                               ),
                             );
@@ -163,4 +149,16 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
       ),
     );
   }
+
+  double _getBalance() =>
+      double.tryParse(
+        (_balanceKey.currentState?.fields['balance']?.value as String?) ?? '',
+      ) ??
+      0.0;
+
+  String _getName() =>
+      (_nameAndTypeKey.currentState?.fields['name']?.value as String?) ?? '';
+
+  String _getType() =>
+      (_nameAndTypeKey.currentState?.fields['type']?.value as String?) ?? '';
 }
