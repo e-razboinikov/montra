@@ -3,6 +3,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
+import 'package:montra/internal/localization/generated/l10n.dart';
 
 class CoreDopdownForm extends StatelessWidget {
   const CoreDopdownForm({
@@ -39,6 +40,13 @@ class CoreDopdownForm extends StatelessWidget {
           child: Text(labeles[index]),
         ),
       ).toList(),
+      validator: (input) {
+        if (input == null) {
+          return Locales.of(context).inpuntShouldNotBeEmpty;
+        }
+
+        return null;
+      },
     );
   }
 }
