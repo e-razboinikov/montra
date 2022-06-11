@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:montra/features/account/account_management/data/data_sources/services/account_service.dart';
 import 'package:montra/features/account/account_management/data/repositories/account_repo_impl.dart';
 import 'package:montra/features/account/account_management/domain/use_cases/account_use_cases.dart';
-import 'package:montra/features/account/account_management/presentation/manager/account_bloc.dart';
+import 'package:montra/features/account/account_management/presentation/bloc/account_bloc.dart';
 import 'package:montra/features/local_auth/data/data_sources/services/local_auth_service.dart';
 import 'package:montra/features/local_auth/data/repositories/local_auth_repo_impl.dart';
 import 'package:montra/features/local_auth/domain/use_cases/local_auth_use_cases.dart';
