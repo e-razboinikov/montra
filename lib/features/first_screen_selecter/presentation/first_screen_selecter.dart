@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
-import 'package:montra/features/account/account_management/presentation/manager/account_bloc.dart';
+import 'package:montra/features/account/account_management/presentation/bloc/account_bloc.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
 import 'package:montra/features/home/presentation/pages/main_page.dart';
 import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
@@ -74,6 +74,13 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
           listener: (context, state) => state.maybeMap(
             successGetAccount: (state) => context.goNamed(MainPage.name),
             setupAccounts: (state) => context.goNamed(SetupAccountPage.name),
+            successAddAccount: (state) async {
+              await Future.delayed(const Duration(seconds: 1));
+              if (!mounted) return;
+              context.goNamed(MainPage.name);
+
+              return null;
+            },
             orElse: () => null,
           ),
         ),

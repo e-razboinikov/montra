@@ -10,7 +10,7 @@ import 'package:montra/core/widgets/buttons/core_button.dart';
 import 'package:montra/core/widgets/buttons/forms/core_dropdown_form.dart';
 import 'package:montra/core/widgets/buttons/forms/core_text_field.dart';
 import 'package:montra/features/account/account_management/domain/entities/account_entity.dart';
-import 'package:montra/features/account/account_management/presentation/manager/account_bloc.dart';
+import 'package:montra/features/account/account_management/presentation/bloc/account_bloc.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_success_page.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 
@@ -81,7 +81,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                       name: 'balance',
                       style: titleX.copyWith(color: AppColors.light80),
                       decoration: InputDecoration.collapsed(
-                        hintText: '0.00',
+                        hintText: '0',
                         hintStyle: titleX.copyWith(color: AppColors.light60),
                       ),
                       keyboardType: TextInputType.number,
@@ -127,27 +127,13 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                     SizedBox(height: 24.h),
                     CoreButton(
                       onPressed: () {
-                        final String name = (_nameAndTypeKey.currentState!
-                                .fields['name']?.value as String?) ??
-                            '';
-
-                        final String type = (_nameAndTypeKey.currentState!
-                                .fields['type']?.value as String?) ??
-                            '';
-                        final double balance = double.tryParse(
-                              (_balanceKey.currentState?.fields['balance']
-                                      ?.value as String?) ??
-                                  '',
-                            ) ??
-                            0.0;
-
                         context.read<AccountBloc>().add(
                               AddAccountEvent(
                                 account: AccountEntity(
                                   id: 0,
-                                  name: name,
-                                  type: type,
-                                  balance: balance,
+                                  name: _getName(),
+                                  type: _getType(),
+                                  balance: _getBalance(),
                                 ),
                               ),
                             );
@@ -163,4 +149,16 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
       ),
     );
   }
+
+  double _getBalance() =>
+      double.tryParse(
+        (_balanceKey.currentState?.fields['balance']?.value as String?) ?? '',
+      ) ??
+      0.0;
+
+  String _getName() =>
+      (_nameAndTypeKey.currentState?.fields['name']?.value as String?) ?? '';
+
+  String _getType() =>
+      (_nameAndTypeKey.currentState?.fields['type']?.value as String?) ?? '';
 }
