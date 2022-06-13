@@ -25,19 +25,22 @@ class MainPage extends StatelessWidget {
             ),
           ),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.access_time_outlined,
-                size: 256.h,
-              ),
-              Text(
-                locales.applicationStillInWork,
-                style: title1,
-              ),
-            ],
+        body: SizedBox(
+          width: double.infinity,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.access_time_outlined,
+                  size: 256.h,
+                ),
+                Text(
+                  locales.applicationStillInWork,
+                  style: title1,
+                ),
+              ],
+            ),
           ),
         ),
       ),
