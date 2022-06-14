@@ -1,5 +1,4 @@
 import 'package:bot_toast/bot_toast.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -47,7 +46,6 @@ class MyApp extends StatelessWidget {
           supportedLocales: Locales.delegate.supportedLocales,
           routeInformationParser: router.routeInformationParser,
           routerDelegate: router.routerDelegate,
-          scrollBehavior: const CupertinoScrollBehavior(),
           theme: theme,
           title: 'Montra - Expenses Tracker',
         ),
