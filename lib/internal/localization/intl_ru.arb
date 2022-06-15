@@ -36,5 +36,5 @@
   "letsGo": "Вперед",
   "continueText": "Продолжить",
   "youAreSet": "Все готово!",
-  "inpuntShouldNotBeEmpty": "Ввод не должен быть пустым"
+  "inpuntShouldNotBeEmpty": "Поле обязательно для заполнения"
 }

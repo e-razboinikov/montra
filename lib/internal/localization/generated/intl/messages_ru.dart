@@ -45,8 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "iWillUsePin": MessageLookupByLibrary.simpleMessage(
             "Я буду использовать только ПИН-код"),
-        "inpuntShouldNotBeEmpty":
-            MessageLookupByLibrary.simpleMessage("Ввод не должен быть пустым"),
+        "inpuntShouldNotBeEmpty": MessageLookupByLibrary.simpleMessage(
+            "Поле обязательно для заполнения"),
         "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(
             "Неверный ПИН-код, попробуйте ещё раз"),
         "iosBiometricRequest": MessageLookupByLibrary.simpleMessage(
