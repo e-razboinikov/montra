@@ -70,9 +70,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Setup your budget for each category so you in control"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "soonThereWillBeATransitionToConfirmingThePin":
-            MessageLookupByLibrary.simpleMessage(
-                "Soon there will be a transition to confirming the PIN code!"),
         "theNewPinDoesNotMatchTheOldOnePlease":
             MessageLookupByLibrary.simpleMessage(
                 "The new PIN does not match the old one, please try again."),

@@ -72,9 +72,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Установите бюджет для каждой категории, чтобы контролировать свои траты"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
-        "soonThereWillBeATransitionToConfirmingThePin":
-            MessageLookupByLibrary.simpleMessage(
-                "Скоро здесь будет переход к подтверждению ПИН-кода!"),
         "theNewPinDoesNotMatchTheOldOnePlease":
             MessageLookupByLibrary.simpleMessage(
                 "Новый ПИН-код не совпадает со старым, попробуйте ещё раз"),

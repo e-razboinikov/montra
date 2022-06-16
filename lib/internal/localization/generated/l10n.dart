@@ -150,16 +150,6 @@ class Locales {
     );
   }
 
-  /// `Soon there will be a transition to confirming the PIN code!`
-  String get soonThereWillBeATransitionToConfirmingThePin {
-    return Intl.message(
-      'Soon there will be a transition to confirming the PIN code!',
-      name: 'soonThereWillBeATransitionToConfirmingThePin',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `The PIN length must be 4.`
   String get thePinLengthMustBe4 {
     return Intl.message(
