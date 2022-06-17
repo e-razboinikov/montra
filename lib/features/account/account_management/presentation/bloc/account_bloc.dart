@@ -5,9 +5,7 @@ import 'package:montra/features/account/account_management/domain/entities/accou
 import 'package:montra/features/account/account_management/domain/use_cases/account_use_cases.dart';
 
 part 'account_bloc.freezed.dart';
-
 part 'account_event.dart';
-
 part 'account_state.dart';
 
 class AccountBloc extends Bloc<AccountEvent, AccountState> {
