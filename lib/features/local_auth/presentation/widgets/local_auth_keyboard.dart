@@ -73,9 +73,9 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
                 await widget.authWithBiometric!().then(
                   (value) {
                     if (value) {
-                      context
-                          .read<LocalAuthBloc>()
-                          .add(const SuccessfulAuthLocalAuthEvent());
+                      context.read<LocalAuthBloc>().add(
+                            const SuccessfulAuthLocalAuthEvent(),
+                          );
                     }
                   },
                 );
@@ -117,12 +117,14 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
   }
 
   void _deleteEnteredNumber() {
-    setState(() {
-      if (widget.textController.text.isNotEmpty) {
-        widget.textController.text = widget.textController.value.text
-            .substring(0, widget.textController.value.text.length - 1);
-      }
-    });
+    setState(
+      () {
+        if (widget.textController.text.isNotEmpty) {
+          widget.textController.text = widget.textController.value.text
+              .substring(0, widget.textController.value.text.length - 1);
+        }
+      },
+    );
     HapticFeedback.lightImpact();
   }
 }
