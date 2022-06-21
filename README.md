@@ -4,7 +4,7 @@
 
 ## Thanks to [Braja Omar Justico](https://dribbble.com/brajaomar_j?ref=uistore.design) for sharing this freebie!
 
-## [UI-kit in Figma.](https://www.figma.com/file/WeLl3jVvgbkEdnD7MtW00n/Montra---Expense-Tracker-UI-Kit-(Community)?node-id=1500%3A4506)
+## [MVP UI-kit in Figma.](https://www.figma.com/file/WeLl3jVvgbkEdnD7MtW00n/Montra---Expense-Tracker-UI-Kit-(Community)?node-id=1500%3A4506)
 
 
 
