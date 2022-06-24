@@ -51,7 +51,7 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
         BlocListener<OnboardingBloc, OnboardingState>(
           listener: (context, state) => state.maybeMap(
             isNotShowed: (state) => context.goNamed(OnboardingPage.name),
-            isShowed: (state) async {
+            isShowed: (state) {
               context.read<LocalAuthBloc>().add(
                     const GetStoredPinOrNullLocalAuthEvent(),
                   );
