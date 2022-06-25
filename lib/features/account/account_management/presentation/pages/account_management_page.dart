@@ -1,4 +1,5 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -12,6 +13,7 @@ import 'package:montra/core/widgets/buttons/forms/core_text_field.dart';
 import 'package:montra/features/account/account_management/domain/entities/account_entity.dart';
 import 'package:montra/features/account/account_management/presentation/bloc/account_bloc.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_success_page.dart';
+import 'package:montra/internal/constants.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 
 class AccountManagementPage extends StatefulWidget {
@@ -30,8 +32,7 @@ class AccountManagementPage extends StatefulWidget {
 
 class _AccountManagementPageState extends State<AccountManagementPage> {
   late final Locales locales;
-  final _balanceKey = GlobalKey<FormBuilderState>();
-  final _nameAndTypeKey = GlobalKey<FormBuilderState>();
+  final _formKey = GlobalKey<FormBuilderState>();
 
   @override
   void didChangeDependencies() {
@@ -60,24 +61,24 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
             orElse: () => null,
           );
         },
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    locales.balance,
-                    style: title3.copyWith(
-                      color: AppColors.light80.withOpacity(0.64),
+        child: FormBuilder(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      locales.balance,
+                      style: title3.copyWith(
+                        color: AppColors.light80.withOpacity(0.64),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 13.h),
-                  FormBuilder(
-                    key: _balanceKey,
-                    child: FormBuilderTextField(
+                    SizedBox(height: 13.h),
+                    FormBuilderTextField(
                       name: 'balance',
                       style: titleX.copyWith(color: AppColors.light80),
                       decoration: InputDecoration.collapsed(
@@ -86,25 +87,22 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                       ),
                       keyboardType: TextInputType.number,
                     ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 8.h),
-            Container(
-              padding: EdgeInsets.symmetric(
-                vertical: 32.h,
-                horizontal: 16.w,
-              ),
-              decoration: BoxDecoration(
-                color: AppColors.light100,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(32.r),
-                  topRight: Radius.circular(32.r),
+                  ],
                 ),
               ),
-              child: FormBuilder(
-                key: _nameAndTypeKey,
+              SizedBox(height: 8.h),
+              Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: 32.h,
+                  horizontal: 16.w,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.light100,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(32.r),
+                    topRight: Radius.circular(32.r),
+                  ),
+                ),
                 child: Column(
                   children: [
                     CoreTextField(
@@ -112,28 +110,36 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                       label: locales.name,
                     ),
                     SizedBox(height: 16.h),
-                    CoreDopdownForm(
+                    CoreDopdownForm<int>(
                       name: 'type',
                       label: locales.type,
-                      labeles: [
-                        locales.card,
-                        locales.vallet,
-                      ],
-                      values: const [
-                        'card',
-                        'vallet',
-                      ],
+                      labeles: Constants.accountTypes.map((e) {
+                        final List<String> labels = [
+                          locales.card,
+                          locales.vallet,
+                        ];
+                        return labels[e.id];
+                      }).toList(),
+                      values: Constants.accountTypes.map((e) => e.id).toList(),
                     ),
                     SizedBox(height: 24.h),
                     CoreButton(
                       onPressed: () {
+                        if (!_isFieldsIsNotEmpty()) {
+                          BotToast.showText(
+                            text: locales.allRequiredFieldsAreNotFilled,
+                          );
+
+                          return;
+                        }
+
                         context.read<AccountBloc>().add(
                               AddAccountEvent(
                                 account: AccountEntity(
                                   id: 0,
-                                  name: _getName(),
-                                  type: _getType(),
-                                  balance: _getBalance(),
+                                  name: _getName()!,
+                                  type: _getType()!,
+                                  balance: _getBalance()!,
                                 ),
                               ),
                             );
@@ -143,22 +149,33 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 
-  double _getBalance() =>
-      double.tryParse(
-        (_balanceKey.currentState?.fields['balance']?.value as String?) ?? '',
-      ) ??
-      0.0;
+  bool _isFieldsIsNotEmpty() =>
+      _getBalance() != null && _getName() != null && _getType() != null;
 
-  String _getName() =>
-      (_nameAndTypeKey.currentState?.fields['name']?.value as String?) ?? '';
+  double? _getBalance() => double.tryParse(
+        (_formKey.currentState?.fields['balance']?.value as String?) ?? '',
+      );
 
-  String _getType() =>
-      (_nameAndTypeKey.currentState?.fields['type']?.value as String?) ?? '';
+  String? _getName() =>
+      (_formKey.currentState?.fields['name']?.value as String?) ?? '';
+
+  AccountTypeEntity? _getType() {
+    final int input =
+        _formKey.currentState?.fields['type']?.value as int? ?? -1;
+    final AccountTypeEntity? accountType =
+        Constants.accountTypes.firstWhereOrNull((e) => e.id == input);
+
+    if (accountType == null) {
+      BotToast.showText(text: locales.incorrectAccountType);
+    }
+
+    return accountType;
+  }
 }
