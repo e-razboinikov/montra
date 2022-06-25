@@ -429,6 +429,26 @@ class Locales {
       args: [],
     );
   }
+
+  /// `Incorrect account type!`
+  String get incorrectAccountType {
+    return Intl.message(
+      'Incorrect account type!',
+      name: 'incorrectAccountType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All required fields are not filled!`
+  String get allRequiredFieldsAreNotFilled {
+    return Intl.message(
+      'All required fields are not filled!',
+      name: 'allRequiredFieldsAreNotFilled',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Locales> {

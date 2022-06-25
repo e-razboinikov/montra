@@ -36,5 +36,7 @@
   "letsGo": "Let’s go",
   "continueText": "Continue",
   "youAreSet": "You are set!",
-  "inpuntShouldNotBeEmpty": "Inpunt should not be empty"
+  "inpuntShouldNotBeEmpty": "Inpunt should not be empty",
+  "incorrectAccountType": "Incorrect account type!",
+  "allRequiredFieldsAreNotFilled": "All required fields are not filled!"
 }
