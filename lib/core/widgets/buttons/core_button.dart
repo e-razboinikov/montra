@@ -19,7 +19,7 @@ class CoreButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60.h,
+      height: 58.h,
       width: double.infinity,
       child: ElevatedButton(
         onPressed: onPressed,
