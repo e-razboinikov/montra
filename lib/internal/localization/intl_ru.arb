@@ -35,5 +35,7 @@
   "letsGo": "Вперед",
   "continueText": "Продолжить",
   "youAreSet": "Все готово!",
-  "inpuntShouldNotBeEmpty": "Поле обязательно для заполнения"
+  "inpuntShouldNotBeEmpty": "Поле обязательно для заполнения",
+  "incorrectAccountType": "Некорректный вид счёта!",
+  "allRequiredFieldsAreNotFilled": "Не заполнены все обязательные поля!"
 }

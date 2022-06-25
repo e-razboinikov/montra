@@ -24,7 +24,23 @@ class AccountModel extends AccountEntity {
   @HiveField(1)
   final String name;
   @HiveField(2)
-  final String type;
+  final AccountTypeModel type;
   @HiveField(3)
   final double balance;
+}
+
+@HiveType(typeId: 1)
+class AccountTypeModel extends AccountTypeEntity {
+  const AccountTypeModel({
+    required this.id,
+    required this.name,
+  }) : super(
+          id: id,
+          name: name,
+        );
+
+  @HiveField(0)
+  final int id;
+  @HiveField(1)
+  final String name;
 }

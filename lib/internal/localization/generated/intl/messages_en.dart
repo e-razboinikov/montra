@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Account can be your bank card or your wallet."),
         "addNewAccount":
             MessageLookupByLibrary.simpleMessage("Add new account"),
+        "allRequiredFieldsAreNotFilled": MessageLookupByLibrary.simpleMessage(
+            "All required fields are not filled!"),
         "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
             "If you do not want to enter a PIN, then we can use the Fingerprint"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Gain total control of your money"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get started"),
         "iWillUsePin": MessageLookupByLibrary.simpleMessage("I will use PIN"),
+        "incorrectAccountType":
+            MessageLookupByLibrary.simpleMessage("Incorrect account type!"),
         "inpuntShouldNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("Inpunt should not be empty"),
         "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(

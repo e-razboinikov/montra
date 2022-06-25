@@ -4,7 +4,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 import 'package:montra/features/account/account_management/presentation/bloc/account_bloc.dart';
 import 'package:montra/features/account/account_management/presentation/pages/setup_account_page.dart';
-import 'package:montra/features/home/presentation/pages/main_page.dart';
+import 'package:montra/features/home/presentation/pages/home_page.dart';
 import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
 import 'package:montra/features/local_auth/presentation/pages/local_auth_page.dart';
 import 'package:montra/features/onboarding/presentation/bloc/onboarding_bloc.dart';
@@ -72,12 +72,12 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
         ),
         BlocListener<AccountBloc, AccountState>(
           listener: (context, state) => state.maybeMap(
-            successGetAccount: (state) => context.goNamed(MainPage.name),
+            successGetAccount: (state) => context.goNamed(HomePage.name),
             setupAccounts: (state) => context.goNamed(SetupAccountPage.name),
             successAddAccount: (state) async {
               await Future.delayed(const Duration(seconds: 5));
               if (!mounted) return;
-              context.goNamed(MainPage.name);
+              context.goNamed(HomePage.name);
 
               return null;
             },

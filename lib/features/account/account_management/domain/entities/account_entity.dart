@@ -10,14 +10,22 @@ class AccountEntity extends Equatable {
 
   final int id;
   final String name;
-  final String type;
+  final AccountTypeEntity type;
   final double balance;
 
   @override
-  List<Object?> get props => [
-        id,
-        name,
-        type,
-        balance,
-      ];
+  List<Object?> get props => [id, name, type, balance];
+}
+
+class AccountTypeEntity extends Equatable {
+  const AccountTypeEntity({
+    required this.id,
+    required this.name,
+  });
+
+  final int id;
+  final String name;
+
+  @override
+  List<Object?> get props => [id, name];
 }

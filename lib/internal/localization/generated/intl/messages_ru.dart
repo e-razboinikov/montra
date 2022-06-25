@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Счетом могут быть наличные или банковская карта"),
         "addNewAccount": MessageLookupByLibrary.simpleMessage("Добавить счет"),
+        "allRequiredFieldsAreNotFilled": MessageLookupByLibrary.simpleMessage(
+            "Не заполнены все обязательные поля!"),
         "androidBiometricRequest": MessageLookupByLibrary.simpleMessage(
             "Если вы не хотите постоянно вводить ПИН-код, то мы можем использовать отпечаток пальца"),
         "applicationStillInWork": MessageLookupByLibrary.simpleMessage(
@@ -45,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "iWillUsePin": MessageLookupByLibrary.simpleMessage(
             "Я буду использовать только ПИН-код"),
+        "incorrectAccountType":
+            MessageLookupByLibrary.simpleMessage("Некорректный вид счёта!"),
         "inpuntShouldNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Поле обязательно для заполнения"),
         "invalidPinPleaseTryAgain": MessageLookupByLibrary.simpleMessage(

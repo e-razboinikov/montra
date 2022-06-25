@@ -13,7 +13,10 @@ class AccountRepoImpl extends AccountRepo {
         AccountModel(
           id: account.id,
           name: account.name,
-          type: account.type,
+          type: AccountTypeModel(
+            id: account.type.id,
+            name: account.type.name,
+          ),
           balance: account.balance,
         ),
       );
@@ -23,7 +26,10 @@ class AccountRepoImpl extends AccountRepo {
         AccountModel(
           id: newAccount.id,
           name: newAccount.name,
-          type: newAccount.type,
+          type: AccountTypeModel(
+            id: newAccount.type.id,
+            name: newAccount.type.name,
+          ),
           balance: newAccount.balance,
         ),
       );
