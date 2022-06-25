@@ -4,4 +4,6 @@ import 'package:montra/features/account/account_management/data/models/account_m
 void registerHiveAdapters() {
   // id: 0
   Hive.registerAdapter<AccountModel>(AccountModelAdapter());
+  // id: 1
+  Hive.registerAdapter<AccountTypeModel>(AccountTypeModelAdapter());
 }
