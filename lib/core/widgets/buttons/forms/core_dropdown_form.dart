@@ -5,7 +5,7 @@ import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 
-class CoreDopdownForm extends StatelessWidget {
+class CoreDopdownForm<T> extends StatelessWidget {
   const CoreDopdownForm({
     required this.name,
     required this.label,
@@ -16,12 +16,12 @@ class CoreDopdownForm extends StatelessWidget {
 
   final String name;
   final String label;
-  final List<String> values;
+  final List<T> values;
   final List<String> labeles;
 
   @override
   Widget build(BuildContext context) {
-    return FormBuilderDropdown(
+    return FormBuilderDropdown<T>(
       name: name,
       decoration: InputDecoration(
         border: OutlineInputBorder(
