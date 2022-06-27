@@ -20,9 +20,7 @@ class OnboardingItem extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(
-              onboardingInfo.imageAsset,
-            ),
+            Image.asset(onboardingInfo.imageAsset),
             SizedBox(height: 32.h),
             Column(
               children: [
