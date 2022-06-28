@@ -32,9 +32,9 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
     emitItem(const PendingLocalAuthState());
 
     try {
-      final String? storedPin = await useCases.getStoredPinOrNull();
+      final String? storedPin = await useCases.getStoredPin();
       final bool isBiometricAccepted =
-          await useCases.getStoredBiometricPermissionOrNull() ?? false;
+          await useCases.getStoredBiometricPermission() ?? false;
 
       emitItem(
         storedPin != null
@@ -55,7 +55,7 @@ class LocalAuthBloc extends Bloc<LocalAuthEvent, LocalAuthState> {
     emitItem(const PendingLocalAuthState());
 
     try {
-      final String? storedPin = await useCases.getStoredPinOrNull();
+      final String? storedPin = await useCases.getStoredPin();
 
       final bool isNewPinValid = useCases.confirmPin(
         oldPin: storedPin!,

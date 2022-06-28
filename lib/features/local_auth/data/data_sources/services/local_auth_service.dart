@@ -3,7 +3,7 @@ import 'package:montra/internal/db_constants.dart';
 
 class LocalAuthService {
   /// Retrieve a previously saved pin.
-  Future<String?> getStoredPinOrNull() async {
+  Future<String?> getStoredPin() async {
     final box = await Hive.openBox<String>(DBConstants.localAuth);
 
     final String? value = box.get(DBConstants.localAuth);
@@ -26,7 +26,7 @@ class LocalAuthService {
   }
 
   /// Retrieve a previously saved user biometric permission.
-  Future<bool?> getStoredBiometricPermissionOrNull() async {
+  Future<bool?> getStoredBiometricPermission() async {
     final box = await Hive.openBox<bool>(DBConstants.biometric);
 
     final bool? value = box.get(DBConstants.biometric);

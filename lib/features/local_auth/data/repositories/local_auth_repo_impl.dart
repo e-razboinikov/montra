@@ -7,7 +7,7 @@ class LocalAuthRepoImpl extends LocalAuthRepo {
   final LocalAuthService service;
 
   @override
-  Future<String?> getStoredPinOrNull() async => service.getStoredPinOrNull();
+  Future<String?> getStoredPin() async => service.getStoredPin();
 
   @override
   Future<void> storePin(String pinToStore) async =>
@@ -18,6 +18,6 @@ class LocalAuthRepoImpl extends LocalAuthRepo {
       service.storeBiomrtricPermission();
 
   @override
-  Future<bool?> getStoredBiometricPermissionOrNull() async =>
-      service.getStoredBiometricPermissionOrNull();
+  Future<bool?> getStoredBiometricPermission() async =>
+      service.getStoredBiometricPermission();
 }

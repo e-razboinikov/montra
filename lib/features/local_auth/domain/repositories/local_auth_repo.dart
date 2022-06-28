@@ -1,6 +1,6 @@
 abstract class LocalAuthRepo {
   /// Retrieve a previously saved pin.
-  Future<String?> getStoredPinOrNull();
+  Future<String?> getStoredPin();
 
   /// Save the pin to the Box.
   Future<void> storePin(String pinToStore);
@@ -9,5 +9,5 @@ abstract class LocalAuthRepo {
   Future<void> storeBiomrtricPermission();
 
   /// Retrieve a previously saved user biometric permission.
-  Future<bool?> getStoredBiometricPermissionOrNull();
+  Future<bool?> getStoredBiometricPermission();
 }
