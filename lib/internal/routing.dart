@@ -9,9 +9,7 @@ import 'package:montra/features/local_auth/presentation/pages/local_auth_page.da
 import 'package:montra/features/onboarding/presentation/pages/onboarding_page.dart';
 
 final router = GoRouter(
-  observers: [
-    BotToastNavigatorObserver(),
-  ],
+  observers: [BotToastNavigatorObserver()],
   routes: [
     GoRoute(
       path: '/',
