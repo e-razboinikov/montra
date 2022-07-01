@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -40,7 +39,7 @@ class _PinCodeFieldState extends State<PinCodeField> {
           style: title3.copyWith(color: AppColors.light80),
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 92.h),
+        const SizedBox(height: 92),
         PinCodeTextField(
           readOnly: true,
           appContext: context,
@@ -54,14 +53,14 @@ class _PinCodeFieldState extends State<PinCodeField> {
             ),
           ),
           pinTheme: PinTheme(
-            fieldOuterPadding: EdgeInsets.symmetric(horizontal: 8.w),
+            fieldOuterPadding: const EdgeInsets.symmetric(horizontal: 8),
             borderWidth: 4,
             activeColor: AppColors.light80,
             selectedColor: AppColors.violet20,
             inactiveColor: AppColors.violet20,
             shape: PinCodeFieldShape.circle,
-            fieldHeight: 32.h,
-            fieldWidth: 32.w,
+            fieldHeight: 32,
+            fieldWidth: 32,
           ),
           errorAnimationController: widget.errorController,
           controller: widget.textController,

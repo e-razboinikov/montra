@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
@@ -19,17 +18,17 @@ class SetupAccountPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(16.h),
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              SizedBox(height: 51.h),
+              const SizedBox(height: 51),
               Text(
                 locales.letsSetupYourAccount,
                 style: button.copyWith(
                   color: AppColors.dark50,
                 ),
               ),
-              SizedBox(height: 37.h),
+              const SizedBox(height: 36),
               Text(
                 locales.accountCanBeYourBankCardOrYourWallet,
                 style: body3.copyWith(

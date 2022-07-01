@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:montra/core/themes/app_themes.dart';
 import 'package:montra/internal/bloc_providers.dart';
@@ -28,27 +27,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      // 812 x 375 - UI-kit dementions
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_) => MultiBlocProvider(
-        providers: providers,
-        child: MaterialApp.router(
-          builder: BotToastInit(),
-          localizationsDelegates: const [
-            Locales.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: Locales.delegate.supportedLocales,
-          routeInformationParser: router.routeInformationParser,
-          routerDelegate: router.routerDelegate,
-          theme: theme,
-          title: 'Montra - Expenses Tracker',
-        ),
+    return MultiBlocProvider(
+      providers: providers,
+      child: MaterialApp.router(
+        builder: BotToastInit(),
+        localizationsDelegates: const [
+          Locales.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: Locales.delegate.supportedLocales,
+        routeInformationParser: router.routeInformationParser,
+        routerDelegate: router.routerDelegate,
+        theme: theme,
+        title: 'Montra - Expenses Tracker',
       ),
     );
   }

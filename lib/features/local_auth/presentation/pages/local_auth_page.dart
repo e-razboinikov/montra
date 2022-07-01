@@ -7,7 +7,6 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
@@ -230,21 +229,21 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
       backgroundColor: AppColors.violet100,
       expand: true,
       builder: (context) => Padding(
-        padding: EdgeInsets.all(16.h),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             if (Platform.isAndroid)
-              Icon(
+              const Icon(
                 Icons.fingerprint,
                 color: AppColors.light80,
-                size: 256.h,
+                size: 256,
               ),
             if (Platform.isIOS)
               SvgPicture.asset(
                 VectorResources.faceId,
-                height: 256.h,
-                width: 256.w,
+                height: 256,
+                width: 256,
                 color: AppColors.light80,
               ),
             Text(

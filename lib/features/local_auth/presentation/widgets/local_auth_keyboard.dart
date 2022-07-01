@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:montra/core/resources/vector_resources.dart';
@@ -40,8 +39,8 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         childAspectRatio: widget.deviceHeight >= 720 ? 2 / 1 : 3 / 2,
-        mainAxisSpacing: 8.h,
-        crossAxisSpacing: 8.w,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
       ),
       children: [
         ...List.generate(
@@ -56,9 +55,9 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
         ),
         TextButton(
           onPressed: () => _deleteEnteredNumber(),
-          child: Icon(
+          child: const Icon(
             Icons.backspace_outlined,
-            size: 32.h,
+            size: 32,
             color: AppColors.light80,
           ),
         ),
@@ -82,15 +81,15 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
               }
             },
             child: Platform.isAndroid
-                ? Icon(
+                ? const Icon(
                     Icons.fingerprint,
                     color: AppColors.light80,
-                    size: 48.h,
+                    size: 48,
                   )
                 : SvgPicture.asset(
                     VectorResources.faceId,
-                    height: 64.h,
-                    width: 64.w,
+                    height: 64,
+                    width: 64,
                     color: AppColors.light80,
                   ),
           ),
@@ -99,8 +98,8 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
             onPressed: () => widget.confirmFunction(widget.textController.text),
             child: SvgPicture.asset(
               VectorResources.iconArrowRight,
-              height: 64.h,
-              width: 64.w,
+              height: 64,
+              width: 64,
             ),
           ),
       ],
