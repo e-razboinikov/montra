@@ -3,7 +3,6 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/themes/app_text_styles.dart';
@@ -67,7 +66,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -77,7 +76,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                         color: AppColors.light80.withOpacity(0.64),
                       ),
                     ),
-                    SizedBox(height: 13.h),
+                    const SizedBox(height: 13),
                     FormBuilderTextField(
                       name: 'balance',
                       style: titleX.copyWith(color: AppColors.light80),
@@ -90,17 +89,17 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 8.h),
+              const SizedBox(height: 8),
               Container(
-                padding: EdgeInsets.symmetric(
-                  vertical: 32.h,
-                  horizontal: 16.w,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 32,
+                  horizontal: 16,
                 ),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColors.light100,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32.r),
-                    topRight: Radius.circular(32.r),
+                    topLeft: Radius.circular(32),
+                    topRight: Radius.circular(32),
                   ),
                 ),
                 child: Column(
@@ -109,7 +108,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                       name: 'name',
                       label: locales.name,
                     ),
-                    SizedBox(height: 16.h),
+                    const SizedBox(height: 16),
                     CoreDopdownForm<int>(
                       name: 'type',
                       label: locales.type,
@@ -122,7 +121,7 @@ class _AccountManagementPageState extends State<AccountManagementPage> {
                       }).toList(),
                       values: Constants.accountTypes.map((e) => e.id).toList(),
                     ),
-                    SizedBox(height: 24.h),
+                    const SizedBox(height: 24),
                     CoreButton(
                       onPressed: () {
                         if (!_isFieldsIsNotEmpty()) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:montra/core/themes/app_colors.dart';
 
@@ -7,80 +6,80 @@ Color get defaultTextColor => AppColors.dark75;
 
 TextStyle get titleX => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 64.sp,
+      fontSize: 64,
       fontWeight: FontWeight.w700,
-      height: 80.h / 64.h,
+      height: 80 / 64,
       letterSpacing: 0,
     );
 
 TextStyle get button => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 48.sp,
+      fontSize: 48,
       fontWeight: FontWeight.w500,
-      height: 58.sp / 48.sp,
+      height: 58 / 48,
       letterSpacing: 0,
     );
 
 TextStyle get title1 => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 32.sp,
+      fontSize: 32,
       fontWeight: FontWeight.w700,
-      height: 39.sp / 32.sp,
+      height: 39 / 32,
       letterSpacing: 0,
     );
 
 TextStyle get title2 => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 24.sp,
+      fontSize: 24,
       fontWeight: FontWeight.w600,
-      height: 29.sp / 24.sp,
+      height: 29 / 24,
       letterSpacing: 0,
     );
 
 TextStyle get title3 => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 18.sp,
+      fontSize: 18,
       fontWeight: FontWeight.w600,
-      height: 22.sp / 18.sp,
+      height: 22 / 18,
       letterSpacing: 0,
     );
 
 TextStyle get body1 => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 16.sp,
+      fontSize: 16,
       fontWeight: FontWeight.w500,
-      height: 19.sp / 16.sp,
+      height: 19 / 16,
       letterSpacing: 0,
     );
 
 TextStyle get body2 => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 16.sp,
+      fontSize: 16,
       fontWeight: FontWeight.w600,
-      height: 19.sp / 16.sp,
+      height: 19 / 16,
       letterSpacing: 0,
     );
 
 TextStyle get body3 => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 14.sp,
+      fontSize: 14,
       fontWeight: FontWeight.w500,
-      height: 18.sp / 14.sp,
+      height: 18 / 14,
       letterSpacing: 0,
     );
 
 TextStyle get small => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 13.sp,
+      fontSize: 13,
       fontWeight: FontWeight.w500,
-      height: 16.sp / 13.sp,
+      height: 16 / 13,
       letterSpacing: 0,
     );
 
 TextStyle get tiny => GoogleFonts.inter(
       color: defaultTextColor,
-      fontSize: 12.sp,
+      fontSize: 12,
       fontWeight: FontWeight.w500,
-      height: 12.sp / 12.sp,
+      height: 12 / 12,
       letterSpacing: 0,
     );

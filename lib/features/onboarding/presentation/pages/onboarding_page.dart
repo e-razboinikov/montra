@@ -2,7 +2,6 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:montra/core/resources/raster_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
 import 'package:montra/core/widgets/buttons/core_button.dart';
@@ -84,20 +83,20 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 32.w),
+                        padding: const EdgeInsets.symmetric(horizontal: 32),
                         child: DotsIndicator(
                           dotsCount: _onboardigInfo.length,
                           position: _currentPage,
-                          decorator: DotsDecorator(
-                            size: Size(8.w, 8.h),
-                            activeSize: Size(16.w, 16.h),
+                          decorator: const DotsDecorator(
+                            size: Size(8, 8),
+                            activeSize: Size(16, 16),
                             color: AppColors.violet20,
                             activeColor: AppColors.violet100,
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.fromLTRB(32.w, 0, 32.w, 32.h),
+                        padding: const EdgeInsets.fromLTRB(32, 0, 32, 32),
                         child: CoreButton(
                           buttonText: locales.getStarted,
                           onPressed: () {
