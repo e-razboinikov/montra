@@ -43,6 +43,7 @@ class _LocalAuthKeyboardState extends State<LocalAuthKeyboard> {
         crossAxisSpacing: 8,
       ),
       children: [
+        // Generating number buttons.
         ...List.generate(
           9,
           (index) => TextButton(
