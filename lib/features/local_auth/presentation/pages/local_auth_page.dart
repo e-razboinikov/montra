@@ -1,21 +1,18 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:async';
-import 'dart:io';
 
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_ios/local_auth_ios.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:montra/core/resources/vector_resources.dart';
 import 'package:montra/core/themes/app_colors.dart';
-import 'package:montra/core/themes/app_text_styles.dart';
 import 'package:montra/features/local_auth/presentation/bloc/local_auth_bloc.dart';
+import 'package:montra/features/local_auth/presentation/widgets/biometric%20_request_body.dart';
 import 'package:montra/features/local_auth/presentation/widgets/local_auth_scaffold.dart';
 import 'package:montra/internal/localization/generated/l10n.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -74,7 +71,6 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
 
   @override
   void initState() {
-    super.initState();
     auth.isDeviceSupported().then(
           (bool isSupported) => setState(
             () => _supportState = isSupported
@@ -82,6 +78,8 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
                 : _SupportState.unsupported,
           ),
         );
+
+    super.initState();
   }
 
   @override
@@ -228,68 +226,8 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
       context: context,
       backgroundColor: AppColors.violet100,
       expand: true,
-      builder: (context) => Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            if (Platform.isAndroid)
-              const Icon(
-                Icons.fingerprint,
-                color: AppColors.light80,
-                size: 256,
-              ),
-            if (Platform.isIOS)
-              SvgPicture.asset(
-                VectorResources.faceId,
-                height: 256,
-                width: 256,
-                color: AppColors.light80,
-              ),
-            Text(
-              Platform.isAndroid
-                  ? locales.androidBiometricRequest
-                  : locales.iosBiometricRequest,
-              style: body1.copyWith(color: AppColors.light80),
-              textAlign: TextAlign.center,
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextButton(
-                  onPressed: () async {
-                    await _authenticateWithBiometrics().then(
-                      (value) {
-                        if (value) {
-                          context
-                              .read<LocalAuthBloc>()
-                              .add(const BiometricAcceptedLocalAuthEvent());
-
-                          context
-                              .read<LocalAuthBloc>()
-                              .add(const SuccessfulAuthLocalAuthEvent());
-                        }
-                      },
-                    );
-                  },
-                  child: Text(
-                    locales.letsTry.toUpperCase(),
-                    style: title3.copyWith(color: AppColors.light80),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () => context
-                      .read<LocalAuthBloc>()
-                      .add(const SuccessfulAuthLocalAuthEvent()),
-                  child: Text(
-                    locales.iWillUsePin.toUpperCase(),
-                    style: title3.copyWith(color: AppColors.light80),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+      builder: (context) => BiometricRequestBody(
+        authWithBiometric: _authenticateWithBiometrics,
       ),
     );
   }
