@@ -33,45 +33,16 @@ class LocalAuthPage extends StatefulWidget {
 }
 
 class _LocalAuthPageState extends State<LocalAuthPage> {
-  late final TextEditingController textEditingController;
-  late final StreamController<ErrorAnimationType> errorController;
-  late final Locales locales;
-  late final double deviceHeight;
-  final LocalAuthentication auth = LocalAuthentication();
+  late final TextEditingController _textEditingController;
+  late final StreamController<ErrorAnimationType> _errorController;
+  late final Locales _locales;
+  late final double _deviceHeight;
+  final LocalAuthentication _auth = LocalAuthentication();
   _SupportState _supportState = _SupportState.unknown;
-
-  Future<bool> _authenticateWithBiometrics() async {
-    try {
-      return await auth.authenticate(
-        authMessages: <AuthMessages>[
-          AndroidAuthMessages(
-            signInTitle: locales.signIn,
-            biometricHint: '',
-            cancelButton: locales.cancel,
-          ),
-          IOSAuthMessages(
-            cancelButton: locales.cancel,
-            goToSettingsButton: locales.settings,
-            goToSettingsDescription: locales.pleaseSetupYourFaceId,
-            lockOut: locales.pleaseActivateFaceId,
-          ),
-        ],
-        localizedReason: locales.useBiometricsForAuthorization,
-        options: const AuthenticationOptions(
-          stickyAuth: true,
-          biometricOnly: true,
-        ),
-      );
-    } on PlatformException catch (e) {
-      BotToast.showText(text: e.toString());
-
-      return false;
-    }
-  }
 
   @override
   void initState() {
-    auth.isDeviceSupported().then(
+    _auth.isDeviceSupported().then(
           (bool isSupported) => setState(
             () => _supportState = isSupported
                 ? _SupportState.supported
@@ -84,10 +55,10 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
 
   @override
   void didChangeDependencies() {
-    textEditingController = TextEditingController();
-    errorController = StreamController<ErrorAnimationType>();
-    locales = Locales.of(context);
-    deviceHeight = MediaQuery.of(context).size.height;
+    _textEditingController = TextEditingController();
+    _errorController = StreamController<ErrorAnimationType>();
+    _locales = Locales.of(context);
+    _deviceHeight = MediaQuery.of(context).size.height;
 
     super.didChangeDependencies();
   }
@@ -98,79 +69,7 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
       onWillPop: () async => false,
       child: BlocConsumer<LocalAuthBloc, LocalAuthState>(
         listener: _listenBloc,
-        builder: (context, state) {
-          return state.maybeMap(
-            auth: (state) => LocalAuthScaffold(
-              isBiometcricAccepted: state.isBiometricAccepted ?? false,
-              authWithBiometric: _authenticateWithBiometrics,
-              confirmFunction: (String enteredPin) =>
-                  context.read<LocalAuthBloc>().add(
-                        ConfirmAuthLocalAuthEvent(enteredPin: enteredPin),
-                      ),
-              title: locales.enterYourPin,
-              textEditingController: textEditingController,
-              errorController: errorController,
-              deviceHeight: deviceHeight,
-            ),
-            failedAuth: (state) => LocalAuthScaffold(
-              isBiometcricAccepted: false,
-              confirmFunction: (String enteredPin) =>
-                  context.read<LocalAuthBloc>().add(
-                        ConfirmAuthLocalAuthEvent(
-                          enteredPin: enteredPin,
-                        ),
-                      ),
-              title: locales.invalidPinPleaseTryAgain,
-              textEditingController: textEditingController,
-              errorController: errorController,
-              deviceHeight: deviceHeight,
-            ),
-            createPin: (state) => LocalAuthScaffold(
-              isBiometcricAccepted: false,
-              confirmFunction: (String enteredPin) =>
-                  context.read<LocalAuthBloc>().add(
-                        RepeatPinLocalAuthEvent(
-                          firstPin: enteredPin,
-                        ),
-                      ),
-              title: locales.letsSetupYourPin,
-              textEditingController: textEditingController,
-              errorController: errorController,
-              deviceHeight: deviceHeight,
-            ),
-            repeatPin: (state) => LocalAuthScaffold(
-              isBiometcricAccepted: false,
-              confirmFunction: (String enteredPin) =>
-                  context.read<LocalAuthBloc>().add(
-                        ConfirmPinCreationLocalAuthEvent(
-                          oldPin: state.firstPin,
-                          newPin: enteredPin,
-                        ),
-                      ),
-              title: locales.reenterPin,
-              textEditingController: textEditingController,
-              errorController: errorController,
-              deviceHeight: deviceHeight,
-            ),
-            failedPinCreation: (state) => LocalAuthScaffold(
-              isBiometcricAccepted: false,
-              confirmFunction: (String enteredPin) =>
-                  context.read<LocalAuthBloc>().add(
-                        ConfirmPinCreationLocalAuthEvent(
-                          oldPin: state.firstPin,
-                          newPin: enteredPin,
-                        ),
-                      ),
-              title: locales.thePinsDontMatch,
-              textEditingController: textEditingController,
-              errorController: errorController,
-              deviceHeight: deviceHeight,
-            ),
-            orElse: () => const Center(
-              child: CircularProgressIndicator.adaptive(),
-            ),
-          );
-        },
+        builder: _widgetBuilder,
       ),
     );
   }
@@ -193,19 +92,19 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
           return null;
         },
         failedAuth: (state) {
-          errorController.add(ErrorAnimationType.shake);
-          textEditingController.clear();
+          _errorController.add(ErrorAnimationType.shake);
+          _textEditingController.clear();
 
           return null;
         },
         repeatPin: (state) {
-          textEditingController.clear();
+          _textEditingController.clear();
 
           return null;
         },
         failedPinCreation: (state) {
-          errorController.add(ErrorAnimationType.shake);
-          textEditingController.clear();
+          _errorController.add(ErrorAnimationType.shake);
+          _textEditingController.clear();
 
           return null;
         },
@@ -220,6 +119,108 @@ class _LocalAuthPageState extends State<LocalAuthPage> {
         },
         orElse: () => null,
       );
+
+  Widget _widgetBuilder(BuildContext context, LocalAuthState state) =>
+      state.maybeMap(
+        auth: (state) => LocalAuthScaffold(
+          isBiometcricAccepted: state.isBiometricAccepted ?? false,
+          authWithBiometric: _authenticateWithBiometrics,
+          confirmFunction: (String enteredPin) =>
+              context.read<LocalAuthBloc>().add(
+                    ConfirmAuthLocalAuthEvent(enteredPin: enteredPin),
+                  ),
+          title: _locales.enterYourPin,
+          textEditingController: _textEditingController,
+          errorController: _errorController,
+          deviceHeight: _deviceHeight,
+        ),
+        failedAuth: (state) => LocalAuthScaffold(
+          isBiometcricAccepted: false,
+          confirmFunction: (String enteredPin) =>
+              context.read<LocalAuthBloc>().add(
+                    ConfirmAuthLocalAuthEvent(
+                      enteredPin: enteredPin,
+                    ),
+                  ),
+          title: _locales.invalidPinPleaseTryAgain,
+          textEditingController: _textEditingController,
+          errorController: _errorController,
+          deviceHeight: _deviceHeight,
+        ),
+        createPin: (state) => LocalAuthScaffold(
+          isBiometcricAccepted: false,
+          confirmFunction: (String enteredPin) =>
+              context.read<LocalAuthBloc>().add(
+                    RepeatPinLocalAuthEvent(
+                      firstPin: enteredPin,
+                    ),
+                  ),
+          title: _locales.letsSetupYourPin,
+          textEditingController: _textEditingController,
+          errorController: _errorController,
+          deviceHeight: _deviceHeight,
+        ),
+        repeatPin: (state) => LocalAuthScaffold(
+          isBiometcricAccepted: false,
+          confirmFunction: (String enteredPin) =>
+              context.read<LocalAuthBloc>().add(
+                    ConfirmPinCreationLocalAuthEvent(
+                      oldPin: state.firstPin,
+                      newPin: enteredPin,
+                    ),
+                  ),
+          title: _locales.reenterPin,
+          textEditingController: _textEditingController,
+          errorController: _errorController,
+          deviceHeight: _deviceHeight,
+        ),
+        failedPinCreation: (state) => LocalAuthScaffold(
+          isBiometcricAccepted: false,
+          confirmFunction: (String enteredPin) =>
+              context.read<LocalAuthBloc>().add(
+                    ConfirmPinCreationLocalAuthEvent(
+                      oldPin: state.firstPin,
+                      newPin: enteredPin,
+                    ),
+                  ),
+          title: _locales.thePinsDontMatch,
+          textEditingController: _textEditingController,
+          errorController: _errorController,
+          deviceHeight: _deviceHeight,
+        ),
+        orElse: () => const Center(
+          child: CircularProgressIndicator.adaptive(),
+        ),
+      );
+
+  Future<bool> _authenticateWithBiometrics() async {
+    try {
+      return await _auth.authenticate(
+        authMessages: <AuthMessages>[
+          AndroidAuthMessages(
+            signInTitle: _locales.signIn,
+            biometricHint: '',
+            cancelButton: _locales.cancel,
+          ),
+          IOSAuthMessages(
+            cancelButton: _locales.cancel,
+            goToSettingsButton: _locales.settings,
+            goToSettingsDescription: _locales.pleaseSetupYourFaceId,
+            lockOut: _locales.pleaseActivateFaceId,
+          ),
+        ],
+        localizedReason: _locales.useBiometricsForAuthorization,
+        options: const AuthenticationOptions(
+          stickyAuth: true,
+          biometricOnly: true,
+        ),
+      );
+    } on PlatformException catch (e) {
+      BotToast.showText(text: e.toString());
+
+      return false;
+    }
+  }
 
   void _buildModalBottomSheet() {
     showMaterialModalBottomSheet(
