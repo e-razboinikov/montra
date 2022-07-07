@@ -30,15 +30,9 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.access_time_outlined,
-                  size: 128,
-                ),
+                const Icon(Icons.access_time_outlined, size: 128),
                 const SizedBox(height: 16),
-                Text(
-                  locales.applicationStillInWork,
-                  style: title2,
-                ),
+                Text(locales.applicationStillInWork, style: title2),
               ],
             ),
           ),
