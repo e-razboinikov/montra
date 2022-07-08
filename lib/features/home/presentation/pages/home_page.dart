@@ -19,9 +19,7 @@ class HomePage extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Text(
             locales.comingSoon,
-            style: title2.copyWith(
-              color: AppColors.light40,
-            ),
+            style: title2.copyWith(color: AppColors.light40),
           ),
         ),
         body: SizedBox(
