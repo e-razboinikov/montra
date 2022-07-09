@@ -16,34 +16,32 @@ class OnboardingItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.asset(onboardingInfo.imageAsset),
-            const SizedBox(height: 32),
-            Column(
-              children: [
-                AutoSizeText(
-                  onboardingInfo.title,
-                  style: title1.copyWith(
-                    color: AppColors.dark50,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
+      child: ListView(
+        children: [
+          Image.asset(onboardingInfo.imageAsset),
+          const SizedBox(height: 32),
+          Column(
+            children: [
+              AutoSizeText(
+                onboardingInfo.title,
+                style: title1.copyWith(
+                  color: AppColors.dark50,
                 ),
-                const SizedBox(height: 17),
-                AutoSizeText(
-                  onboardingInfo.description,
-                  style: body1.copyWith(
-                    color: AppColors.light20,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+              ),
+              const SizedBox(height: 17),
+              AutoSizeText(
+                onboardingInfo.description,
+                style: body1.copyWith(
+                  color: AppColors.light20,
                 ),
-              ],
-            ),
-          ],
-        ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
