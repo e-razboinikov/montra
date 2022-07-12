@@ -37,9 +37,7 @@ class _FirstScreenSelecterState extends State<FirstScreenSelecter> {
         );
 
     // This is necessary for correct page selection
-    await Future.delayed(
-      const Duration(seconds: 1),
-    );
+    await Future.delayed(const Duration(seconds: 1));
 
     FlutterNativeSplash.remove();
   }
