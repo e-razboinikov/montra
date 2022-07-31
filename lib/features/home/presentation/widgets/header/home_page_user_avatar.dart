@@ -8,10 +8,9 @@ class HomePageUserAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+        shape: BoxShape.circle,
         border: Border.all(
           color: AppColors.violet100,
-          width: 1.0,
         ),
       ),
       child: Container(
@@ -24,7 +23,7 @@ class HomePageUserAvatar extends StatelessWidget {
             ),
             fit: BoxFit.cover,
           ),
-          borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+          shape: BoxShape.circle,
           border: Border.all(
             color: AppColors.light100,
             width: 2.0,
